@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "uR9iCsmQQ2k=",
+  "dgSpecHash": "aVTbAHtQbmw=",
   "success": true,
   "projectFilePath": "D:\\CIPHER\\CIPHER\\CIPHER\\CIPHER.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hosain ahmad\\.nuget\\packages\\bcrypt.net-next\\4.1.0\\bcrypt.net-next.4.1.0.nupkg.sha512"
+  ],
   "logs": []
 }
