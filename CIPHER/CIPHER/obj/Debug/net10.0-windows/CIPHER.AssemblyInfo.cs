@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CIPHER")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0c1ef7935233a3c6cbd1e399d38155e4e7095f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0ba0c89411b7d614dc583f636e34bd7348b3c4fc")]
 [assembly: System.Reflection.AssemblyProductAttribute("CIPHER")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CIPHER")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
