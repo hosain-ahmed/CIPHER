@@ -13,14 +13,13 @@
     <Folder Include="Forms\Agent\" />
     <Folder Include="Forms\Admin\" />
     <Folder Include="Forms\Shared\" />
-    <Folder Include="Models\" />
-    <Folder Include="Helpers\" />
     <Folder Include="Assets\" />
     <Folder Include="Services\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="7.0.0" />
   </ItemGroup>
 
 </Project>
