@@ -1,15 +1,18 @@
+using CIPHER.Forms;
+using CIPHER.Forms.Controls;
+
 namespace CIPHER
 {
-    public partial class Form1 : Form
+    public partial class MainShell : Form
     {
-        public Form1()
+        public MainShell()
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(10, 15, 20);
             this.FormBorderStyle = FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
         }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -17,7 +20,7 @@ namespace CIPHER
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            panelHeader.BackColor = Color.FromArgb(5, 10, 15);
+            //panelHeader.BackColor = Color.FromArgb(5, 10, 15);
         }
 
         private void panel1_Paint_1(object sender, PaintEventArgs e)
