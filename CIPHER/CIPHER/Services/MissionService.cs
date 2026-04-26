@@ -31,6 +31,16 @@ namespace CIPHER.Services
             return list;
         }
 
+        public List<Mission> GetAllMissions() 
+        {
+            var list = new List<Mission>();
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand("SELECT * FROM Missions ORDER BY OrderIndex", conn);
+            using var r = cmd.ExecuteReader();
+            while (r.Read()) list.Add(MapMission(r));
+            return list;
+        }
+
         public Mission GetByID(int missionID)
         {
             using var conn = DBHelper.Getconnection();

@@ -1,6 +1,6 @@
 ﻿namespace CIPHER.Forms.Controls
 {
-    partial class Login
+    partial class LoginControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,36 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
+            loginTerminal = new RichTextBox();
             SuspendLayout();
             // 
-            // richTextBox1
+            // loginTerminal
             // 
-            richTextBox1.BackColor = SystemColors.Desktop;
-            richTextBox1.BorderStyle = BorderStyle.None;
-            richTextBox1.Dock = DockStyle.Fill;
-            richTextBox1.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            richTextBox1.ForeColor = SystemColors.MenuBar;
-            richTextBox1.Location = new Point(0, 0);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(1028, 637);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
-            richTextBox1.TextChanged += richTextBox1_TextChanged;
-            richTextBox1.KeyDown += richTextBox1_KeyDown;
+            loginTerminal.BackColor = SystemColors.InactiveCaptionText;
+            loginTerminal.Dock = DockStyle.Fill;
+            loginTerminal.ForeColor = SystemColors.Window;
+            loginTerminal.Location = new Point(0, 0);
+            loginTerminal.Name = "loginTerminal";
+            loginTerminal.Size = new Size(921, 635);
+            loginTerminal.TabIndex = 0;
+            loginTerminal.Text = "";
+            loginTerminal.SelectionChanged += loginTerminal_SelectionChanged;
+            loginTerminal.TextChanged += loginTerminal_TextChanged;
+            loginTerminal.KeyDown += loginTerminal_KeyDown;
+            loginTerminal.KeyPress += loginTerminal_KeyPress;
+            loginTerminal.KeyUp += loginTerminal_KeyUp;
             // 
-            // Login
+            // LoginControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(richTextBox1);
-            Name = "Login";
-            Size = new Size(1028, 637);
+            BackColor = SystemColors.ActiveCaptionText;
+            Controls.Add(loginTerminal);
+            Name = "LoginControl";
+            Size = new Size(921, 635);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private RichTextBox richTextBox1;
+        private RichTextBox loginTerminal;
     }
 }

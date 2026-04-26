@@ -1,4 +1,4 @@
-﻿using CIPHER.Forms.Agent;
+﻿/*using CIPHER.Forms.Agent;
 using CIPHER.Services;
 using System;
 using System.Collections.Generic;
@@ -73,4 +73,4 @@ COMMANDS:
             catch { return "Parse error. Check syntax."; }
         }
     }
-}
+}*/

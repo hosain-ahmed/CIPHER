@@ -10,9 +10,9 @@ namespace CIPHER
             InitializeComponent();
             this.BackColor = Color.FromArgb(10, 15, 20);
             this.FormBorderStyle = FormBorderStyle.None;
-            this.WindowState = FormWindowState.Maximized;
+            
         }
-        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -29,6 +29,11 @@ namespace CIPHER
         }
 
         private void btnAll_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint_2(object sender, PaintEventArgs e)
         {
 
         }

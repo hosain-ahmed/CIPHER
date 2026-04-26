@@ -31,3 +31,27 @@ INSERT INTO Missions VALUES
 ('Neural Lock', 'Logic', 'Hard',
  'I speak without a mouth. I hear without ears. I have no body but come alive with the wind. What am I?',
  'ECHO', 'Think about sound and nature', 150, 75, 5)
+
+ -- Bounty 1: Posted by GHOST_X, unsolved (Open)
+INSERT INTO Bounties (CreatorID, SolverID, Title, EncryptedMessage, Answer, CoinReward, Status)
+VALUES (2, NULL, 
+        'Ghost Signal', 
+        'Decode this transmission: 01001000 01000001 01000011 01001011',
+        'HACK',
+        40, 'Open')
+
+-- Bounty 2: Posted by VOID_NULL, unsolved (Open)
+INSERT INTO Bounties (CreatorID, SolverID, Title, EncryptedMessage, Answer, CoinReward, Status)
+VALUES (3, NULL,
+        'Void Cipher',
+        'Caesar shift 7: AOPZA PZ ZLJYLA',
+        'THIS IS SECRET',
+        60, 'Open')
+
+-- Bounty 3: Posted by GHOST_X, solved by VOID_NULL
+INSERT INTO Bounties (CreatorID, SolverID, Title, EncryptedMessage, Answer, CoinReward, Status, SolvedAt)
+VALUES (2, 3,
+        'Neon Protocol',
+        'ROT13: Gur cnffjbeq vf ARBA',
+        'THE PASSWORD IS NEON',
+        50, 'Solved', GETDATE())

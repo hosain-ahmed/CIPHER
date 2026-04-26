@@ -23,7 +23,21 @@ namespace CIPHER.Services
             );
             cmd.Parameters.AddWithValue("@uid", currentUserID);
             using var r = cmd.ExecuteReader();
-            while (!r.Read()) list.Add(MapBounty(r));
+            while (r.Read()) list.Add(MapBounty(r));
+            return list;
+        }
+
+        public List<Bounty> GetAllBounties()
+        {
+                        var list = new List<Bounty>();
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand(@"
+            SELECT b.*, u.CodeName as CreatorCodeName
+            FROM Bounties b
+            JOIN Users u on b.CreatorID = u.UserID
+            ORDER BY b.CreatedAt DESC", conn);
+            var r = cmd.ExecuteReader();
+            while (r.Read()) list.Add(MapBounty(r));
             return list;
         }
 
@@ -39,7 +53,7 @@ namespace CIPHER.Services
             ORDER BY b.CreatedAt DESC", conn);
             cmd.Parameters.AddWithValue("@uid", userID);
             var r = cmd.ExecuteReader();
-            while (!r.Read()) list.Add(MapBounty(r));
+            while (r.Read()) list.Add(MapBounty(r));
             return list;
         }
 

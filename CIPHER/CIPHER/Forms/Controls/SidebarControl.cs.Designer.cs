@@ -149,7 +149,7 @@
             Controls.Add(btnTerminal);
             Margin = new Padding(3, 2, 3, 2);
             Name = "SidebarControl";
-            Size = new Size(504, 353);
+            Size = new Size(177, 353);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
