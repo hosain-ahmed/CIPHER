@@ -17,6 +17,19 @@ namespace CIPHER.Forms.CustomItems
         public MissionCard()
         {
             InitializeComponent();
+            this.Cursor = Cursors.Hand;
+            foreach (Control c in this.Controls)
+            {
+                c.Cursor = Cursors.Hand; // Force child panels to show the hand
+
+                if (c is TableLayoutPanel tlp)
+                {
+                    foreach (Control child in tlp.Controls)
+                    {
+                        child.Cursor = Cursors.Hand; // Force labels to show the hand
+                    }
+                }
+            }
         }
 
         // 2. THE SYNC: A method to push data to your existing properties

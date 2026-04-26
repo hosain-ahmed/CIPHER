@@ -21,6 +21,51 @@ namespace CIPHER.Services
             cmd.ExecuteNonQuery();
         }
 
+        public List<LogEntry> GetMasterLogs(int userID)
+        {
+            try
+            {
+                int activeID = (userID <= 0) ? 1 : userID; //for now, we just return the first user's logs if an invalid ID is given. In a real app, you'd want to handle this more gracefully.
+
+                var list = new List<LogEntry>();
+                using var conn = DBHelper.Getconnection();
+
+                // We 'normalize' the columns so they all have the same names (Category, Action, Details, Time)
+                string query = @"
+        SELECT '[SYS]' as Category, EventType as Action, Details, Timestamp 
+        FROM AuditLog WHERE UserID = @uid
+        UNION ALL
+        SELECT '[ECO]' as Category, Type as Action, Description as Details, Timestamp 
+        FROM Transactions WHERE UserID = @uid
+        UNION ALL
+        SELECT '[SEC]' as Category, 'FAILED_ATTEMPT' as Action, AttemptedAnswer as Details, AttemptedAt as Timestamp 
+        FROM FailedAttempts WHERE UserID = @uid
+        ORDER BY Timestamp DESC";
+
+                var cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@uid", userID);
+
+                using var r = cmd.ExecuteReader();
+                while (r.Read()) // Remember: No '!' here!
+                {
+                    list.Add(new LogEntry
+                    {
+                        Category = r["Category"].ToString(),
+                        Action = r["Action"].ToString(),
+                        Details = r["Details"].ToString(),
+                        Timestamp = (DateTime)r["Timestamp"]
+                    });
+                }
+                return list;
+            }
+            
+            catch (Exception ex)
+            {
+                MessageBox.Show($"DATABASE ERROR: {ex.Message}\n\nStack: {ex.StackTrace}");
+                return new List<LogEntry>(); // Return empty so the app doesn't close
+            }
+        }
+
         public List<AuditEntry> GetLog(string filter = null)
         {
             var list = new List<AuditEntry>();

@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\Content\LogContent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Forms\Content\PoPBountySolve.cs">
       <SubType>Form</SubType>
     </Compile>

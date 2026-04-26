@@ -67,6 +67,8 @@ namespace CIPHER.Forms.Controls
 
         private void btnLog_Click(object sender, EventArgs e)
         {
+            HighlightButton((Button)sender);
+            LoadView(new LogContent());
 
         }
 
