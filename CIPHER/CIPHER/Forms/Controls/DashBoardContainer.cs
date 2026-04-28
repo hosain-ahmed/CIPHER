@@ -57,18 +57,21 @@ namespace CIPHER.Forms.Controls
         {
             HighlightButton((Button)sender);
             LoadView(new MissionContent());
+            lblTItle.Text = "MISSIONS";
         }
 
         private void btnMarket_Click(object sender, EventArgs e)
         {
             HighlightButton((Button)sender);
             LoadView(new MarketContent());
+            lblTItle.Text = "MARKET";
         }
 
         private void btnLog_Click(object sender, EventArgs e)
         {
             HighlightButton((Button)sender);
             LoadView(new LogContent());
+            lblTItle.Text = "LOGS";
 
         }
 

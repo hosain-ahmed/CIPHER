@@ -30,33 +30,8 @@ namespace CIPHER.Forms.Content
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
-            label1 = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.FromArgb(18, 18, 18);
-            panel1.Controls.Add(label1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(899, 52);
-            panel1.TabIndex = 0;
-            // 
-            // label1
-            // 
-            label1.Font = new Font("Sylfaen", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = SystemColors.ControlLightLight;
-            label1.Location = new Point(3, 14);
-            label1.Name = "label1";
-            label1.Size = new Size(212, 32);
-            label1.TabIndex = 0;
-            label1.Text = "Black Market";
-            label1.TextAlign = ContentAlignment.MiddleLeft;
-            label1.Click += label1_Click;
             // 
             // flowLayoutPanel1
             // 
@@ -72,18 +47,14 @@ namespace CIPHER.Forms.Content
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(30, 30, 30);
             Controls.Add(flowLayoutPanel1);
-            Controls.Add(panel1);
             Name = "MarketContent";
             Size = new Size(899, 616);
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private Label label1;
         private FlowLayoutPanel flowLayoutPanel1;
     }
 }

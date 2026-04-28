@@ -36,9 +36,12 @@
             btnLog = new Button();
             btnMarket = new Button();
             pnlContent = new Panel();
+            panel1 = new Panel();
+            lblTItle = new Label();
             label1 = new Label();
             pnlSideBar.SuspendLayout();
             pnlContent.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSideBar
@@ -120,11 +123,31 @@
             // 
             pnlContent.BackColor = Color.FromArgb(30, 30, 30);
             pnlContent.Controls.Add(label1);
-            pnlContent.Location = new Point(34, 0);
+            pnlContent.Location = new Point(34, 37);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(833, 618);
+            pnlContent.Size = new Size(833, 581);
             pnlContent.TabIndex = 1;
             pnlContent.Paint += pnlContent_Paint;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Black;
+            panel1.Controls.Add(lblTItle);
+            panel1.Location = new Point(34, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(833, 42);
+            panel1.TabIndex = 6;
+            // 
+            // lblTItle
+            // 
+            lblTItle.AutoSize = true;
+            lblTItle.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTItle.ForeColor = SystemColors.ButtonFace;
+            lblTItle.Location = new Point(30, 0);
+            lblTItle.Name = "lblTItle";
+            lblTItle.Size = new Size(48, 25);
+            lblTItle.TabIndex = 0;
+            lblTItle.Text = "Title";
             // 
             // label1
             // 
@@ -140,6 +163,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
+            Controls.Add(panel1);
             Controls.Add(pnlSideBar);
             Controls.Add(pnlContent);
             Name = "DashBoardContainer";
@@ -148,6 +172,8 @@
             pnlSideBar.ResumeLayout(false);
             pnlContent.ResumeLayout(false);
             pnlContent.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -161,5 +187,7 @@
         private Button btnLog;
         private Button btnMarket;
         private Button btnTerminal;
+        private Panel panel1;
+        private Label lblTItle;
     }
 }

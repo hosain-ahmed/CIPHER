@@ -9,7 +9,7 @@ namespace CIPHER
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(10, 15, 20);
-            this.FormBorderStyle = FormBorderStyle.None;
+           // this.FormBorderStyle = FormBorderStyle.None;
             
         }
 
