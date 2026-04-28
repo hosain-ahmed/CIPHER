@@ -40,12 +40,17 @@ namespace CIPHER.Forms.CustomItems
             this.MissionTitle = MissionData.Title;
             this.MissionID = "ID: " + MissionData.MissionID;
             this.MissionDescription = MissionData.Briefing;
-            
+
             this.MissionReward = MissionData.XPReward.ToString() + " XP";
+            this.MissionDifficulty = MissionData.Difficulty;
+
+            
+
+            lblDifficulty.Invalidate();
 
             // Logic for accent color based on difficulty
-            if (MissionData.Difficulty == "Hard") this.AccentColor = Color.Red;
-            else this.AccentColor = Color.Cyan;
+            /* if (MissionData.Difficulty == "Hard") this.AccentColor = Color.Red;
+             else this.AccentColor = Color.Cyan;*/
         }
 
         // 3. THE ACTION: Opening the detail form
@@ -62,9 +67,22 @@ namespace CIPHER.Forms.CustomItems
                 {
                     // If they solved it, maybe change the UI here?
                     this.MissionStatus = "COMPLETED";
-                    this.AccentColor = Color.LimeGreen;
+                    
+                    //this.AccentColor = Color.LimeGreen;
                 }
             }
+        }
+
+        private void MissionCard_MouseEnter(object sender, EventArgs e)
+        {
+            this.BorderStyle = BorderStyle.FixedSingle; // Add a border on hover
+            this.BackColor = Color.FromArgb(40, 40, 40); // Slightly lighter background on hover
+        }
+
+        private void MissionCard_MouseLeave(object sender, EventArgs e)
+        {
+            this.BorderStyle = BorderStyle.None; // Remove the border when not hovering
+            this.BackColor = Color.FromArgb(30, 30, 30); // Revert to original background color
         }
 
         // --- Your existing properties remain below ---
@@ -87,10 +105,35 @@ namespace CIPHER.Forms.CustomItems
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string MissionReward { get { return lblExtraInfo.Text; } set { lblExtraInfo.Text = value; } }
+        public string MissionReward { get { return lblReward.Text; } set { lblReward.Text = value; } }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public Color AccentColor { get { return cardPanel.BackColor; } set { cardPanel.BackColor = value; } }
+        public string MissionDifficulty
+        {
+            get => lblDifficulty.Text;
+            set
+            {
+                lblDifficulty.Text = value;
+
+                // Update color automatically whenever text changes
+                switch (value?.ToLower())
+                {
+                    case "hard":
+                        lblDifficulty.ForeColor = Color.Red;
+                        break;
+                    case "medium":
+                        lblDifficulty.ForeColor = Color.Orange;
+                        break;
+                    default:
+                        lblDifficulty.ForeColor = Color.LimeGreen;
+                        break;
+                }
+            }
+        }
+
+        //[Browsable(false)]
+        //[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        // public Color AccentColor { get { return cardPanel.BackColor; } set { cardPanel.BackColor = value; } }
     }
 }

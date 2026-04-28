@@ -41,9 +41,10 @@ namespace CIPHER.Forms.Content
                 card.MissionDescription = m.Briefing;
                 //card.MissionStatus = m.Status; // Make sure your card has this property!
                 card.MissionReward = m.CoinReward.ToString() + " CR";
+                card.MissionDifficulty  = m.Difficulty;
 
                 // Use your theme color here!
-                card.AccentColor = Color.FromArgb(0, 245, 255); // Neon Cyan
+                // card.AccentColor = Color.FromArgb(0, 245, 255); // Neon Cyan
 
                 // 3. Add to the panel
                 flowLayoutPanel1.Controls.Add(card);

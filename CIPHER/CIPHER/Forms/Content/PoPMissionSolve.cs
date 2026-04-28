@@ -25,7 +25,7 @@ namespace CIPHER.Forms.Content
 
 
         }
-
+     
         private void btnSubmit_Click(object sender, EventArgs e)
         {
             if(rtbAnswer.Text.Trim() == cM.Answer.Trim())
