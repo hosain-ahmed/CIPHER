@@ -43,7 +43,8 @@ namespace CIPHER.Forms
     \  \:\        \__\/           \__\/       /__/:/       \  \:\        |__|:|~   
      \__\/                                    \__\/         \__\/         \__\|    
 ");
-            rtbLogin.AppendText("-------------------------------------------------------------------------------------\n");
+            rtbLogin.AppendText("_____________________________________________________________________________________\n");
+            rtbLogin.AppendText("\n");
             rtbLogin.AppendText("Version 1.0.0 - CIPHER Authentication Terminal\n");
             rtbLogin.AppendText("\n");
             rtbLogin.AppendText("\n");
@@ -173,9 +174,7 @@ namespace CIPHER.Forms
 
             if (previousState == TerminalState.LoginPass)
             {
-                // TEMPORARY DEBUG - remove before submission
-                
-
+               
                 
                 var (success, user, error) = auth.Login(tempUser, passwordBuffer);
 
