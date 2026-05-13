@@ -3,9 +3,9 @@ using CIPHER.Forms.Controls;
 
 namespace CIPHER
 {
-    public partial class MainShell : Form
+    public partial class UserMainShell : Form
     {
-        public MainShell()
+        public UserMainShell()
         {
             InitializeComponent();
             this.BackColor = Color.FromArgb(10, 15, 20);

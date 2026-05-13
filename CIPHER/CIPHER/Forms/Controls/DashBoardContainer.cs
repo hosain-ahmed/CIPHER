@@ -53,26 +53,31 @@ namespace CIPHER.Forms.Controls
 
 
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_click(object sender, EventArgs e)
         {
+            // Changed (button) to (Button) - C# is case-sensitive!
             HighlightButton((Button)sender);
+
+            // Assuming your UserControls are named MissionContent, etc.
             LoadView(new MissionContent());
-            lblTItle.Text = "MISSIONS";
+
+            // lblTitle.Text = "Missions";
         }
 
-        private void btnMarket_Click(object sender, EventArgs e)
+        private void btnmarket_click(object sender, EventArgs e)
         {
             HighlightButton((Button)sender);
             LoadView(new MarketContent());
-            lblTItle.Text = "MARKET";
+
+            // lblTitle.Text = "Market";
         }
 
-        private void btnLog_Click(object sender, EventArgs e)
+        private void btnlog_click(object sender, EventArgs e)
         {
             HighlightButton((Button)sender);
             LoadView(new LogContent());
-            lblTItle.Text = "LOGS";
 
+            // lblTitle.Text = "Logs";
         }
 
         private void btnProfile_Click(object sender, EventArgs e)

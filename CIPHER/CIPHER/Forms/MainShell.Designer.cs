@@ -1,6 +1,6 @@
 ﻿namespace CIPHER
 {
-    partial class MainShell
+    partial class UserMainShell
     {
         /// <summary>
         ///  Required designer variable.
@@ -39,7 +39,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(859, 616);
+            panel1.Size = new Size(1264, 711);
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint_2;
             // 
@@ -49,16 +49,16 @@
             dashBoardContainer1.Dock = DockStyle.Fill;
             dashBoardContainer1.Location = new Point(0, 0);
             dashBoardContainer1.Name = "dashBoardContainer1";
-            dashBoardContainer1.Size = new Size(859, 616);
+            dashBoardContainer1.Size = new Size(1264, 711);
             dashBoardContainer1.TabIndex = 0;
             // 
-            // MainShell
+            // UserMainShell
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(859, 616);
+            ClientSize = new Size(1264, 711);
             Controls.Add(panel1);
-            Name = "MainShell";
+            Name = "UserMainShell";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CIPHER";
             Load += Form1_Load;
