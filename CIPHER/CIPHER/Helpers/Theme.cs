@@ -1,27 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Drawing;
 
 namespace CIPHER.Helpers
 {
     public static class Theme
     {
         // Backgrounds
-        public static Color BgDeep = ColorTranslator.FromHtml("#121212");
-        public static Color BgCard = ColorTranslator.FromHtml("#1E1E1E");
+        public static readonly Color BackgroundMain = ColorTranslator.FromHtml("#F4F7F6");
+        public static readonly Color BackgroundSidebar = ColorTranslator.FromHtml("#32383E");
+        public static readonly Color BackgroundCard = Color.White;
 
-        // Accents
-        public static Color PrimaryGreen = ColorTranslator.FromHtml("#00FF41");
-        public static Color DangerRed = ColorTranslator.FromHtml("#FF3B3B");
-        public static Color InfoBlue = ColorTranslator.FromHtml("#00A3FF");
+        // Brand Accents
+        public static readonly Color PrimaryCyan = ColorTranslator.FromHtml("#00D2FF");
+        public static readonly Color MutedTeal = ColorTranslator.FromHtml("#006070");
 
-        // Text
-        public static Color TextMain = Color.FromArgb(224, 224, 224);
-        public static Color TextDim = Color.FromArgb(150, 150, 150);
+        // Text Colors
+        public static readonly Color TextMain = ColorTranslator.FromHtml("#1A2026");
+        public static readonly Color TextSecondary = ColorTranslator.FromHtml("#607D8B");
+        public static readonly Color TextGhostly = ColorTranslator.FromHtml("#90A4AE");
 
-        // Fonts (Standardize these!)
-        public static Font HeaderFont = new Font("Segoe UI Semibold", 14f);
-        public static Font BodyFont = new Font("Segoe UI", 10f);
-        public static Font TerminalFont = new Font("Consolas", 10f);
+        // Status Colors
+        public static readonly Color SuccessGreen = ColorTranslator.FromHtml("#4CAF50");
+        public static readonly Color WarningRed = ColorTranslator.FromHtml("#E66A6A");
+        public static readonly Color EasyGold = ColorTranslator.FromHtml("#C1A056");
+
+        // UI Elements
+        public static readonly Color GridLines = ColorTranslator.FromHtml("#DDE4E6");
     }
 }

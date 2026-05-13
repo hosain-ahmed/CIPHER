@@ -27,7 +27,7 @@ namespace CIPHER.Services
             ORDER BY m.OrderIndex", conn);
             cmd.Parameters.AddWithValue("@uid", userID);
             using var r = cmd.ExecuteReader();
-            while (!r.Read()) list.Add(MapMission(r));
+            while (r.Read()) list.Add(MapMission(r));
             return list;
         }
 

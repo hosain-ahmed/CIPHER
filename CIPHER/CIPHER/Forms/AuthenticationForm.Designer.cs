@@ -44,8 +44,9 @@
             // 
             // rtbLogin
             // 
+            rtbLogin.BackColor = Color.FromArgb(253, 246, 227);
             rtbLogin.Dock = DockStyle.Fill;
-            rtbLogin.Font = new Font("Courier New", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            rtbLogin.Font = new Font("Cascadia Code", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             rtbLogin.Location = new Point(0, 0);
             rtbLogin.Name = "rtbLogin";
             rtbLogin.Size = new Size(1264, 711);
@@ -61,6 +62,7 @@
             ClientSize = new Size(1264, 711);
             Controls.Add(panel1);
             Name = "AuthenticationForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CIPHER";
             panel1.ResumeLayout(false);
             ResumeLayout(false);

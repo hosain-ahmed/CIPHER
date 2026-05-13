@@ -1,4 +1,5 @@
 ﻿using CIPHER.Forms.CustomItems;
+using CIPHER.Helpers;
 using CIPHER.Services;
 using System;
 using System.Collections.Generic;
@@ -23,15 +24,15 @@ namespace CIPHER.Forms.Content
         public void LoadMissions()
         {
             flowLayoutPanel1.Controls.Clear();
-           var missions = MissionService.GetAllMissions();
-           //var missions = bountyService.GetAllBounties(); // Replace with your actual method to get missions
-                                                          // If you don't see this popup, the method isn't running!
+            var missions = MissionService.GetMissionForAgent(SessionManager.CurrentUser.UserID);
+            //var missions = bountyService.GetAllBounties(); // Replace with your actual method to get missions
+            // If you don't see this popup, the method isn't running!
 
             foreach (var m in missions)
             {
                 MissionCard card = new MissionCard();
 
-               // 1. Give the card the "Whole Soul" of the mission
+                // 1. Give the card the "Whole Soul" of the mission
                 card.MissionData = m;
 
                 // 2. Map the UI (You can keep your existing mapping or 
@@ -41,7 +42,7 @@ namespace CIPHER.Forms.Content
                 card.MissionDescription = m.Briefing;
                 //card.MissionStatus = m.Status; // Make sure your card has this property!
                 card.MissionReward = m.CoinReward.ToString() + " CR";
-                card.MissionDifficulty  = m.Difficulty;
+                card.MissionDifficulty = m.Difficulty;
 
                 // Use your theme color here!
                 // card.AccentColor = Color.FromArgb(0, 245, 255); // Neon Cyan
@@ -49,12 +50,16 @@ namespace CIPHER.Forms.Content
                 // 3. Add to the panel
                 flowLayoutPanel1.Controls.Add(card);
 
-               
+
 
             }
         }
-        
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-    
+
 }
 

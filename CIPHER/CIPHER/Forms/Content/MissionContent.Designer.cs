@@ -33,9 +33,9 @@ namespace CIPHER.Forms.Content
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
+            lblMissionPage = new Label();
             panel2 = new Panel();
             panel3 = new Panel();
-            lblMissionPage = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -43,6 +43,7 @@ namespace CIPHER.Forms.Content
             // 
             flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
+            flowLayoutPanel1.BackColor = Color.FromArgb(234, 221, 255);
             flowLayoutPanel1.Location = new Point(46, 97);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(712, 455);
@@ -55,6 +56,19 @@ namespace CIPHER.Forms.Content
             panel1.Name = "panel1";
             panel1.Size = new Size(564, 41);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
+            // 
+            // lblMissionPage
+            // 
+            lblMissionPage.Anchor = AnchorStyles.Left;
+            lblMissionPage.AutoSize = true;
+            lblMissionPage.Font = new Font("Constantia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMissionPage.ForeColor = Color.FromArgb(4, 159, 182);
+            lblMissionPage.Location = new Point(3, 0);
+            lblMissionPage.Name = "lblMissionPage";
+            lblMissionPage.Size = new Size(130, 29);
+            lblMissionPage.TabIndex = 0;
+            lblMissionPage.Text = "MISSIONS";
             // 
             // panel2
             // 
@@ -70,23 +84,11 @@ namespace CIPHER.Forms.Content
             panel3.Size = new Size(712, 22);
             panel3.TabIndex = 3;
             // 
-            // lblMissionPage
-            // 
-            lblMissionPage.Anchor = AnchorStyles.Left;
-            lblMissionPage.AutoSize = true;
-            lblMissionPage.Font = new Font("Constantia", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMissionPage.ForeColor = SystemColors.ControlLightLight;
-            lblMissionPage.Location = new Point(3, 0);
-            lblMissionPage.Name = "lblMissionPage";
-            lblMissionPage.Size = new Size(130, 29);
-            lblMissionPage.TabIndex = 0;
-            lblMissionPage.Text = "MISSIONS";
-            // 
             // MissionContent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(30, 30, 30);
+            BackColor = Color.FromArgb(245, 250, 252);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);

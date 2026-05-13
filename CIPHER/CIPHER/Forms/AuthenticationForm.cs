@@ -22,18 +22,33 @@ namespace CIPHER.Forms
         public AuthenticationForm()
         {
             InitializeComponent();
+            SetupTerminalLook();
             StartBootSequence();
         }
 
         private void StartBootSequence()
         {
             rtbLogin.Clear();
-            rtbLogin.SelectionColor = Color.LightSkyBlue;
-            rtbLogin.AppendText("-------------------------------------\n");
-            rtbLogin.AppendText("CIPHER V0.1 - SECURE ACCESS SYSTEM\n");
-            rtbLogin.AppendText("-------------------------------------\n");
-            rtbLogin.AppendText("");
+            rtbLogin.SelectionColor = Color.Black;
+            rtbLogin.AppendText("-------------------------------------------------------------------------------------\n");
+            rtbLogin.AppendText(@"      ___                                      ___           ___           ___     
+     /  /\           ___         ___          /  /\         /  /\         /  /\    
+    /  /::\         /__/\       /  /\        /  /:/        /  /::\       /  /::\   
+   /  /:/\:\        \__\:\     /  /::\      /  /:/        /  /:/\:\     /  /:/\:\  
+  /  /:/  \:\       /  /::\   /  /:/\:\    /  /::\ ___   /  /::\ \:\   /  /::\ \:\ 
+ /__/:/ \  \:\   __/  /:/\/  /  /::\ \:\  /__/:/\:\  /\ /__/:/\:\ \:\ /__/:/\:\_\:\
+ \  \:\  \__\/  /__/\/:/~~  /__/:/\:\_\:\ \__\/  \:\/:/ \  \:\ \:\_\/ \__\/~|::\/:/
+  \  \:\        \  \::/     \__\/  \:\/:/      \__\::/   \  \:\ \:\      |  |:|::/ 
+   \  \:\        \  \:\          \  \::/       /  /:/     \  \:\_\/      |  |:|\/  
+    \  \:\        \__\/           \__\/       /__/:/       \  \:\        |__|:|~   
+     \__\/                                    \__\/         \__\/         \__\|    
+");
+            rtbLogin.AppendText("-------------------------------------------------------------------------------------\n");
+            rtbLogin.AppendText("Version 1.0.0 - CIPHER Authentication Terminal\n");
+            rtbLogin.AppendText("\n");
+            rtbLogin.AppendText("\n");
             rtbLogin.AppendText("Are you a previous user? (Y/N): ");
+            rtbLogin.AppendText("");
             currentState = TerminalState.AskType;
         }
 
@@ -48,6 +63,14 @@ namespace CIPHER.Forms
                     e.Handled = true;
                 }
             }
+        }
+
+        private void SetupTerminalLook()
+        {
+            // Use the primary background from image_2d8b79.png
+            rtbLogin.BackColor = Theme.BackgroundMain;
+            rtbLogin.ForeColor = Theme.TextMain;
+            rtbLogin.Font = new Font("Cascadia Code", 11, FontStyle.Regular);
         }
 
         private void rtbLogin_KeyDown(object sender, KeyEventArgs e)
@@ -98,6 +121,10 @@ namespace CIPHER.Forms
                         PrintPrompt("Choose a username: ");
                         currentState = TerminalState.RegUser;
                     }
+                    else if(input.ToLower()== "exit"){
+                        System.Environment.Exit(0);
+                    }
+
                     else
                     {
                         PrintPrompt("Please enter Y or N: ");
@@ -138,7 +165,7 @@ namespace CIPHER.Forms
             currentState = TerminalState.Processing;
 
             rtbLogin.SelectionColor = Color.Green;
-            rtbLogin.AppendText("CONTACTING DATABSE..." + Environment.NewLine);
+            rtbLogin.AppendText("CONTACTING DATABASE..." + Environment.NewLine);
 
             await Task.Delay(800);
 
@@ -147,8 +174,7 @@ namespace CIPHER.Forms
             if (previousState == TerminalState.LoginPass)
             {
                 // TEMPORARY DEBUG - remove before submission
-                rtbLogin.AppendText($"DEBUG: user='{tempUser}' pass='{passwordBuffer}'"
-                    + Environment.NewLine);
+                
 
                 
                 var (success, user, error) = auth.Login(tempUser, passwordBuffer);
@@ -176,7 +202,7 @@ namespace CIPHER.Forms
                 else
                 {
                     rtbLogin.AppendText($"ERROR: {error}" + Environment.NewLine);
-                    await Task.Delay(5000);
+                    await Task.Delay(1000);
                     StartBootSequence();
                 }
             }
@@ -208,13 +234,13 @@ namespace CIPHER.Forms
 
         private void PrintPrompt(string prompt)
         {
-            rtbLogin.SelectionColor = Color.Navy;
+            rtbLogin.SelectionColor = Theme.MutedTeal;
             rtbLogin.SelectionFont = new Font(rtbLogin.Font, FontStyle.Bold);
             rtbLogin.AppendText(prompt);
 
-            rtbLogin.SelectionColor = Color.Black;
+            // Switch back to Primary Text for user typing
+            rtbLogin.SelectionColor = Theme.TextMain;
             rtbLogin.SelectionFont = new Font(rtbLogin.Font, FontStyle.Regular);
-            rtbLogin.ScrollToCaret();
         }
     }
 }

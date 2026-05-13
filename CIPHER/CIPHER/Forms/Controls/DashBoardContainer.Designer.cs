@@ -43,7 +43,7 @@
             // 
             // pnlSideBar
             // 
-            pnlSideBar.BackColor = SystemColors.ActiveCaptionText;
+            pnlSideBar.BackColor = Color.FromArgb(66, 72, 73);
             pnlSideBar.Controls.Add(btnTerminal);
             pnlSideBar.Controls.Add(btnMission);
             pnlSideBar.Controls.Add(btnProfile);
@@ -52,7 +52,7 @@
             pnlSideBar.Dock = DockStyle.Left;
             pnlSideBar.Location = new Point(0, 0);
             pnlSideBar.Name = "pnlSideBar";
-            pnlSideBar.Size = new Size(34, 618);
+            pnlSideBar.Size = new Size(34, 750);
             pnlSideBar.TabIndex = 0;
             pnlSideBar.Paint += pnlSideBar_Paint;
             // 
@@ -61,7 +61,7 @@
             btnTerminal.FlatAppearance.BorderSize = 0;
             btnTerminal.FlatStyle = FlatStyle.Flat;
             btnTerminal.Image = Properties.Resources.SSCMD;
-            btnTerminal.Location = new Point(0, 548);
+            btnTerminal.Location = new Point(1, 646);
             btnTerminal.Name = "btnTerminal";
             btnTerminal.Size = new Size(31, 23);
             btnTerminal.TabIndex = 9;
@@ -86,7 +86,7 @@
             btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Image = Properties.Resources.SSMale;
-            btnProfile.Location = new Point(6, 577);
+            btnProfile.Location = new Point(6, 675);
             btnProfile.Name = "btnProfile";
             btnProfile.Size = new Size(22, 23);
             btnProfile.TabIndex = 8;
@@ -119,12 +119,12 @@
             // 
             // pnlContent
             // 
-            pnlContent.BackColor = Color.FromArgb(30, 30, 30);
+            pnlContent.BackColor = Color.FromArgb(245, 250, 252);
             pnlContent.Controls.Add(label1);
             pnlContent.Dock = DockStyle.Fill;
             pnlContent.Location = new Point(0, 0);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(867, 618);
+            pnlContent.Size = new Size(1280, 750);
             pnlContent.TabIndex = 1;
             pnlContent.Paint += pnlContent_Paint;
             // 
@@ -145,7 +145,7 @@
             Controls.Add(pnlSideBar);
             Controls.Add(pnlContent);
             Name = "DashBoardContainer";
-            Size = new Size(867, 618);
+            Size = new Size(1280, 750);
             Load += sdbControl_Load;
             pnlSideBar.ResumeLayout(false);
             pnlContent.ResumeLayout(false);
