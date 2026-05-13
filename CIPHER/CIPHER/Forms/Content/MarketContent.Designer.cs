@@ -35,11 +35,11 @@ namespace CIPHER.Forms.Content
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = Color.FromArgb(30, 30, 30);
+            flowLayoutPanel1.BackColor = Color.Teal;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 49);
+            flowLayoutPanel1.Location = new Point(182, 131);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(899, 567);
+            flowLayoutPanel1.Size = new Size(511, 348);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 

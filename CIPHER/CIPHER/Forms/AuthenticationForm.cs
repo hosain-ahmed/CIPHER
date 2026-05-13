@@ -185,15 +185,15 @@ namespace CIPHER.Forms
                     
                     
                    
-                    if (SessionManager.isAdmin)
-                    {
-                        var main = new AdminMainShell();
-                        main.Show();
-                    }
-                    else                     {
-                        var main = new UserMainShell();
-                        main.Show();
-                    }
+                    //if (SessionManager.isAdmin)
+                    //{
+                    //    var main = new AdminMainShell();
+                    //    main.Show();
+                    //}
+                    //else                     {
+                    //    var main = new UserMainShell();
+                    //    main.Show();
+                    //}
 
                     this.Close();
 
