@@ -1,18 +1,27 @@
 using CIPHER.Forms;
+using CIPHER.Helpers;
+
 namespace CIPHER
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new UserMainShell());
+
+            // Show login — blocks here until closed
+            var auth = new AuthenticationForm();
+            auth.ShowDialog();
+
+            // After login — check who logged in
+            if (SessionManager.IsLoggedIn)
+            {
+                if (SessionManager.isAdmin)
+                    Application.Run(new AdminMainShell());
+                else
+                    Application.Run(new UserMainShell());
+            }
         }
     }
 }

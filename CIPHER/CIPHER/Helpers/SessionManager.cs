@@ -13,6 +13,7 @@ namespace CIPHER.Helpers
         public static bool isAdmin => CurrentUser?.Role == "Admin";
         public static void Login(Models.User u) => CurrentUser = u;
         public static void Logout() => CurrentUser = null;
+        public static bool IsLoggedIn => CurrentUser != null;
 
         public static void RefreshUser()
         {
