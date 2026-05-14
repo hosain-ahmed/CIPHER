@@ -1,4 +1,6 @@
-﻿namespace CIPHER.Forms.Controls
+﻿using CIPHER.Helpers;
+
+namespace CIPHER.Forms.Controls
 {
     partial class DashBoardContainer
     {
@@ -43,7 +45,7 @@
             // 
             // pnlSideBar
             // 
-            pnlSideBar.BackColor = Color.FromArgb(66, 72, 73);
+            pnlSideBar.BackColor = Theme.BackgroundSidebar;
             pnlSideBar.Controls.Add(btnTerminal);
             pnlSideBar.Controls.Add(btnMission);
             pnlSideBar.Controls.Add(btnProfile);
@@ -157,7 +159,7 @@
 
         private Panel pnlSideBar;
         private Panel pnlContent;
-        private Label label1;
+        protected Label label1;
         private Button btnMission;
         private Button btnProfile;
         private Button btnLog;

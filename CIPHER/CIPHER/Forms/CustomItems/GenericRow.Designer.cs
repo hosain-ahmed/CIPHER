@@ -38,6 +38,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.BackColor = Color.Transparent;
             tableLayoutPanel1.ColumnCount = 4;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 55F));
@@ -48,11 +49,11 @@
             tableLayoutPanel1.Controls.Add(lblSInfo, 2, 0);
             tableLayoutPanel1.Controls.Add(lblInfo, 3, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
-            tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Location = new Point(10, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(813, 26);
+            tableLayoutPanel1.Size = new Size(130, 48);
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
@@ -61,7 +62,7 @@
             lblID.Dock = DockStyle.Fill;
             lblID.Location = new Point(3, 0);
             lblID.Name = "lblID";
-            lblID.Size = new Size(115, 26);
+            lblID.Size = new Size(13, 48);
             lblID.TabIndex = 0;
             lblID.Text = "ID";
             lblID.TextAlign = ContentAlignment.MiddleLeft;
@@ -70,9 +71,9 @@
             // lblTitle
             // 
             lblTitle.Dock = DockStyle.Fill;
-            lblTitle.Location = new Point(124, 0);
+            lblTitle.Location = new Point(22, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(441, 26);
+            lblTitle.Size = new Size(65, 48);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "TItle";
             lblTitle.TextAlign = ContentAlignment.MiddleLeft;
@@ -81,9 +82,9 @@
             // lblSInfo
             // 
             lblSInfo.Dock = DockStyle.Fill;
-            lblSInfo.Location = new Point(571, 0);
+            lblSInfo.Location = new Point(93, 0);
             lblSInfo.Name = "lblSInfo";
-            lblSInfo.Size = new Size(115, 26);
+            lblSInfo.Size = new Size(13, 48);
             lblSInfo.TabIndex = 3;
             lblSInfo.Text = "Status";
             lblSInfo.TextAlign = ContentAlignment.MiddleCenter;
@@ -92,9 +93,9 @@
             // lblInfo
             // 
             lblInfo.Dock = DockStyle.Fill;
-            lblInfo.Location = new Point(692, 0);
+            lblInfo.Location = new Point(112, 0);
             lblInfo.Name = "lblInfo";
-            lblInfo.Size = new Size(118, 26);
+            lblInfo.Size = new Size(15, 48);
             lblInfo.TabIndex = 2;
             lblInfo.Text = "Info";
             lblInfo.TextAlign = ContentAlignment.MiddleCenter;
@@ -105,9 +106,13 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
+            Margin = new Padding(0, 0, 0, 1);
             Name = "GenericRow";
-            Size = new Size(813, 26);
+            Padding = new Padding(10, 0, 10, 0);
+            Size = new Size(150, 48);
             Click += Row_Click;
+            MouseEnter += GenericRow_MouseEnter;
+            MouseLeave += GenericRow_MouseLeave;
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

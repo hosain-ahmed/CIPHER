@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Forms\ADMINSTUFF\CustomItems\" />
     <Folder Include="Forms\Resources\" />
     <Folder Include="Forms\Shared\" />
     <Folder Include="Assets\" />
