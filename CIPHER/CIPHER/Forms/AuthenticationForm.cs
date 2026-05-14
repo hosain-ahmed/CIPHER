@@ -227,6 +227,12 @@ namespace CIPHER.Forms
 
         private string ExtractInput(string line)
         {
+            // If the very last line is empty, get the one before it
+            if (string.IsNullOrWhiteSpace(line) && rtbLogin.Lines.Length > 1)
+            {
+                line = rtbLogin.Lines[rtbLogin.Lines.Length - 2];
+            }
+
             int colonIndex = line.LastIndexOf(":");
             return (colonIndex == -1) ? "" : line.Substring(colonIndex + 1).Trim();
         }
