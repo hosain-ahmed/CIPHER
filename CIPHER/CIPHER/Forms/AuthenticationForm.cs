@@ -175,7 +175,9 @@ namespace CIPHER.Forms
             if (previousState == TerminalState.LoginPass)
             {
 
+                // Strip out any hidden control characters that might have leaked in
                 passwordBuffer = passwordBuffer.Replace("\r", "").Replace("\n", "").Trim();
+                tempUser = tempUser.Trim();
                 var (success, user, error) = auth.Login(tempUser, passwordBuffer);
 
                 if (success)
@@ -226,17 +228,22 @@ namespace CIPHER.Forms
             
         }
 
-       private string ExtractInput(string line)
-{
-    // If the very last line is empty, get the one before it
-    if (string.IsNullOrWhiteSpace(line) && rtbLogin.Lines.Length > 1)
-    {
-        line = rtbLogin.Lines[rtbLogin.Lines.Length - 2];
-    }
+        private string ExtractInput(string line)
+        {
+            // If the last line is empty (common on some Windows versions), 
+            // grab the previous line instead.
+            if (string.IsNullOrWhiteSpace(line))
+            {
+                var allLines = rtbLogin.Lines.Where(l => !string.IsNullOrWhiteSpace(l)).ToArray();
+                line = allLines.Length > 0 ? allLines.Last() : "";
+            }
 
-    int colonIndex = line.LastIndexOf(":");
-    return (colonIndex == -1) ? "" : line.Substring(colonIndex + 1).Trim();
-}
+            int colonIndex = line.LastIndexOf(":");
+            if (colonIndex == -1) return "";
+
+            // Trim removes any accidental spaces or hidden \r characters
+            return line.Substring(colonIndex + 1).Trim();
+        }
 
         private void PrintPrompt(string prompt)
         {
