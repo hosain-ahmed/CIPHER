@@ -174,8 +174,8 @@ namespace CIPHER.Forms
 
             if (previousState == TerminalState.LoginPass)
             {
-               
-                
+
+                passwordBuffer = passwordBuffer.Replace("\r", "").Replace("\n", "").Trim();
                 var (success, user, error) = auth.Login(tempUser, passwordBuffer);
 
                 if (success)
@@ -200,6 +200,7 @@ namespace CIPHER.Forms
                 }
                 else
                 {
+                    MessageBox.Show($"BUFF_LEN: {passwordBuffer.Length} | USER: {tempUser}");
                     rtbLogin.AppendText($"ERROR: {error}" + Environment.NewLine);
                     await Task.Delay(1000);
                     StartBootSequence();
@@ -225,17 +226,17 @@ namespace CIPHER.Forms
             
         }
 
-        private string ExtractInput(string line)
-        {
-            // If the very last line is empty, get the one before it
-            if (string.IsNullOrWhiteSpace(line) && rtbLogin.Lines.Length > 1)
-            {
-                line = rtbLogin.Lines[rtbLogin.Lines.Length - 2];
-            }
+       private string ExtractInput(string line)
+{
+    // If the very last line is empty, get the one before it
+    if (string.IsNullOrWhiteSpace(line) && rtbLogin.Lines.Length > 1)
+    {
+        line = rtbLogin.Lines[rtbLogin.Lines.Length - 2];
+    }
 
-            int colonIndex = line.LastIndexOf(":");
-            return (colonIndex == -1) ? "" : line.Substring(colonIndex + 1).Trim();
-        }
+    int colonIndex = line.LastIndexOf(":");
+    return (colonIndex == -1) ? "" : line.Substring(colonIndex + 1).Trim();
+}
 
         private void PrintPrompt(string prompt)
         {
