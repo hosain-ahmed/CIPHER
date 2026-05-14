@@ -21,14 +21,14 @@ namespace CIPHER.Forms.Content
             InitializeComponent();
 
             LoadBounties();
-            
+
         }
 
         public void LoadBounties()
         {
             var Bounties = bountyService.GetAllBounties();
 
-        
+
 
             flowLayoutPanel1.Controls.Clear();
 
@@ -59,6 +59,11 @@ namespace CIPHER.Forms.Content
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
         {
 
         }

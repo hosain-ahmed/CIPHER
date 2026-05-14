@@ -14,5 +14,10 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
         {
             InitializeComponent();
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
