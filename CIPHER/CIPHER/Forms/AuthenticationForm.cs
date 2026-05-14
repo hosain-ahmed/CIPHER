@@ -178,6 +178,12 @@ namespace CIPHER.Forms
                 // Strip out any hidden control characters that might have leaked in
                 passwordBuffer = passwordBuffer.Replace("\r", "").Replace("\n", "").Trim();
                 tempUser = tempUser.Trim();
+                // FORCE A TEST
+                if (tempUser == "testy")
+                {
+                    var (s, u, e) = auth.Login("testy", "testy"); // Use a known user in his DB
+                    if (s) MessageBox.Show("Database Connection is FINE. The problem is the Terminal Input.");
+                }
                 var (success, user, error) = auth.Login(tempUser, passwordBuffer);
 
                 if (success)
