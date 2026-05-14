@@ -44,7 +44,7 @@ namespace CIPHER.Forms.CustomItems
             this.MissionReward = MissionData.XPReward.ToString() + " XP";
             this.MissionDifficulty = MissionData.Difficulty;
 
-            
+
 
             lblDifficulty.Invalidate();
 
@@ -67,7 +67,7 @@ namespace CIPHER.Forms.CustomItems
                 {
                     // If they solved it, maybe change the UI here?
                     this.MissionStatus = "COMPLETED";
-                    
+
                     //this.AccentColor = Color.LimeGreen;
                 }
             }
@@ -83,6 +83,11 @@ namespace CIPHER.Forms.CustomItems
         {
             this.BorderStyle = BorderStyle.None; // Remove the border when not hovering
             this.BackColor = Color.FromArgb(30, 30, 30); // Revert to original background color
+        }
+
+        private void lblDifficulty_Click(object sender, EventArgs e)
+        {
+
         }
 
         // --- Your existing properties remain below ---
