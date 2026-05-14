@@ -37,33 +37,37 @@
             tbSearch = new MaskedTextBox();
             btnSearch = new Button();
             panel1 = new Panel();
-            panel2 = new Panel();
             panel3 = new Panel();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            panel2 = new Panel();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
             // 
             // pnlHeader
             // 
+            pnlHeader.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlHeader.BackColor = SystemColors.ControlDark;
             pnlHeader.Location = new Point(15, 12);
             pnlHeader.Name = "pnlHeader";
-            pnlHeader.Size = new Size(644, 54);
+            pnlHeader.Size = new Size(577, 54);
             pnlHeader.TabIndex = 0;
             pnlHeader.Paint += panel1_Paint;
             // 
             // btnCreateMission
             // 
-            btnCreateMission.Location = new Point(666, 12);
+            btnCreateMission.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnCreateMission.Location = new Point(598, 12);
             btnCreateMission.Name = "btnCreateMission";
-            btnCreateMission.Size = new Size(155, 54);
+            btnCreateMission.Size = new Size(223, 54);
             btnCreateMission.TabIndex = 1;
-            btnCreateMission.Text = "button1";
+            btnCreateMission.Text = "Create new Mission";
             btnCreateMission.UseVisualStyleBackColor = true;
+            btnCreateMission.Click += btnCreateMission_Click;
             // 
             // pnlCoin
             // 
+            pnlCoin.Anchor = AnchorStyles.Left;
             pnlCoin.BackColor = SystemColors.ControlDark;
             pnlCoin.Location = new Point(15, 102);
             pnlCoin.Name = "pnlCoin";
@@ -73,6 +77,7 @@
             // 
             // pnlSuccess
             // 
+            pnlSuccess.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             pnlSuccess.BackColor = SystemColors.ControlDark;
             pnlSuccess.Location = new Point(226, 102);
             pnlSuccess.Name = "pnlSuccess";
@@ -81,6 +86,7 @@
             // 
             // pnlTime
             // 
+            pnlTime.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             pnlTime.BackColor = SystemColors.ControlDark;
             pnlTime.Location = new Point(441, 102);
             pnlTime.Name = "pnlTime";
@@ -89,6 +95,7 @@
             // 
             // pnlUsers
             // 
+            pnlUsers.Anchor = AnchorStyles.Right;
             pnlUsers.BackColor = SystemColors.ControlDark;
             pnlUsers.Location = new Point(651, 102);
             pnlUsers.Name = "pnlUsers";
@@ -97,37 +104,31 @@
             // 
             // tbSearch
             // 
-            tbSearch.Location = new Point(666, 230);
+            tbSearch.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            tbSearch.Location = new Point(598, 230);
             tbSearch.Name = "tbSearch";
-            tbSearch.Size = new Size(155, 23);
+            tbSearch.Size = new Size(223, 23);
             tbSearch.TabIndex = 0;
             // 
             // btnSearch
             // 
-            btnSearch.Location = new Point(619, 230);
+            btnSearch.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnSearch.Location = new Point(548, 230);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(40, 23);
+            btnSearch.Size = new Size(44, 23);
             btnSearch.TabIndex = 7;
             btnSearch.Text = "button2";
             btnSearch.UseVisualStyleBackColor = true;
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.Location = new Point(15, 259);
             panel1.Name = "panel1";
             panel1.Size = new Size(806, 387);
             panel1.TabIndex = 8;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.ControlDark;
-            panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(0, 0);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(806, 31);
-            panel2.TabIndex = 9;
             // 
             // panel3
             // 
@@ -141,14 +142,23 @@
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = SystemColors.ControlDarkDark;
-            flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(806, 356);
             flowLayoutPanel1.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ControlDark;
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(0, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(806, 31);
+            panel2.TabIndex = 9;
             // 
             // AMissionContent
             // 

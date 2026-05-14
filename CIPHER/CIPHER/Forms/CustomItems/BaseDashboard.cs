@@ -32,5 +32,10 @@ namespace CIPHER.Forms.CustomItems
         {
 
         }
+
+        protected virtual void btnMission_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

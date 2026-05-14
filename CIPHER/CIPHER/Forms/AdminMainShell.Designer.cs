@@ -29,15 +29,26 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            aDashboardContainer1 = new CIPHER.Forms.ADMINSTUFF.Controls.ADashboardContainer();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
+            panel1.Controls.Add(aDashboardContainer1);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1264, 711);
             panel1.TabIndex = 0;
+            // 
+            // aDashboardContainer1
+            // 
+            aDashboardContainer1.Dock = DockStyle.Fill;
+            aDashboardContainer1.Location = new Point(0, 0);
+            aDashboardContainer1.Name = "aDashboardContainer1";
+            aDashboardContainer1.Size = new Size(1264, 711);
+            aDashboardContainer1.TabIndex = 0;
             // 
             // AdminMainShell
             // 
@@ -48,11 +59,13 @@
             Name = "AdminMainShell";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CIPHER";
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel panel1;
+        private ADMINSTUFF.Controls.ADashboardContainer aDashboardContainer1;
     }
 }

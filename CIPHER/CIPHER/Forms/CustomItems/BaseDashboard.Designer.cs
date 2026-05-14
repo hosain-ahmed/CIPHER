@@ -31,14 +31,17 @@ namespace CIPHER.Forms.CustomItems
         private void InitializeComponent()
         {
             pnlSidebar = new Panel();
+            btnMission = new Button();
             btnProfile = new Button();
             pnlContainer = new Panel();
+            panel1 = new Panel();
             pnlSidebar.SuspendLayout();
             SuspendLayout();
             // 
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.FromArgb(50, 56, 62);
+            pnlSidebar.Controls.Add(btnMission);
             pnlSidebar.Controls.Add(btnProfile);
             pnlSidebar.Dock = DockStyle.Left;
             pnlSidebar.Location = new Point(0, 0);
@@ -46,15 +49,29 @@ namespace CIPHER.Forms.CustomItems
             pnlSidebar.Size = new Size(32, 750);
             pnlSidebar.TabIndex = 0;
             // 
+            // btnMission
+            // 
+            btnMission.BackColor = Color.Transparent;
+            btnMission.FlatAppearance.BorderSize = 0;
+            btnMission.FlatStyle = FlatStyle.Flat;
+            btnMission.Image = Properties.Resources.SSGoal;
+            btnMission.Location = new Point(0, 54);
+            btnMission.Name = "btnMission";
+            btnMission.Size = new Size(32, 31);
+            btnMission.TabIndex = 1;
+            btnMission.UseVisualStyleBackColor = false;
+            btnMission.Click += btnMission_Click;
+            // 
             // btnProfile
             // 
             btnProfile.BackColor = Color.FromArgb(50, 56, 62);
+            btnProfile.Dock = DockStyle.Bottom;
             btnProfile.FlatAppearance.BorderSize = 0;
             btnProfile.FlatStyle = FlatStyle.Flat;
             btnProfile.Image = Properties.Resources.SSMale;
-            btnProfile.Location = new Point(3, 706);
+            btnProfile.Location = new Point(0, 719);
             btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(28, 31);
+            btnProfile.Size = new Size(32, 31);
             btnProfile.TabIndex = 0;
             btnProfile.UseVisualStyleBackColor = false;
             btnProfile.Click += btnProfile_Click;
@@ -63,16 +80,26 @@ namespace CIPHER.Forms.CustomItems
             // 
             pnlContainer.BackColor = Color.FromArgb(244, 247, 246);
             pnlContainer.Dock = DockStyle.Fill;
-            pnlContainer.Location = new Point(32, 0);
+            pnlContainer.Location = new Point(32, 48);
             pnlContainer.Name = "pnlContainer";
-            pnlContainer.Size = new Size(1248, 750);
+            pnlContainer.Size = new Size(1248, 702);
             pnlContainer.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.ControlDarkDark;
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(32, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1248, 48);
+            panel1.TabIndex = 2;
             // 
             // BaseDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(pnlContainer);
+            Controls.Add(panel1);
             Controls.Add(pnlSidebar);
             Name = "BaseDashboard";
             Size = new Size(1280, 750);
@@ -85,5 +112,7 @@ namespace CIPHER.Forms.CustomItems
         private Panel pnlSidebar;
         private Panel pnlContainer;
         private Button btnProfile;
+        private Button btnMission;
+        private Panel panel1;
     }
 }

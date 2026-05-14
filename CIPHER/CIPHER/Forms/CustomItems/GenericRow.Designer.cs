@@ -88,6 +88,7 @@
             lblSInfo.TabIndex = 3;
             lblSInfo.Text = "Status";
             lblSInfo.TextAlign = ContentAlignment.MiddleCenter;
+            lblSInfo.Padding = new Padding(6, 2, 6, 2);
             lblSInfo.Click += Row_Click;
             // 
             // lblInfo
@@ -115,6 +116,17 @@
             MouseLeave += GenericRow_MouseLeave;
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
+
+            //
+            //
+            //
+            Panel accent = new Panel();
+            accent.Dock = DockStyle.Left;
+            accent.Width = 4;
+            accent.BackColor = Color.Cyan;
+
+            Controls.Add(accent);
+            accent.BringToFront();
         }
 
         #endregion

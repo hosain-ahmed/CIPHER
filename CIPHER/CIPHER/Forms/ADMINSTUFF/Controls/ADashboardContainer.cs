@@ -16,10 +16,17 @@ namespace CIPHER.Forms.ADMINSTUFF.Controls
         {
             InitializeComponent();
         }
-    
-    protected override void btnProfile_Click(object sender, EventArgs e)
+
+        protected override void btnProfile_Click(object sender, EventArgs e)
         {
 
         }
+
+
+        protected override void btnMission_Click(object sender, EventArgs e)
+        {
+            LoadView(new Content.AMissionContent());
+        }
+
     }
 }

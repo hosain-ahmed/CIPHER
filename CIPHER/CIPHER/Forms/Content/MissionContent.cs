@@ -1,4 +1,5 @@
-﻿using CIPHER.Forms.CustomItems;
+﻿
+using CIPHER.Forms.CustomItems;
 using CIPHER.Helpers;
 using CIPHER.Services;
 using System;

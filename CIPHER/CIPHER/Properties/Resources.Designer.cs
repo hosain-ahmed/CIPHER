@@ -93,6 +93,16 @@ namespace CIPHER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SSGoal {
+            get {
+                object obj = ResourceManager.GetObject("SSGoal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SSLog {
             get {
                 object obj = ResourceManager.GetObject("SSLog", resourceCulture);
