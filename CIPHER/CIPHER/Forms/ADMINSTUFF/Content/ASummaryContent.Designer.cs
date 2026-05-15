@@ -28,203 +28,385 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel1 = new Panel();
+            components = new System.ComponentModel.Container();
+            pnlContent = new Panel();
+            dgvUsers = new DataGridView();
+            userBindingSource = new BindingSource(components);
             panel2 = new Panel();
-            button1 = new Button();
-            label1 = new Label();
-            label2 = new Label();
-            panel3 = new Panel();
-            button2 = new Button();
-            button3 = new Button();
+            btnLock = new Button();
+            btnDelete = new Button();
+            btnReset = new Button();
+            pnlUserDetails = new Panel();
+            lblFactionID = new Label();
+            lblXP = new Label();
+            lblRole = new Label();
+            lblCryptcoin = new Label();
+            lblRank = new Label();
+            lblStatus = new Label();
+            lblUserID = new Label();
+            lblEmail = new Label();
+            lblFullName = new Label();
+            lblCodeName = new Label();
+            btnPromote = new Button();
+            btnCreateUser = new Button();
+            lblActiveRegistry = new Label();
+            lblCurrentUser = new Label();
             panel4 = new Panel();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            label9 = new Label();
-            label10 = new Label();
+            lblMissionSolved = new Label();
+            lblMS = new Label();
+            lblLockedAccounts = new Label();
+            lblActiveSessions = new Label();
+            lblTotalUsers = new Label();
+            lblLA = new Label();
+            lblAS = new Label();
+            lblTUS = new Label();
+            pnlContent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)userBindingSource).BeginInit();
             panel2.SuspendLayout();
+            pnlUserDetails.SuspendLayout();
             panel4.SuspendLayout();
             SuspendLayout();
             // 
-            // panel1
+            // pnlContent
             // 
-            panel1.BackColor = SystemColors.ControlDark;
-            panel1.Location = new Point(38, 189);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(700, 509);
-            panel1.TabIndex = 1;
+            pnlContent.BackColor = SystemColors.ControlDark;
+            pnlContent.Controls.Add(dgvUsers);
+            pnlContent.Location = new Point(38, 189);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(700, 509);
+            pnlContent.TabIndex = 1;
+            // 
+            // dgvUsers
+            // 
+            dgvUsers.AllowUserToResizeRows = false;
+            dgvUsers.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgvUsers.Location = new Point(0, 0);
+            dgvUsers.MultiSelect = false;
+            dgvUsers.Name = "dgvUsers";
+            dgvUsers.Size = new Size(700, 509);
+            dgvUsers.TabIndex = 0;
+            dgvUsers.SelectionChanged += dgvUsers_SelectionChanged;
+            // 
+            // userBindingSource
+            // 
+            userBindingSource.DataSource = typeof(Models.User);
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             panel2.BackColor = SystemColors.ControlLight;
-            panel2.Controls.Add(button3);
-            panel2.Controls.Add(button2);
-            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(btnLock);
+            panel2.Controls.Add(btnDelete);
+            panel2.Controls.Add(btnReset);
+            panel2.Controls.Add(pnlUserDetails);
+            panel2.Controls.Add(btnPromote);
             panel2.Location = new Point(760, 189);
             panel2.Name = "panel2";
             panel2.Size = new Size(278, 509);
             panel2.TabIndex = 2;
             // 
-            // button1
+            // btnLock
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(828, 10);
-            button1.Name = "button1";
-            button1.Size = new Size(170, 47);
-            button1.TabIndex = 0;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnLock.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLock.Location = new Point(16, 397);
+            btnLock.Name = "btnLock";
+            btnLock.Size = new Size(245, 23);
+            btnLock.TabIndex = 4;
+            btnLock.Text = "Unlock/Lock User";
+            btnLock.UseVisualStyleBackColor = true;
+            btnLock.Click += btnLock_Click;
             // 
-            // label1
+            // btnDelete
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(35, 155);
-            label1.Name = "label1";
-            label1.Size = new Size(38, 15);
-            label1.TabIndex = 3;
-            label1.Text = "label1";
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDelete.Location = new Point(16, 465);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(245, 32);
+            btnDelete.TabIndex = 3;
+            btnDelete.Text = "Delete User";
+            btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
-            // label2
+            // btnReset
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(757, 143);
-            label2.Name = "label2";
-            label2.Size = new Size(38, 15);
-            label2.TabIndex = 4;
-            label2.Text = "label2";
+            btnReset.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnReset.Location = new Point(141, 426);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(120, 33);
+            btnReset.TabIndex = 1;
+            btnReset.Text = "Reset Progress";
+            btnReset.UseVisualStyleBackColor = true;
+            btnReset.Click += btnReset_Click;
             // 
-            // panel3
+            // pnlUserDetails
             // 
-            panel3.BackColor = SystemColors.ControlText;
-            panel3.Dock = DockStyle.Top;
-            panel3.Location = new Point(0, 0);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(278, 442);
-            panel3.TabIndex = 0;
+            pnlUserDetails.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            pnlUserDetails.BackColor = SystemColors.AppWorkspace;
+            pnlUserDetails.Controls.Add(lblFactionID);
+            pnlUserDetails.Controls.Add(lblXP);
+            pnlUserDetails.Controls.Add(lblRole);
+            pnlUserDetails.Controls.Add(lblCryptcoin);
+            pnlUserDetails.Controls.Add(lblRank);
+            pnlUserDetails.Controls.Add(lblStatus);
+            pnlUserDetails.Controls.Add(lblUserID);
+            pnlUserDetails.Controls.Add(lblEmail);
+            pnlUserDetails.Controls.Add(lblFullName);
+            pnlUserDetails.Controls.Add(lblCodeName);
+            pnlUserDetails.Location = new Point(0, 0);
+            pnlUserDetails.Name = "pnlUserDetails";
+            pnlUserDetails.Size = new Size(278, 386);
+            pnlUserDetails.TabIndex = 0;
             // 
-            // button2
+            // lblFactionID
             // 
-            button2.Location = new Point(141, 460);
-            button2.Name = "button2";
-            button2.Size = new Size(120, 33);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            lblFactionID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblFactionID.AutoSize = true;
+            lblFactionID.Location = new Point(16, 256);
+            lblFactionID.Name = "lblFactionID";
+            lblFactionID.Size = new Size(57, 15);
+            lblFactionID.TabIndex = 9;
+            lblFactionID.Text = "FactionID";
             // 
-            // button3
+            // lblXP
             // 
-            button3.Location = new Point(16, 460);
-            button3.Name = "button3";
-            button3.Size = new Size(119, 33);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            lblXP.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblXP.AutoSize = true;
+            lblXP.Location = new Point(16, 217);
+            lblXP.Name = "lblXP";
+            lblXP.Size = new Size(21, 15);
+            lblXP.TabIndex = 8;
+            lblXP.Text = "XP";
+            // 
+            // lblRole
+            // 
+            lblRole.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblRole.AutoSize = true;
+            lblRole.Location = new Point(16, 138);
+            lblRole.Name = "lblRole";
+            lblRole.Size = new Size(30, 15);
+            lblRole.TabIndex = 7;
+            lblRole.Text = "Role";
+            // 
+            // lblCryptcoin
+            // 
+            lblCryptcoin.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblCryptcoin.AutoSize = true;
+            lblCryptcoin.Location = new Point(16, 171);
+            lblCryptcoin.Name = "lblCryptcoin";
+            lblCryptcoin.Size = new Size(61, 15);
+            lblCryptcoin.TabIndex = 6;
+            lblCryptcoin.Text = "CryptCoin";
+            // 
+            // lblRank
+            // 
+            lblRank.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblRank.AutoSize = true;
+            lblRank.Location = new Point(213, 14);
+            lblRank.Name = "lblRank";
+            lblRank.Size = new Size(33, 15);
+            lblRank.TabIndex = 5;
+            lblRank.Text = "Rank";
+            // 
+            // lblStatus
+            // 
+            lblStatus.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblStatus.AutoSize = true;
+            lblStatus.Location = new Point(169, 13);
+            lblStatus.Name = "lblStatus";
+            lblStatus.Size = new Size(39, 15);
+            lblStatus.TabIndex = 4;
+            lblStatus.Text = "Status";
+            // 
+            // lblUserID
+            // 
+            lblUserID.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblUserID.AutoSize = true;
+            lblUserID.Location = new Point(16, 13);
+            lblUserID.Name = "lblUserID";
+            lblUserID.Size = new Size(41, 15);
+            lblUserID.TabIndex = 3;
+            lblUserID.Text = "UserID";
+            // 
+            // lblEmail
+            // 
+            lblEmail.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(16, 110);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 2;
+            lblEmail.Text = "Email";
+            // 
+            // lblFullName
+            // 
+            lblFullName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblFullName.AutoSize = true;
+            lblFullName.Location = new Point(16, 75);
+            lblFullName.Name = "lblFullName";
+            lblFullName.Size = new Size(56, 15);
+            lblFullName.TabIndex = 1;
+            lblFullName.Text = "Fullname";
+            // 
+            // lblCodeName
+            // 
+            lblCodeName.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            lblCodeName.AutoSize = true;
+            lblCodeName.Location = new Point(16, 43);
+            lblCodeName.Name = "lblCodeName";
+            lblCodeName.Size = new Size(65, 15);
+            lblCodeName.TabIndex = 0;
+            lblCodeName.Text = "Codename";
+            // 
+            // btnPromote
+            // 
+            btnPromote.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnPromote.Location = new Point(16, 426);
+            btnPromote.Name = "btnPromote";
+            btnPromote.Size = new Size(119, 33);
+            btnPromote.TabIndex = 2;
+            btnPromote.Text = "Promote";
+            btnPromote.UseVisualStyleBackColor = true;
+            btnPromote.Click += btnPromote_Click;
+            // 
+            // btnCreateUser
+            // 
+            btnCreateUser.Anchor = AnchorStyles.None;
+            btnCreateUser.Location = new Point(828, 10);
+            btnCreateUser.Name = "btnCreateUser";
+            btnCreateUser.Size = new Size(170, 47);
+            btnCreateUser.TabIndex = 0;
+            btnCreateUser.Text = "Create User";
+            btnCreateUser.UseVisualStyleBackColor = true;
+            btnCreateUser.Click += btnCreateUser_Click;
+            // 
+            // lblActiveRegistry
+            // 
+            lblActiveRegistry.AutoSize = true;
+            lblActiveRegistry.Location = new Point(35, 155);
+            lblActiveRegistry.Name = "lblActiveRegistry";
+            lblActiveRegistry.Size = new Size(85, 15);
+            lblActiveRegistry.TabIndex = 3;
+            lblActiveRegistry.Text = "Active Registry";
+            // 
+            // lblCurrentUser
+            // 
+            lblCurrentUser.AutoSize = true;
+            lblCurrentUser.Location = new Point(757, 143);
+            lblCurrentUser.Name = "lblCurrentUser";
+            lblCurrentUser.Size = new Size(73, 15);
+            lblCurrentUser.TabIndex = 4;
+            lblCurrentUser.Text = "Current User";
             // 
             // panel4
             // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel4.BackColor = SystemColors.ControlDark;
-            panel4.Controls.Add(label10);
-            panel4.Controls.Add(label9);
-            panel4.Controls.Add(label8);
-            panel4.Controls.Add(label7);
-            panel4.Controls.Add(label6);
-            panel4.Controls.Add(label5);
-            panel4.Controls.Add(label4);
-            panel4.Controls.Add(label3);
-            panel4.Controls.Add(button1);
+            panel4.Controls.Add(lblMissionSolved);
+            panel4.Controls.Add(lblMS);
+            panel4.Controls.Add(lblLockedAccounts);
+            panel4.Controls.Add(lblActiveSessions);
+            panel4.Controls.Add(lblTotalUsers);
+            panel4.Controls.Add(lblLA);
+            panel4.Controls.Add(lblAS);
+            panel4.Controls.Add(lblTUS);
+            panel4.Controls.Add(btnCreateUser);
             panel4.Location = new Point(35, 35);
             panel4.Name = "panel4";
             panel4.Size = new Size(1003, 66);
             panel4.TabIndex = 5;
             // 
-            // label3
+            // lblMissionSolved
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(25, 26);
-            label3.Name = "label3";
-            label3.Size = new Size(38, 15);
-            label3.TabIndex = 1;
-            label3.Text = "label3";
+            lblMissionSolved.AutoSize = true;
+            lblMissionSolved.Location = new Point(646, 26);
+            lblMissionSolved.Name = "lblMissionSolved";
+            lblMissionSolved.Size = new Size(44, 15);
+            lblMissionSolved.TabIndex = 8;
+            lblMissionSolved.Text = "label10";
             // 
-            // label4
+            // lblMS
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(193, 26);
-            label4.Name = "label4";
-            label4.Size = new Size(38, 15);
-            label4.TabIndex = 2;
-            label4.Text = "label4";
+            lblMS.AutoSize = true;
+            lblMS.Location = new Point(554, 26);
+            lblMS.Name = "lblMS";
+            lblMS.Size = new Size(86, 15);
+            lblMS.TabIndex = 7;
+            lblMS.Text = "Mission Solved";
             // 
-            // label5
+            // lblLockedAccounts
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(356, 26);
-            label5.Name = "label5";
-            label5.Size = new Size(38, 15);
-            label5.TabIndex = 3;
-            label5.Text = "label5";
+            lblLockedAccounts.AutoSize = true;
+            lblLockedAccounts.Location = new Point(400, 26);
+            lblLockedAccounts.Name = "lblLockedAccounts";
+            lblLockedAccounts.Size = new Size(38, 15);
+            lblLockedAccounts.TabIndex = 6;
+            lblLockedAccounts.Text = "label8";
             // 
-            // label6
+            // lblActiveSessions
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(80, 26);
-            label6.Name = "label6";
-            label6.Size = new Size(38, 15);
-            label6.TabIndex = 4;
-            label6.Text = "label6";
-            label6.Click += label6_Click;
+            lblActiveSessions.AutoSize = true;
+            lblActiveSessions.Location = new Point(237, 26);
+            lblActiveSessions.Name = "lblActiveSessions";
+            lblActiveSessions.Size = new Size(38, 15);
+            lblActiveSessions.TabIndex = 5;
+            lblActiveSessions.Text = "label7";
             // 
-            // label7
+            // lblTotalUsers
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(237, 26);
-            label7.Name = "label7";
-            label7.Size = new Size(38, 15);
-            label7.TabIndex = 5;
-            label7.Text = "label7";
+            lblTotalUsers.AutoSize = true;
+            lblTotalUsers.Location = new Point(80, 26);
+            lblTotalUsers.Name = "lblTotalUsers";
+            lblTotalUsers.Size = new Size(38, 15);
+            lblTotalUsers.TabIndex = 4;
+            lblTotalUsers.Text = "label6";
             // 
-            // label8
+            // lblLA
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(400, 26);
-            label8.Name = "label8";
-            label8.Size = new Size(38, 15);
-            label8.TabIndex = 6;
-            label8.Text = "label8";
+            lblLA.AutoSize = true;
+            lblLA.Location = new Point(296, 26);
+            lblLA.Name = "lblLA";
+            lblLA.Size = new Size(98, 15);
+            lblLA.TabIndex = 3;
+            lblLA.Text = "Locked Accounts";
             // 
-            // label9
+            // lblAS
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(588, 26);
-            label9.Name = "label9";
-            label9.Size = new Size(38, 15);
-            label9.TabIndex = 7;
-            label9.Text = "label9";
+            lblAS.AutoSize = true;
+            lblAS.Location = new Point(153, 26);
+            lblAS.Name = "lblAS";
+            lblAS.Size = new Size(87, 15);
+            lblAS.TabIndex = 2;
+            lblAS.Text = "Active Sessions";
             // 
-            // label10
+            // lblTUS
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(646, 26);
-            label10.Name = "label10";
-            label10.Size = new Size(44, 15);
-            label10.TabIndex = 8;
-            label10.Text = "label10";
+            lblTUS.AutoSize = true;
+            lblTUS.Location = new Point(25, 26);
+            lblTUS.Name = "lblTUS";
+            lblTUS.Size = new Size(64, 15);
+            lblTUS.TabIndex = 1;
+            lblTUS.Text = "Total Users";
             // 
             // ASummaryContent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(panel4);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            Controls.Add(lblCurrentUser);
+            Controls.Add(lblActiveRegistry);
             Controls.Add(panel2);
-            Controls.Add(panel1);
+            Controls.Add(pnlContent);
             Name = "ASummaryContent";
             Size = new Size(1082, 750);
+            pnlContent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
+            ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();
             panel2.ResumeLayout(false);
+            pnlUserDetails.ResumeLayout(false);
+            pnlUserDetails.PerformLayout();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             ResumeLayout(false);
@@ -232,22 +414,37 @@
         }
 
         #endregion
-        private Panel panel1;
+        private Panel pnlContent;
         private Panel panel2;
-        private Button button1;
-        private Button button3;
-        private Button button2;
-        private Panel panel3;
-        private Label label1;
-        private Label label2;
+        private Button btnCreateUser;
+        private Button btnPromote;
+        private Button btnReset;
+        private Panel pnlUserDetails;
+        private Label lblActiveRegistry;
+        private Label lblCurrentUser;
         private Panel panel4;
-        private Label label4;
-        private Label label3;
-        private Label label8;
-        private Label label7;
-        private Label label6;
-        private Label label5;
-        private Label label10;
-        private Label label9;
+        private Label lblAS;
+        private Label lblTUS;
+        private Label lblLockedAccounts;
+        private Label lblActiveSessions;
+        private Label lblTotalUsers;
+        private Label lblLA;
+        private Label lblMissionSolved;
+        private Label lblMS;
+        private Button btnDelete;
+        private DataGridView dgvUsers;
+        private DataGridViewTextBoxColumn passwordHashDataGridViewTextBoxColumn;
+        private BindingSource userBindingSource;
+        private Label lblXP;
+        private Label lblRole;
+        private Label lblCryptcoin;
+        private Label lblRank;
+        private Label lblStatus;
+        private Label lblUserID;
+        private Label lblEmail;
+        private Label lblFullName;
+        private Label lblCodeName;
+        private Label lblFactionID;
+        private Button btnLock;
     }
 }

@@ -37,5 +37,9 @@ namespace CIPHER.Forms.CustomItems
         {
 
         }
+
+        protected virtual void btnAgentManagement_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

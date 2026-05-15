@@ -31,6 +31,7 @@ namespace CIPHER.Forms.CustomItems
         private void InitializeComponent()
         {
             pnlSidebar = new Panel();
+            btnAgentManagement = new Button();
             btnMission = new Button();
             btnProfile = new Button();
             pnlContainer = new Panel();
@@ -41,6 +42,7 @@ namespace CIPHER.Forms.CustomItems
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.FromArgb(50, 56, 62);
+            pnlSidebar.Controls.Add(btnAgentManagement);
             pnlSidebar.Controls.Add(btnMission);
             pnlSidebar.Controls.Add(btnProfile);
             pnlSidebar.Dock = DockStyle.Left;
@@ -48,6 +50,18 @@ namespace CIPHER.Forms.CustomItems
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(32, 750);
             pnlSidebar.TabIndex = 0;
+            // 
+            // btnAgentManagement
+            // 
+            btnAgentManagement.BackgroundImage = Properties.Resources.Spyware;
+            btnAgentManagement.FlatAppearance.BorderSize = 0;
+            btnAgentManagement.FlatStyle = FlatStyle.Flat;
+            btnAgentManagement.Location = new Point(0, 106);
+            btnAgentManagement.Name = "btnAgentManagement";
+            btnAgentManagement.Size = new Size(26, 26);
+            btnAgentManagement.TabIndex = 2;
+            btnAgentManagement.UseVisualStyleBackColor = false;
+            btnAgentManagement.Click += btnAgentManagement_Click;
             // 
             // btnMission
             // 
@@ -57,7 +71,7 @@ namespace CIPHER.Forms.CustomItems
             btnMission.Image = Properties.Resources.SSGoal;
             btnMission.Location = new Point(0, 54);
             btnMission.Name = "btnMission";
-            btnMission.Size = new Size(32, 31);
+            btnMission.Size = new Size(29, 32);
             btnMission.TabIndex = 1;
             btnMission.UseVisualStyleBackColor = false;
             btnMission.Click += btnMission_Click;
@@ -114,5 +128,6 @@ namespace CIPHER.Forms.CustomItems
         private Button btnProfile;
         private Button btnMission;
         private Panel panel1;
+        private Button btnAgentManagement;
     }
 }

@@ -83,6 +83,16 @@ namespace CIPHER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Spyware {
+            get {
+                object obj = ResourceManager.GetObject("Spyware", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SSCMD {
             get {
                 object obj = ResourceManager.GetObject("SSCMD", resourceCulture);

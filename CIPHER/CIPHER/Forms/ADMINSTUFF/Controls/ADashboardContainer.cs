@@ -28,5 +28,10 @@ namespace CIPHER.Forms.ADMINSTUFF.Controls
             LoadView(new Content.AMissionContent());
         }
 
+        protected override void btnAgentManagement_Click(object sender, EventArgs e)
+        {
+            LoadView(new Content.ASummaryContent());
+        }
+
     }
 }

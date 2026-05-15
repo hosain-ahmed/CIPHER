@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Text;
 
 namespace CIPHER.Models
@@ -10,6 +11,7 @@ namespace CIPHER.Models
         public string Codename { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
+        [Browsable(false)]
         public string PasswordHash { get; set; }
 
         public string Role { get; set; }

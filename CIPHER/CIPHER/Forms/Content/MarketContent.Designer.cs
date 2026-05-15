@@ -63,9 +63,8 @@ namespace CIPHER.Forms.Content
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1199, 631);
+            flowLayoutPanel1.Size = new Size(1049, 473);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 
@@ -75,10 +74,9 @@ namespace CIPHER.Forms.Content
             panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
             panel1.ForeColor = Color.Firebrick;
-            panel1.Location = new Point(47, 229);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(41, 172);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1199, 695);
+            panel1.Size = new Size(1049, 521);
             panel1.TabIndex = 2;
             // 
             // panel3
@@ -86,10 +84,9 @@ namespace CIPHER.Forms.Content
             panel3.Controls.Add(flowLayoutPanel1);
             panel3.Dock = DockStyle.Fill;
             panel3.ForeColor = Color.Crimson;
-            panel3.Location = new Point(0, 64);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(0, 48);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1199, 631);
+            panel3.Size = new Size(1049, 473);
             panel3.TabIndex = 3;
             // 
             // panel2
@@ -98,21 +95,20 @@ namespace CIPHER.Forms.Content
             panel2.Controls.Add(tableLayoutPanel1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1199, 64);
+            panel2.Size = new Size(1049, 48);
             panel2.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.BackColor = Color.BurlyWood;
             tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 91F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 44.4444427F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.9363556F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.4291229F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2222214F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 70F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 62F));
             tableLayoutPanel1.Controls.Add(lblID, 0, 0);
             tableLayoutPanel1.Controls.Add(lblTitle, 1, 0);
             tableLayoutPanel1.Controls.Add(lblEmpty, 2, 0);
@@ -122,11 +118,10 @@ namespace CIPHER.Forms.Content
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.ForeColor = Color.DarkSlateGray;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1199, 64);
+            tableLayoutPanel1.Size = new Size(1049, 48);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // lblID
@@ -136,7 +131,7 @@ namespace CIPHER.Forms.Content
             lblID.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblID.Location = new Point(3, 0);
             lblID.Name = "lblID";
-            lblID.Size = new Size(85, 64);
+            lblID.Size = new Size(74, 48);
             lblID.TabIndex = 0;
             lblID.Text = "ID";
             lblID.TextAlign = ContentAlignment.MiddleCenter;
@@ -146,9 +141,9 @@ namespace CIPHER.Forms.Content
             lblTitle.BackColor = Color.BurlyWood;
             lblTitle.Dock = DockStyle.Fill;
             lblTitle.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(94, 0);
+            lblTitle.Location = new Point(83, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(455, 64);
+            lblTitle.Size = new Size(396, 48);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Title";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -157,9 +152,9 @@ namespace CIPHER.Forms.Content
             // 
             lblEmpty.BackColor = Color.BurlyWood;
             lblEmpty.Dock = DockStyle.Fill;
-            lblEmpty.Location = new Point(555, 0);
+            lblEmpty.Location = new Point(485, 0);
             lblEmpty.Name = "lblEmpty";
-            lblEmpty.Size = new Size(180, 64);
+            lblEmpty.Size = new Size(156, 48);
             lblEmpty.TabIndex = 2;
             lblEmpty.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -168,9 +163,9 @@ namespace CIPHER.Forms.Content
             lblReward.BackColor = Color.BurlyWood;
             lblReward.Dock = DockStyle.Fill;
             lblReward.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblReward.Location = new Point(741, 0);
+            lblReward.Location = new Point(647, 0);
             lblReward.Name = "lblReward";
-            lblReward.Size = new Size(154, 64);
+            lblReward.Size = new Size(133, 48);
             lblReward.TabIndex = 3;
             lblReward.Text = "Reward";
             lblReward.TextAlign = ContentAlignment.MiddleCenter;
@@ -180,9 +175,9 @@ namespace CIPHER.Forms.Content
             lblStatus.BackColor = Color.BurlyWood;
             lblStatus.Dock = DockStyle.Fill;
             lblStatus.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(901, 0);
+            lblStatus.Location = new Point(786, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(224, 64);
+            lblStatus.Size = new Size(195, 48);
             lblStatus.TabIndex = 4;
             lblStatus.Text = "Status";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
@@ -192,9 +187,9 @@ namespace CIPHER.Forms.Content
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1131, 0);
+            label1.Location = new Point(987, 0);
             label1.Name = "label1";
-            label1.Size = new Size(65, 64);
+            label1.Size = new Size(59, 48);
             label1.TabIndex = 5;
             label1.Text = "Action";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -204,9 +199,9 @@ namespace CIPHER.Forms.Content
             lblMarketTitle.AutoSize = true;
             lblMarketTitle.Font = new Font("Segoe UI Semibold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMarketTitle.ForeColor = Color.Teal;
-            lblMarketTitle.Location = new Point(54, 31);
+            lblMarketTitle.Location = new Point(47, 23);
             lblMarketTitle.Name = "lblMarketTitle";
-            lblMarketTitle.Size = new Size(287, 50);
+            lblMarketTitle.Size = new Size(235, 41);
             lblMarketTitle.TabIndex = 3;
             lblMarketTitle.Text = "BLACK MARKET";
             // 
@@ -215,9 +210,9 @@ namespace CIPHER.Forms.Content
             lblExtraStuff.AutoSize = true;
             lblExtraStuff.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lblExtraStuff.ForeColor = Color.Gray;
-            lblExtraStuff.Location = new Point(54, 94);
+            lblExtraStuff.Location = new Point(47, 70);
             lblExtraStuff.Name = "lblExtraStuff";
-            lblExtraStuff.Size = new Size(579, 23);
+            lblExtraStuff.Size = new Size(466, 19);
             lblExtraStuff.TabIndex = 4;
             lblExtraStuff.Text = "Encrypted bounty board for high-value targets. All transactions are routed.";
             // 
@@ -227,10 +222,9 @@ namespace CIPHER.Forms.Content
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.White;
-            button1.Location = new Point(47, 190);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(41, 129);
             button1.Name = "button1";
-            button1.Size = new Size(100, 31);
+            button1.Size = new Size(88, 38);
             button1.TabIndex = 5;
             button1.Text = "ALL_JOBS";
             button1.UseVisualStyleBackColor = false;
@@ -245,10 +239,9 @@ namespace CIPHER.Forms.Content
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button2.ForeColor = Color.White;
-            button2.Location = new Point(171, 191);
-            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Location = new Point(150, 143);
             button2.Name = "button2";
-            button2.Size = new Size(111, 31);
+            button2.Size = new Size(97, 23);
             button2.TabIndex = 6;
             button2.Text = "INFLATION";
             button2.UseVisualStyleBackColor = false;
@@ -263,10 +256,9 @@ namespace CIPHER.Forms.Content
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             button3.ForeColor = Color.White;
-            button3.Location = new Point(303, 191);
-            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Location = new Point(265, 143);
             button3.Name = "button3";
-            button3.Size = new Size(122, 31);
+            button3.Size = new Size(107, 23);
             button3.TabIndex = 7;
             button3.Text = "DATA_HEIST";
             button3.UseVisualStyleBackColor = false;
@@ -277,10 +269,9 @@ namespace CIPHER.Forms.Content
             btnBounty.BackColor = Color.Teal;
             btnBounty.FlatStyle = FlatStyle.Flat;
             btnBounty.ForeColor = Color.White;
-            btnBounty.Location = new Point(1041, 72);
-            btnBounty.Margin = new Padding(3, 4, 3, 4);
+            btnBounty.Location = new Point(911, 54);
             btnBounty.Name = "btnBounty";
-            btnBounty.Size = new Size(205, 65);
+            btnBounty.Size = new Size(179, 49);
             btnBounty.TabIndex = 8;
             btnBounty.Text = "Create new Bounty";
             btnBounty.UseVisualStyleBackColor = false;
@@ -292,11 +283,10 @@ namespace CIPHER.Forms.Content
             // 
             txtSearch.BackColor = SystemColors.ButtonFace;
             txtSearch.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(957, 191);
-            txtSearch.Margin = new Padding(3, 4, 3, 4);
+            txtSearch.Location = new Point(837, 143);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search...";
-            txtSearch.Size = new Size(289, 30);
+            txtSearch.Size = new Size(253, 26);
             txtSearch.TabIndex = 9;
             // 
             // btnSearch
@@ -305,10 +295,9 @@ namespace CIPHER.Forms.Content
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(876, 191);
-            btnSearch.Margin = new Padding(3, 4, 3, 4);
+            btnSearch.Location = new Point(766, 143);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 31);
+            btnSearch.Size = new Size(66, 23);
             btnSearch.TabIndex = 10;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
@@ -320,10 +309,9 @@ namespace CIPHER.Forms.Content
             // panel4
             // 
             panel4.BackColor = SystemColors.MenuHighlight;
-            panel4.Location = new Point(47, 31);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(41, 23);
             panel4.Name = "panel4";
-            panel4.Size = new Size(5, 133);
+            panel4.Size = new Size(4, 100);
             panel4.TabIndex = 11;
             // 
             // btnHint
@@ -332,10 +320,9 @@ namespace CIPHER.Forms.Content
             btnHint.BackColor = Color.Teal;
             btnHint.FlatStyle = FlatStyle.Flat;
             btnHint.ForeColor = Color.White;
-            btnHint.Location = new Point(819, 72);
-            btnHint.Margin = new Padding(3, 4, 3, 4);
+            btnHint.Location = new Point(717, 54);
             btnHint.Name = "btnHint";
-            btnHint.Size = new Size(205, 65);
+            btnHint.Size = new Size(179, 49);
             btnHint.TabIndex = 12;
             btnHint.Text = "Create new Hint";
             btnHint.UseVisualStyleBackColor = false;
@@ -346,7 +333,7 @@ namespace CIPHER.Forms.Content
             // 
             // MarketContent
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(btnHint);
@@ -360,9 +347,8 @@ namespace CIPHER.Forms.Content
             Controls.Add(lblExtraStuff);
             Controls.Add(lblMarketTitle);
             Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "MarketContent";
-            Size = new Size(1303, 964);
+            Size = new Size(1140, 723);
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);

@@ -12,7 +12,7 @@ namespace CIPHER.Services
         {
             var list = new List<User>();
             using var conn = DBHelper.Getconnection();
-            var cmd = new SqlCommand("SELECT UserID,Codename,XP,Rank,AccountStatus,Role FROM Users WHERE Role = 'Agent'", conn);
+            var cmd = new SqlCommand("SELECT UserID,Codename,XP,Rank,AccountStatus,Role,FullName,Email,CryptCoin,FactionID FROM Users WHERE Role = 'Agent'", conn);
             var r = cmd.ExecuteReader();
             while (r.Read()) list.Add(new User
             {
@@ -21,7 +21,34 @@ namespace CIPHER.Services
                 XP = (int)r["XP"],
                 Rank = r["Rank"].ToString(),
                 AccountStatus = r["AccountStatus"].ToString(),
-                Role = r["Role"].ToString()
+                Role = r["Role"].ToString(),
+                FullName = r["FullName"].ToString(),
+                Email = r["Email"].ToString(),
+                CryptCoin = (int)r["CryptCoin"],
+                FactionID = (int)r["FactionID"]
+
+            });
+            return list;
+        }
+
+        public List<User> GetAllUsers()
+        {
+            var list = new List<User>();
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand("SELECT UserID,Codename,XP,Rank,AccountStatus,Role,FullName,Email,CryptCoin,FactionID FROM Users", conn);
+            var r = cmd.ExecuteReader();
+            while (r.Read()) list.Add(new User
+            {
+                UserID = (int)r["UserID"],
+                Codename = r["Codename"].ToString(),
+                XP = (int)r["XP"],
+                Rank = r["Rank"].ToString(),
+                AccountStatus = r["AccountStatus"].ToString(),
+                Role = r["Role"].ToString(),
+                FullName = r["FullName"].ToString(),
+                Email = r["Email"].ToString(),
+                CryptCoin = (int)r["CryptCoin"],
+                FactionID = (int)r["FactionID"]
 
             });
             return list;
@@ -164,7 +191,7 @@ namespace CIPHER.Services
             stat.MissionsSolvedToday = Convert.ToInt32(cmd2.ExecuteScalar());
 
             var cmd3 = new SqlCommand(@"SELECT TOP 1 CodeName FROM Users
-            ORDER BY XP Desc",conn);
+            ORDER BY XP Desc", conn);
             stat.TopAgentCodename = cmd3.ExecuteScalar().ToString() ?? "None";
 
             var cmd4 = new SqlCommand(@"
@@ -186,7 +213,37 @@ namespace CIPHER.Services
 
             return stat;
         }
-    }
 
-    
+        public void PromoteUser(int UserID)
+        {
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand(@"
+            UPDATE Users SET Role='Admin' WHERE UserID = @uid", conn);
+            cmd.Parameters.AddWithValue("@uid", UserID);
+            cmd.ExecuteNonQuery();
+            _audit.Log(SessionManager.CurrentUser.UserID, "AdminAction", $"Promoted UserID {UserID} to Admin");
+        }
+
+        public void DemoteUser(int UserID)
+        {
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand(@"
+            UPDATE Users SET Role='Agent' WHERE UserID = @uid", conn);
+            cmd.Parameters.AddWithValue("@uid", UserID);
+            cmd.ExecuteNonQuery();
+            _audit.Log(SessionManager.CurrentUser.UserID, "AdminAction", $"Demoted UserID {UserID} to Agent");
+        }
+
+        public bool DeleteUser(int UserID)
+        {
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand(@"
+            UPDATE Users SET AccountStatus='Deleted' WHERE UserID = @uid", conn);
+            cmd.Parameters.AddWithValue("@uid", UserID);
+            cmd.ExecuteNonQuery();
+            _audit.Log(SessionManager.CurrentUser.UserID, "AdminAction", $"Deleted UserID {UserID}");
+
+            return true;
+        }
+    }
 }
