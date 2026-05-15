@@ -48,12 +48,13 @@ namespace CIPHER.Forms.CustomItems
 
         }
 
-        public void SetData(string id, string title, string value, string info)
+        public void SetData(string id, string title, string E1, string E2, string E3)
         {
             lblID.Text = id;
             lblTitle.Text = title;
-            lblSInfo.Text = value;
-            lblInfo.Text = info;
+            lblSInfo.Text = E1;
+            lblInfo.Text = E2;
+            lblMInfo.Text = E3;
 
         }
         private void Row_Click(object sender, EventArgs e)

@@ -39,8 +39,9 @@ namespace CIPHER.Forms.Content
                     entry.Category,                  // ID Slot
                     entry.Action.Replace("_", " "),  // Title Slot (Cleaner look)
                     entry.Timestamp.ToString("HH:mm:ss"), // Value Slot
-                    entry.Details                    // Info Slot
-                );
+                    entry.Details,                    // Info Slot
+                    ""
+                    );
 
                 row.Width = flowLayoutPanel1.ClientSize.Width - 25;
                 flowLayoutPanel1.Controls.Add(row);

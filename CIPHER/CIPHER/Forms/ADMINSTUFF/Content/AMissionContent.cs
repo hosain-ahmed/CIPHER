@@ -28,7 +28,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             for (int i = 0; i < mission.Count; i++)
             {
                 var row = new CustomItems.GenericRow();
-                row.SetData(mission[i].MissionID.ToString(), mission[i].Title, mission[i].Difficulty, mission[i].CoinReward.ToString());
+                row.SetData(mission[i].MissionID.ToString(), mission[i].Title, mission[i].Difficulty, mission[i].CoinReward.ToString(),"");
                 flowLayoutPanel1.Controls.Add(row);
             }
 

@@ -36,8 +36,11 @@ namespace CIPHER.Forms.Content
             foreach (var item in Bounties)
             {
                 GenericRow row = new GenericRow();
+                row.Width = flowLayoutPanel1.ClientSize.Width - 25;
+                row.Height = 45;
+
                 row.DataReference = item; // Store the actual Bounty object here
-                row.SetData(item.BountyID.ToString(), item.Title, item.CoinReward.ToString(), item.Status);
+                row.SetData(item.BountyID.ToString(), item.Title, "",item.CoinReward.ToString(), item.Status);
 
                 // Subscribe to the click event
                 row.OnRowClicked += (s, data) =>
