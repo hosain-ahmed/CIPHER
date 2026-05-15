@@ -40,7 +40,7 @@ namespace CIPHER.Forms.Content
                 row.Height = 45;
 
                 row.DataReference = item; // Store the actual Bounty object here
-                row.SetData(item.BountyID.ToString(), item.Title, "",item.CoinReward.ToString(), item.Status);
+                row.SetData(item.BountyID.ToString(), item.Title, "", item.CoinReward.ToString(), item.Status);
 
                 // Subscribe to the click event
                 row.OnRowClicked += (s, data) =>
@@ -67,6 +67,11 @@ namespace CIPHER.Forms.Content
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
