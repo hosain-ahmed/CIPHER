@@ -31,7 +31,7 @@ namespace CIPHER.Forms.CustomItems
 
 
             foreach (Control c in this.Controls)
-            {   
+            {
                 c.MouseEnter += GenericRow_MouseEnter;
                 c.MouseLeave += GenericRow_MouseLeave;
                 c.Cursor = Cursors.Hand; // Force child panels to show the hand
@@ -44,7 +44,7 @@ namespace CIPHER.Forms.CustomItems
                     }
                 }
             }
-            
+
 
         }
 
@@ -77,6 +77,11 @@ namespace CIPHER.Forms.CustomItems
         private void GenericRow_MouseLeave(object sender, EventArgs e)
         {
             BackColor = normalColor;
+        }
+
+        private void accent_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

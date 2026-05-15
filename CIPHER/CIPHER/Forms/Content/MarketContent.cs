@@ -40,7 +40,7 @@ namespace CIPHER.Forms.Content
                 row.Height = 45;
 
                 row.DataReference = item; // Store the actual Bounty object here
-                row.SetData(item.BountyID.ToString(), item.Title, "",item.CoinReward.ToString(), item.Status);
+                row.SetData(item.BountyID.ToString(), item.Title, "", item.CoinReward.ToString(), item.Status);
 
                 // Subscribe to the click event
                 row.OnRowClicked += (s, data) =>
@@ -67,6 +67,101 @@ namespace CIPHER.Forms.Content
         }
 
         private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHint_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHint_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHint_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHint_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBounty_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBounty_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnBounty_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_MouseHover(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_MouseLeave(object sender, EventArgs e)
         {
 
         }
