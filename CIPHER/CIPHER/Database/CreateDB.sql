@@ -103,3 +103,21 @@ CREATE TABLE Messages (
     IsActive BIT DEFAULT 1
 )
 
+CREATE TABLE Hitlist (
+    HitID INT PRIMARY KEY IDENTITY,
+    AttackerID INT FOREIGN KEY REFERENCES Users(UserID),
+    TargetID INT FOREIGN KEY REFERENCES Users(UserID),
+    Status NVARCHAR(50) DEFAULT 'Active',
+    CoinsStaked INT NOT NULL,
+    CreatedAt DATETIME DEFAULT GETDATE(),
+    ExpiresAt DATETIME NOT NULL,
+    ExecutedAt DATETIME NULL
+)
+
+CREATE TABLE HitChallenges (
+    ChallengeID INT PRIMARY KEY IDENTITY,
+    HitID INT FOREIGN KEY REFERENCES Hitlist(HitID),
+    MissionID INT FOREIGN KEY REFERENCES Missions(MissionID),
+    Solved BIT DEFAULT 0
+)
+
