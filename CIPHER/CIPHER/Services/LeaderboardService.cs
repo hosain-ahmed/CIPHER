@@ -14,18 +14,18 @@ namespace CIPHER.Services
             var list = new List<LeaderboardEntry>();
             using var conn = DBHelper.Getconnection();
             var cmd = new SqlCommand(@"
-            SELECT u.Codename, u.XP,u.Rank,f.Name as Faction, 
-            COUNT(DISTINCT p.MissionID) as MissionSolved,
-            COUNT(DISTINCT p.BountyID) as BountiesSolved,
-            FROM Users u
-            LEFT JOIN Factions f on u.FactionID=f.FactionID
-            LEFT JOIN Progress p on u.UserID = p.UserID AND p.Solved=1
-            LEFT JOIN Bounties b on u.UserID = b.SolverID
-            WHERE u.Role='Agent'
-            GROUP BY u.UserID,u.Codename,u.XP,u.Rank,f.Name
-            ORDER BY u.XP DESC
+            SELECT u.Codename, u.XP, u.Rank, f.Name AS Faction, 
+    COUNT(DISTINCT p.MissionID) AS MissionsSolved,
+    COUNT(DISTINCT b.BountyID) AS BountiesSolved
+FROM Users u
+LEFT JOIN Factions f ON u.FactionID = f.FactionID
+LEFT JOIN Progress p ON u.UserID = p.UserID AND p.Solved = 1
+LEFT JOIN Bounties b ON u.UserID = b.SolverID
+WHERE u.Role = 'Agent'
+GROUP BY u.UserID, u.Codename, u.XP, u.Rank, f.Name
+ORDER BY u.XP DESC, MissionsSolved DESC, BountiesSolved DESC;
             
-            ",conn);
+            ", conn);
             using var r = cmd.ExecuteReader();
             int position = 1;
             while (r.Read()) list.Add(new LeaderboardEntry
@@ -36,7 +36,7 @@ namespace CIPHER.Services
                 Rank = r["Rank"].ToString(),
                 Faction = r["Faction"].ToString(),
                 MissionsSolved = (int)r["MissionsSolved"],
-                BountiesCracked = (int)r["BountiesCracked"]
+                BountiesCracked = (int)r["BountiesSolved"]
             });
             return list;
         }

@@ -95,5 +95,10 @@ namespace CIPHER.Forms.Controls
             btn.BackColor = Color.FromArgb(30, 30, 30); // Slightly lighter
             btn.ForeColor = Color.FromArgb(0, 245, 255); // Neon Cyan text
         }
+
+        private void btnTerminal_Click(object sender, EventArgs e)
+        {
+            LoadView(new Forms.ADMINSTUFF.Content.ALeaderBoardContent());
+        }
     }
 }

@@ -68,6 +68,7 @@ namespace CIPHER.Forms.Controls
             btnTerminal.Size = new Size(31, 23);
             btnTerminal.TabIndex = 9;
             btnTerminal.UseVisualStyleBackColor = true;
+            btnTerminal.Click += btnTerminal_Click;
             // 
             // btnMission
             // 
