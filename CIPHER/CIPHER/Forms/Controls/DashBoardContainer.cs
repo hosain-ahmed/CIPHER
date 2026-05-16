@@ -82,6 +82,7 @@ namespace CIPHER.Forms.Controls
 
         private void btnProfile_Click(object sender, EventArgs e)
         {
+            LoadView(new Forms.ADMINSTUFF.Content.AProfileContent());
 
         }
         private void HighlightButton(Button btn)

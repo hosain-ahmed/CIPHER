@@ -30,36 +30,38 @@ namespace CIPHER.Forms.Content
         /// </summary>
         private void InitializeComponent()
         {
-            flowLayoutPanel1 = new FlowLayoutPanel();
             panel1 = new Panel();
+            dgvLogs = new DataGridView();
             panel2 = new Panel();
             label1 = new Label();
             label2 = new Label();
             textBox1 = new TextBox();
-            button1 = new Button();
+            btnSearch = new Button();
+            cmbFilter = new ComboBox();
+            lblFilter = new Label();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvLogs).BeginInit();
             SuspendLayout();
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = Color.White;
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
-            flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1031, 582);
-            flowLayoutPanel1.TabIndex = 1;
-            flowLayoutPanel1.WrapContents = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Navy;
+            panel1.Controls.Add(dgvLogs);
             panel1.Controls.Add(panel2);
-            panel1.Controls.Add(flowLayoutPanel1);
             panel1.Location = new Point(35, 132);
             panel1.Name = "panel1";
             panel1.Size = new Size(1031, 582);
             panel1.TabIndex = 2;
+            // 
+            // dgvLogs
+            // 
+            dgvLogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
+            dgvLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvLogs.Dock = DockStyle.Fill;
+            dgvLogs.Location = new Point(0, 59);
+            dgvLogs.Name = "dgvLogs";
+            dgvLogs.Size = new Size(1031, 523);
+            dgvLogs.TabIndex = 3;
             // 
             // panel2
             // 
@@ -95,22 +97,44 @@ namespace CIPHER.Forms.Content
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(270, 23);
             textBox1.TabIndex = 5;
+            textBox1.KeyDown += textBox1_KeyDown;
             // 
-            // button1
+            // btnSearch
             // 
-            button1.Location = new Point(715, 103);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
+            btnSearch.Location = new Point(715, 103);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(75, 23);
+            btnSearch.TabIndex = 6;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
+            // 
+            // cmbFilter
+            // 
+            cmbFilter.FormattingEnabled = true;
+            cmbFilter.Location = new Point(111, 98);
+            cmbFilter.Name = "cmbFilter";
+            cmbFilter.Size = new Size(121, 23);
+            cmbFilter.TabIndex = 7;
+            cmbFilter.SelectedIndexChanged += cmbFilter_SelectedIndexChanged;
+            // 
+            // lblFilter
+            // 
+            lblFilter.AutoSize = true;
+            lblFilter.Location = new Point(137, 76);
+            lblFilter.Name = "lblFilter";
+            lblFilter.Size = new Size(38, 15);
+            lblFilter.TabIndex = 8;
+            lblFilter.Text = "label3";
             // 
             // LogContent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(255, 128, 0);
-            Controls.Add(button1);
+            Controls.Add(lblFilter);
+            Controls.Add(cmbFilter);
+            Controls.Add(btnSearch);
             Controls.Add(textBox1);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -118,17 +142,20 @@ namespace CIPHER.Forms.Content
             Name = "LogContent";
             Size = new Size(1104, 767);
             panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvLogs).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private FlowLayoutPanel flowLayoutPanel1;
         private Panel panel1;
         private Panel panel2;
         private Label label1;
         private Label label2;
         private TextBox textBox1;
-        private Button button1;
+        private Button btnSearch;
+        private DataGridView dgvLogs;
+        private ComboBox cmbFilter;
+        private Label lblFilter;
     }
 }

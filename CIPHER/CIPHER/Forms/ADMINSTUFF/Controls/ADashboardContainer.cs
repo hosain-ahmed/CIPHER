@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using CIPHER.Forms.Controls;
 using CIPHER.Forms.CustomItems;
 
+
 namespace CIPHER.Forms.ADMINSTUFF.Controls
 {
     public partial class ADashboardContainer : BaseDashboard
@@ -19,9 +20,14 @@ namespace CIPHER.Forms.ADMINSTUFF.Controls
 
         protected override void btnProfile_Click(object sender, EventArgs e)
         {
-
+            LoadView(new Content.AProfileContent());
+        }
+        protected override void btnLogs_Click(object sender, EventArgs e)
+        {
+            LoadView(new Forms.Content.LogContent());
         }
 
+       
 
         protected override void btnMission_Click(object sender, EventArgs e)
         {

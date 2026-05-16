@@ -45,7 +45,7 @@ namespace CIPHER.Forms.Controls
             // 
             // pnlSideBar
             // 
-            pnlSideBar.BackColor = Theme.BackgroundSidebar;
+            pnlSideBar.BackColor = Color.FromArgb(50, 56, 62);
             pnlSideBar.Controls.Add(btnTerminal);
             pnlSideBar.Controls.Add(btnMission);
             pnlSideBar.Controls.Add(btnProfile);
@@ -102,7 +102,7 @@ namespace CIPHER.Forms.Controls
             btnLog.Image = Properties.Resources.SSLog;
             btnLog.Location = new Point(7, 106);
             btnLog.Name = "btnLog";
-            btnLog.Size = new Size(21, 23);
+            btnLog.Size = new Size(21, 36);
             btnLog.TabIndex = 7;
             btnLog.UseVisualStyleBackColor = true;
             btnLog.Click += btnlog_click;

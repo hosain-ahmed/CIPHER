@@ -31,6 +31,7 @@ namespace CIPHER.Forms.CustomItems
         private void InitializeComponent()
         {
             pnlSidebar = new Panel();
+            btnLogs = new Button();
             btnAgentManagement = new Button();
             btnMission = new Button();
             btnProfile = new Button();
@@ -42,6 +43,7 @@ namespace CIPHER.Forms.CustomItems
             // pnlSidebar
             // 
             pnlSidebar.BackColor = Color.FromArgb(50, 56, 62);
+            pnlSidebar.Controls.Add(btnLogs);
             pnlSidebar.Controls.Add(btnAgentManagement);
             pnlSidebar.Controls.Add(btnMission);
             pnlSidebar.Controls.Add(btnProfile);
@@ -50,6 +52,18 @@ namespace CIPHER.Forms.CustomItems
             pnlSidebar.Name = "pnlSidebar";
             pnlSidebar.Size = new Size(32, 750);
             pnlSidebar.TabIndex = 0;
+            // 
+            // btnLogs
+            // 
+            btnLogs.BackgroundImage = Properties.Resources.SSLog;
+            btnLogs.FlatAppearance.BorderSize = 0;
+            btnLogs.FlatStyle = FlatStyle.Flat;
+            btnLogs.Location = new Point(3, 154);
+            btnLogs.Name = "btnLogs";
+            btnLogs.Size = new Size(23, 24);
+            btnLogs.TabIndex = 3;
+            btnLogs.UseVisualStyleBackColor = true;
+            btnLogs.Click += btnLogs_Click;
             // 
             // btnAgentManagement
             // 
@@ -129,5 +143,6 @@ namespace CIPHER.Forms.CustomItems
         private Button btnMission;
         private Panel panel1;
         private Button btnAgentManagement;
+        private Button btnLogs;
     }
 }

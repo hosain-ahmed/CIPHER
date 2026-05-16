@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using CIPHER.Forms.Content;
 
 namespace CIPHER.Forms.CustomItems
 {
@@ -40,6 +41,11 @@ namespace CIPHER.Forms.CustomItems
 
         protected virtual void btnAgentManagement_Click(object sender, EventArgs e)
         {
+        }
+
+        protected virtual void btnLogs_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

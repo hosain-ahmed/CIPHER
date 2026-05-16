@@ -1,4 +1,5 @@
 ﻿using CIPHER.Forms.CustomItems;
+using CIPHER.Helpers;
 using CIPHER.Models;
 using CIPHER.Services;
 using System;
@@ -47,24 +48,9 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
         private void btnCreateMission_Click(object sender, EventArgs e)
         {
-            var win = new GenericCreatorWindow("Create Mission");
-
-            win.OnDataSubmitted = (title, diff, cat, coin, xp, brief, ans, hint) => {
-                Mission m = new Mission
-                {
-                    Title = title,
-                    Difficulty = diff,
-                    Category = cat,
-                    CoinReward = coin,
-                    XPReward = xp,
-                    Briefing = brief,
-                    Answer = ans,
-                    Hint = hint
-                };
-                new AdminService().CreateMission(m);
-                MessageBox.Show("Mission Saved!");
-            };
-
+            var win = new GenericCreatorWindow();
+            win.SetupMode(CreationModeEnum.Mission);
+            
             win.Show();
         }
     }

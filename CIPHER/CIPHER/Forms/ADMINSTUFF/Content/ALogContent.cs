@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CIPHER.Forms.Content;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
