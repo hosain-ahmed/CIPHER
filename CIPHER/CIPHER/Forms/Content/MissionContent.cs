@@ -70,6 +70,11 @@ namespace CIPHER.Forms.Content
         {
 
         }
+
+        private void lblMissionPage1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

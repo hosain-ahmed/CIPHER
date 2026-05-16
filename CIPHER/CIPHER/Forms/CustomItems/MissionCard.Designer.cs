@@ -80,9 +80,8 @@
             // 
             lblDescription.AutoSize = true;
             lblDescription.BackColor = Color.White;
-            lblDescription.ForeColor = SystemColors.ControlLightLight;
-            lblDescription.Location = new Point(74, 215);
             lblDescription.ForeColor = Color.FromArgb(4, 159, 182);
+            lblDescription.Location = new Point(74, 215);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(102, 20);
             lblDescription.TabIndex = 4;
@@ -92,8 +91,6 @@
             // lblReward
             // 
             lblReward.AutoSize = true;
-           // lblReward.BackColor = Color.Black;
-            lblReward.ForeColor = SystemColors.ControlLightLight;
             lblReward.ForeColor = Color.FromArgb(4, 159, 182);
             lblReward.Location = new Point(150, 164);
             lblReward.Name = "lblReward";
@@ -105,9 +102,7 @@
             // lblDDifficulty
             // 
             lblDDifficulty.AutoSize = true;
-            lblDDifficulty.ForeColor = SystemColors.ControlLightLight;
             lblDDifficulty.ForeColor = Color.Black;
-
             lblDDifficulty.Location = new Point(26, 132);
             lblDDifficulty.Name = "lblDDifficulty";
             lblDDifficulty.Size = new Size(69, 20);
@@ -117,8 +112,6 @@
             // lblDReward
             // 
             lblDReward.AutoSize = true;
-            lblDReward.ForeColor = SystemColors.ControlLightLight;
-            //lblDReward.ForeColor = Color.FromArgb(4, 159, 182);
             lblDReward.ForeColor = Color.Black;
             lblDReward.Location = new Point(26, 164);
             lblDReward.Name = "lblDReward";
@@ -129,10 +122,8 @@
             // lblDifficulty
             // 
             lblDifficulty.AutoSize = true;
-            lblDifficulty.ForeColor = SystemColors.ControlLightLight;
-            lblDifficulty.Location = new Point(150, 132);
             lblDifficulty.ForeColor = Color.FromArgb(4, 159, 182);
-
+            lblDifficulty.Location = new Point(150, 132);
             lblDifficulty.Name = "lblDifficulty";
             lblDifficulty.Size = new Size(69, 20);
             lblDifficulty.TabIndex = 8;
@@ -160,6 +151,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Linen;
+            BackgroundImageLayout = ImageLayout.None;
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(lblDifficulty);

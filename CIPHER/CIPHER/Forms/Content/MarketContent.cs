@@ -1,4 +1,5 @@
 ﻿using CIPHER.Forms.CustomItems;
+using CIPHER.Helpers;
 using CIPHER.Models;
 using CIPHER.Services;
 using System;
@@ -22,6 +23,8 @@ namespace CIPHER.Forms.Content
 
             LoadBounties();
 
+            this.BackColor = Theme.BackgroundMain;
+
         }
 
         public void LoadBounties()
@@ -36,7 +39,7 @@ namespace CIPHER.Forms.Content
             foreach (var item in Bounties)
             {
                 GenericRow row = new GenericRow();
-                row.Width = flowLayoutPanel1.ClientSize.Width - 25;
+                row.Width = flowLayoutPanel1.ClientSize.Width - 10;
                 row.Height = 45;
 
                 row.DataReference = item; // Store the actual Bounty object here
@@ -162,6 +165,11 @@ namespace CIPHER.Forms.Content
         }
 
         private void btnSearch_MouseLeave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMarketTitle_Click(object sender, EventArgs e)
         {
 
         }
