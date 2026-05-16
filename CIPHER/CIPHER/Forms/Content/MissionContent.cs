@@ -2,6 +2,7 @@
 using CIPHER.Forms.CustomItems;
 using CIPHER.Helpers;
 using CIPHER.Services;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace CIPHER.Forms.Content
         {
             InitializeComponent();
             LoadMissions();
+            JustDoinSomething();
         }
 
         public void LoadMissions()
@@ -54,6 +56,21 @@ namespace CIPHER.Forms.Content
 
 
             }
+        }
+
+        private void JustDoinSomething()
+        {
+            using var conn = DBHelper.Getconnection();
+
+            var cmdTotal = new SqlCommand(@"SELECT COUNT(*) FROM Missions", conn);
+            int total = (int)cmdTotal.ExecuteScalar();
+
+            var cmdSolved = new SqlCommand(@"SELECT COUNT(*) FROM Progress WHERE UserID = @uid AND Solved =1", conn);
+                cmdSolved.Parameters.AddWithValue("@uid", SessionManager.CurrentUser.UserID);
+            int solved = (int)cmdSolved.ExecuteScalar();
+
+            
+            lblMissionpage6.Text = $"{solved}/{total}";
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

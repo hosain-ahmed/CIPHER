@@ -44,6 +44,21 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             txtNewPass.Visible = false;
             txtConfirmPass.Visible = false;
             btnConfirmPass.Visible = false;
+
+            using var conn = DBHelper.Getconnection();
+
+            var cmdTotal =  new SqlCommand(@"SELECT COUNT(*) FROM Missions", conn);
+            int total = (int)cmdTotal.ExecuteScalar();
+
+            var cmdSolved = new SqlCommand(@"SELECT COUNT(*) FROM Progress WHERE UserID = @uid AND Solved =1", conn);
+                cmdSolved.Parameters.AddWithValue("@uid", SessionManager.CurrentUser.UserID);
+            int solved = (int)cmdSolved.ExecuteScalar();
+
+            double rate = total > 0 ? (double)solved / total * 100 : 0 ;
+            lblMissionCompletion.Text = $"Missions Solved: {solved}/{total}";
+            lblSuccessRate.Text = $"Success Rate: {rate:F2}%";
+
+
         }
 
         private void AProfileContent_Load(object sender, EventArgs e)
@@ -83,7 +98,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var conn = DBHelper.Getconnection();
+                using var conn = DBHelper.Getconnection();
                 var cmd = new SqlCommand("UPDATE Users SET FullName = @FullName WHERE UserID = @UserID", conn);
                 cmd.Parameters.AddWithValue("@FullName", txtName.Text);
                 cmd.Parameters.AddWithValue("@UserID", SessionManager.CurrentUser.UserID);
@@ -98,7 +113,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
         {
             if (e.KeyCode == Keys.Enter)
             {
-                var conn = DBHelper.Getconnection();
+                using var conn = DBHelper.Getconnection();
                 var cmd = new SqlCommand("UPDATE Users SET Email = @Email WHERE UserID = @UserID", conn);
                 cmd.Parameters.AddWithValue("@Email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@UserID", SessionManager.CurrentUser.UserID);
