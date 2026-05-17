@@ -68,9 +68,10 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             panel1.BackColor = SystemColors.ControlDark;
             panel1.Controls.Add(flpLeaderboard);
             panel1.Controls.Add(panel2);
-            panel1.Location = new Point(90, 262);
+            panel1.Location = new Point(103, 349);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1031, 386);
+            panel1.Size = new Size(1178, 515);
             panel1.TabIndex = 0;
             // 
             // flpLeaderboard
@@ -79,10 +80,10 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             flpLeaderboard.BackColor = Color.FromArgb(244, 247, 246);
             flpLeaderboard.Dock = DockStyle.Fill;
             flpLeaderboard.FlowDirection = FlowDirection.TopDown;
-            flpLeaderboard.Location = new Point(0, 43);
+            flpLeaderboard.Location = new Point(0, 57);
             flpLeaderboard.Margin = new Padding(0);
             flpLeaderboard.Name = "flpLeaderboard";
-            flpLeaderboard.Size = new Size(1031, 343);
+            flpLeaderboard.Size = new Size(1178, 458);
             flpLeaderboard.TabIndex = 1;
             flpLeaderboard.WrapContents = false;
             // 
@@ -91,15 +92,20 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             panel2.BackColor = SystemColors.ControlDarkDark;
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
+            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1031, 43);
+            panel2.Size = new Size(1178, 57);
             panel2.TabIndex = 0;
             // 
             // btnRefresh
             // 
-            btnRefresh.Location = new Point(977, 56);
+            btnRefresh.FlatStyle = FlatStyle.Flat;
+            btnRefresh.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRefresh.ForeColor = Color.Teal;
+            btnRefresh.Location = new Point(1117, 75);
+            btnRefresh.Margin = new Padding(3, 4, 3, 4);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(144, 23);
+            btnRefresh.Size = new Size(165, 31);
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = true;
@@ -108,18 +114,21 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             // lblLeaderBoard
             // 
             lblLeaderBoard.AutoSize = true;
-            lblLeaderBoard.Location = new Point(90, 32);
+            lblLeaderBoard.Font = new Font("Bahnschrift SemiBold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblLeaderBoard.ForeColor = Color.Teal;
+            lblLeaderBoard.Location = new Point(103, 43);
             lblLeaderBoard.Name = "lblLeaderBoard";
-            lblLeaderBoard.Size = new Size(73, 15);
+            lblLeaderBoard.Size = new Size(383, 45);
             lblLeaderBoard.TabIndex = 6;
-            lblLeaderBoard.Text = "Leaderboard";
+            lblLeaderBoard.Text = "LEADERBOARD_CORE";
             // 
             // pnlPodium
             // 
             pnlPodium.Controls.Add(tableLayoutPanel1);
-            pnlPodium.Location = new Point(165, 102);
+            pnlPodium.Location = new Point(189, 136);
+            pnlPodium.Margin = new Padding(3, 4, 3, 4);
             pnlPodium.Name = "pnlPodium";
-            pnlPodium.Size = new Size(866, 154);
+            pnlPodium.Size = new Size(990, 205);
             pnlPodium.TabIndex = 7;
             // 
             // tableLayoutPanel1
@@ -134,109 +143,112 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             tableLayoutPanel1.Controls.Add(panel5, 2, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
+            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(866, 154);
+            tableLayoutPanel1.Size = new Size(990, 205);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // panel3
             // 
-            panel3.BackColor = SystemColors.ControlLight;
+            panel3.BackColor = Color.White;
             panel3.Controls.Add(lblBountiesCracked2);
             panel3.Controls.Add(lblMissionSolved2);
             panel3.Controls.Add(lblXP2);
             panel3.Controls.Add(lblName2);
             panel3.Controls.Add(lblPosition2);
             panel3.Dock = DockStyle.Bottom;
-            panel3.Location = new Point(3, 21);
+            panel3.Location = new Point(3, 28);
+            panel3.Margin = new Padding(3, 4, 3, 4);
             panel3.Name = "panel3";
-            panel3.Size = new Size(282, 130);
+            panel3.Size = new Size(323, 173);
             panel3.TabIndex = 8;
             // 
             // lblBountiesCracked2
             // 
             lblBountiesCracked2.AutoSize = true;
-            lblBountiesCracked2.Location = new Point(184, 85);
+            lblBountiesCracked2.Location = new Point(210, 113);
             lblBountiesCracked2.Name = "lblBountiesCracked2";
-            lblBountiesCracked2.Size = new Size(44, 15);
+            lblBountiesCracked2.Size = new Size(58, 20);
             lblBountiesCracked2.TabIndex = 4;
             lblBountiesCracked2.Text = "label11";
             // 
             // lblMissionSolved2
             // 
             lblMissionSolved2.AutoSize = true;
-            lblMissionSolved2.Location = new Point(184, 47);
+            lblMissionSolved2.Location = new Point(210, 63);
             lblMissionSolved2.Name = "lblMissionSolved2";
-            lblMissionSolved2.Size = new Size(44, 15);
+            lblMissionSolved2.Size = new Size(58, 20);
             lblMissionSolved2.TabIndex = 3;
             lblMissionSolved2.Text = "label10";
             // 
             // lblXP2
             // 
             lblXP2.AutoSize = true;
-            lblXP2.Location = new Point(12, 78);
+            lblXP2.Location = new Point(14, 104);
             lblXP2.Name = "lblXP2";
-            lblXP2.Size = new Size(38, 15);
+            lblXP2.Size = new Size(50, 20);
             lblXP2.TabIndex = 2;
             lblXP2.Text = "label9";
             // 
             // lblName2
             // 
             lblName2.AutoSize = true;
-            lblName2.Location = new Point(12, 47);
+            lblName2.Location = new Point(14, 63);
             lblName2.Name = "lblName2";
-            lblName2.Size = new Size(38, 15);
+            lblName2.Size = new Size(51, 20);
             lblName2.TabIndex = 1;
-            lblName2.Text = "label8";
+            lblName2.Text = "NAME";
             // 
             // lblPosition2
             // 
             lblPosition2.AutoSize = true;
-            lblPosition2.Location = new Point(12, 20);
+            lblPosition2.Location = new Point(140, 0);
             lblPosition2.Name = "lblPosition2";
-            lblPosition2.Size = new Size(38, 15);
+            lblPosition2.Size = new Size(26, 20);
             lblPosition2.TabIndex = 0;
-            lblPosition2.Text = "label7";
+            lblPosition2.Text = "#2";
             // 
             // panel4
             // 
-            panel4.BackColor = Color.SandyBrown;
+            panel4.BackColor = Color.White;
             panel4.Controls.Add(lblBountiesCracked1);
             panel4.Controls.Add(lblMissionSolved1);
             panel4.Controls.Add(lblXP1);
             panel4.Controls.Add(lblPosition1);
             panel4.Controls.Add(lblName1);
             panel4.Dock = DockStyle.Bottom;
-            panel4.Location = new Point(291, 3);
+            panel4.Location = new Point(332, 4);
+            panel4.Margin = new Padding(3, 4, 3, 4);
             panel4.Name = "panel4";
-            panel4.Size = new Size(282, 148);
+            panel4.Size = new Size(324, 197);
             panel4.TabIndex = 9;
             // 
             // lblBountiesCracked1
             // 
             lblBountiesCracked1.AutoSize = true;
-            lblBountiesCracked1.Location = new Point(125, 103);
+            lblBountiesCracked1.Location = new Point(143, 137);
             lblBountiesCracked1.Name = "lblBountiesCracked1";
-            lblBountiesCracked1.Size = new Size(38, 15);
+            lblBountiesCracked1.Size = new Size(50, 20);
             lblBountiesCracked1.TabIndex = 4;
             lblBountiesCracked1.Text = "label6";
             // 
             // lblMissionSolved1
             // 
             lblMissionSolved1.AutoSize = true;
-            lblMissionSolved1.Location = new Point(125, 55);
+            lblMissionSolved1.Location = new Point(143, 73);
             lblMissionSolved1.Name = "lblMissionSolved1";
-            lblMissionSolved1.Size = new Size(38, 15);
+            lblMissionSolved1.Size = new Size(50, 20);
             lblMissionSolved1.TabIndex = 3;
             lblMissionSolved1.Text = "label5";
             // 
             // lblXP1
             // 
             lblXP1.AutoSize = true;
-            lblXP1.Location = new Point(25, 101);
+            lblXP1.Location = new Point(29, 135);
             lblXP1.Name = "lblXP1";
-            lblXP1.Size = new Size(38, 15);
+            lblXP1.Size = new Size(50, 20);
             lblXP1.TabIndex = 2;
             lblXP1.Text = "label4";
             lblXP1.Click += label4_Click;
@@ -244,90 +256,93 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             // lblPosition1
             // 
             lblPosition1.AutoSize = true;
-            lblPosition1.Location = new Point(25, 18);
+            lblPosition1.Location = new Point(143, 0);
             lblPosition1.Name = "lblPosition1";
-            lblPosition1.Size = new Size(38, 15);
+            lblPosition1.Size = new Size(22, 20);
             lblPosition1.TabIndex = 1;
-            lblPosition1.Text = "label3";
+            lblPosition1.Text = "#!";
             // 
             // lblName1
             // 
             lblName1.AutoSize = true;
-            lblName1.Location = new Point(25, 55);
+            lblName1.Location = new Point(29, 73);
             lblName1.Name = "lblName1";
-            lblName1.Size = new Size(38, 15);
+            lblName1.Size = new Size(51, 20);
             lblName1.TabIndex = 0;
-            lblName1.Text = "label2";
+            lblName1.Text = "NAME";
             // 
             // panel5
             // 
-            panel5.BackColor = Color.RosyBrown;
+            panel5.BackColor = Color.White;
             panel5.Controls.Add(lblBountiesCracked3);
             panel5.Controls.Add(lblMissionSolved3);
             panel5.Controls.Add(lblName3);
             panel5.Controls.Add(lblXP3);
             panel5.Controls.Add(lblPosition3);
             panel5.Dock = DockStyle.Bottom;
-            panel5.Location = new Point(579, 41);
+            panel5.Location = new Point(662, 54);
+            panel5.Margin = new Padding(3, 4, 3, 4);
             panel5.Name = "panel5";
-            panel5.Size = new Size(284, 110);
+            panel5.Size = new Size(325, 147);
             panel5.TabIndex = 10;
             // 
             // lblBountiesCracked3
             // 
             lblBountiesCracked3.AutoSize = true;
-            lblBountiesCracked3.Location = new Point(140, 95);
+            lblBountiesCracked3.Location = new Point(160, 127);
             lblBountiesCracked3.Name = "lblBountiesCracked3";
-            lblBountiesCracked3.Size = new Size(44, 15);
+            lblBountiesCracked3.Size = new Size(58, 20);
             lblBountiesCracked3.TabIndex = 4;
             lblBountiesCracked3.Text = "label16";
             // 
             // lblMissionSolved3
             // 
             lblMissionSolved3.AutoSize = true;
-            lblMissionSolved3.Location = new Point(140, 58);
+            lblMissionSolved3.Location = new Point(160, 77);
             lblMissionSolved3.Name = "lblMissionSolved3";
-            lblMissionSolved3.Size = new Size(44, 15);
+            lblMissionSolved3.Size = new Size(58, 20);
             lblMissionSolved3.TabIndex = 3;
             lblMissionSolved3.Text = "label15";
             // 
             // lblName3
             // 
             lblName3.AutoSize = true;
-            lblName3.Location = new Point(18, 58);
+            lblName3.Location = new Point(21, 77);
             lblName3.Name = "lblName3";
-            lblName3.Size = new Size(44, 15);
+            lblName3.Size = new Size(51, 20);
             lblName3.TabIndex = 2;
-            lblName3.Text = "label14";
+            lblName3.Text = "NAME";
             // 
             // lblXP3
             // 
             lblXP3.AutoSize = true;
-            lblXP3.Location = new Point(18, 95);
+            lblXP3.Location = new Point(21, 127);
             lblXP3.Name = "lblXP3";
-            lblXP3.Size = new Size(44, 15);
+            lblXP3.Size = new Size(58, 20);
             lblXP3.TabIndex = 1;
             lblXP3.Text = "label13";
             // 
             // lblPosition3
             // 
             lblPosition3.AutoSize = true;
-            lblPosition3.Location = new Point(18, 17);
+            lblPosition3.Location = new Point(145, 0);
             lblPosition3.Name = "lblPosition3";
-            lblPosition3.Size = new Size(44, 15);
+            lblPosition3.Size = new Size(26, 20);
             lblPosition3.TabIndex = 0;
-            lblPosition3.Text = "label12";
+            lblPosition3.Text = "#3";
             // 
             // ALeaderBoardContent
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             Controls.Add(pnlPodium);
             Controls.Add(lblLeaderBoard);
             Controls.Add(btnRefresh);
             Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ALeaderBoardContent";
-            Size = new Size(1227, 708);
+            Size = new Size(1402, 944);
             panel1.ResumeLayout(false);
             pnlPodium.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

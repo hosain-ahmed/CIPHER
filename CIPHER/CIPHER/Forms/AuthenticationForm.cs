@@ -184,11 +184,19 @@ namespace CIPHER.Forms
                     var (s, u, e) = auth.Login("testy", "testy"); // Use a known user in his DB
                     if (s) MessageBox.Show("Database Connection is FINE. The problem is the Terminal Input.");
                 }
-                var (success, user, error) = auth.Login(tempUser, passwordBuffer);
+                
 
-                if (success)
+                else if (tempUser == "123")
                 {
-                    rtbLogin.AppendText($"WELCOME BACK AGENT : {user.Codename}" + Environment.NewLine);
+                    var (s, u, e) = auth.Login("123", "123"); // Use a known user in his DB
+                    if (s) MessageBox.Show("Database Connection is FINE. The problem is the Terminal Input.");
+                }
+                var (successs, users, error) = auth.Login(tempUser, passwordBuffer);
+
+
+                if (successs)
+                {
+                    rtbLogin.AppendText($"WELCOME BACK AGENT : {users.Codename}" + Environment.NewLine);
                     await Task.Delay(1000);
                     
                     
