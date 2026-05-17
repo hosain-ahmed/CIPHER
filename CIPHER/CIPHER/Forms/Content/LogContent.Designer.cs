@@ -45,6 +45,7 @@ namespace CIPHER.Forms.Content
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel1.BackColor = Color.Navy;
             panel1.Controls.Add(dgvLogs);
             panel1.Controls.Add(panel2);
@@ -56,21 +57,21 @@ namespace CIPHER.Forms.Content
             // 
             // dgvLogs
             // 
+            dgvLogs.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             dgvLogs.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCellsExceptHeaders;
             dgvLogs.BackgroundColor = Color.FromArgb(244, 247, 246);
             dgvLogs.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvLogs.Dock = DockStyle.Fill;
-            dgvLogs.Location = new Point(0, 79);
+            dgvLogs.Location = new Point(0, 0);
             dgvLogs.Margin = new Padding(3, 4, 3, 4);
             dgvLogs.Name = "dgvLogs";
             dgvLogs.RowHeadersWidth = 51;
-            dgvLogs.Size = new Size(1178, 697);
+            dgvLogs.Size = new Size(1178, 776);
             dgvLogs.TabIndex = 3;
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel2.BackColor = Color.BurlyWood;
-            panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
             panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
@@ -104,6 +105,7 @@ namespace CIPHER.Forms.Content
             // 
             // textBox1
             // 
+            textBox1.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             textBox1.Location = new Point(910, 137);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
@@ -115,6 +117,7 @@ namespace CIPHER.Forms.Content
             // 
             // btnSearch
             // 
+            btnSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSearch.BackColor = Color.Teal;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);

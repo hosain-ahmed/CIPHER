@@ -24,7 +24,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
         private void LoadUsers()
         {
-            
+
             List<User> users = adminService.GetAllUsers();
 
             userList.Clear();
@@ -129,7 +129,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
         private void btnLock_Click(object sender, EventArgs e)
         {
-            if(tempUser==null) return;
+            if (tempUser == null) return;
 
             btnLock.Text = tempUser.Status == "Active" ? "LOCK USER" : "UNLOCK USER";
 
@@ -142,12 +142,12 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
                 adminService.UnlockAgent(int.Parse(tempUser.UserID));
             }
 
-                LoadUsers(); // Refresh the user list to reflect changes
+            LoadUsers(); // Refresh the user list to reflect changes
         }
 
         private void btnPromote_Click(object sender, EventArgs e)
         {
-            if(tempUser==null) return;
+            if (tempUser == null) return;
 
             btnPromote.Text = tempUser.Role == "Agent" ? "PROMOTE TO ADMIN" : "DEMOTE TO AGENT";
 
@@ -165,7 +165,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
         private void btnReset_Click(object sender, EventArgs e)
         {
-            if(tempUser==null) return;
+            if (tempUser == null) return;
 
             var result = MessageBox.Show($"RESET PROGRESS FOR {tempUser.Codename}?", "CONFIRM PROGRESS RESET", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             adminService.ResetAgentProgress(int.Parse(tempUser.UserID));
@@ -199,6 +199,21 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
         }
 
         private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblActiveSessions_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCurrentUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblCryptcoin_Click(object sender, EventArgs e)
         {
 
         }

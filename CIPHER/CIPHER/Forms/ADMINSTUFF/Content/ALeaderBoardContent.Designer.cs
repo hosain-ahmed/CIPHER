@@ -99,16 +99,17 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             // 
             // btnRefresh
             // 
+            btnRefresh.BackColor = Color.Teal;
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRefresh.ForeColor = Color.Teal;
-            btnRefresh.Location = new Point(1117, 75);
+            btnRefresh.ForeColor = Color.White;
+            btnRefresh.Location = new Point(1116, 71);
             btnRefresh.Margin = new Padding(3, 4, 3, 4);
             btnRefresh.Name = "btnRefresh";
-            btnRefresh.Size = new Size(165, 31);
+            btnRefresh.Size = new Size(165, 38);
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Refresh";
-            btnRefresh.UseVisualStyleBackColor = true;
+            btnRefresh.UseVisualStyleBackColor = false;
             btnRefresh.Click += btnRefresh_Click;
             // 
             // lblLeaderBoard
@@ -168,45 +169,56 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             // lblBountiesCracked2
             // 
             lblBountiesCracked2.AutoSize = true;
-            lblBountiesCracked2.Location = new Point(210, 113);
+            lblBountiesCracked2.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBountiesCracked2.Location = new Point(185, 113);
             lblBountiesCracked2.Name = "lblBountiesCracked2";
-            lblBountiesCracked2.Size = new Size(58, 20);
+            lblBountiesCracked2.Size = new Size(125, 18);
             lblBountiesCracked2.TabIndex = 4;
-            lblBountiesCracked2.Text = "label11";
+            lblBountiesCracked2.Text = "Bounties Cracked";
             // 
             // lblMissionSolved2
             // 
             lblMissionSolved2.AutoSize = true;
-            lblMissionSolved2.Location = new Point(210, 63);
+            lblMissionSolved2.FlatStyle = FlatStyle.Flat;
+            lblMissionSolved2.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMissionSolved2.Location = new Point(188, 63);
             lblMissionSolved2.Name = "lblMissionSolved2";
-            lblMissionSolved2.Size = new Size(58, 20);
+            lblMissionSolved2.Size = new Size(123, 21);
             lblMissionSolved2.TabIndex = 3;
-            lblMissionSolved2.Text = "label10";
+            lblMissionSolved2.Text = "Mission Solved";
             // 
             // lblXP2
             // 
             lblXP2.AutoSize = true;
-            lblXP2.Location = new Point(14, 104);
+            lblXP2.FlatStyle = FlatStyle.Flat;
+            lblXP2.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblXP2.Location = new Point(36, 111);
             lblXP2.Name = "lblXP2";
-            lblXP2.Size = new Size(50, 20);
+            lblXP2.Size = new Size(26, 18);
             lblXP2.TabIndex = 2;
-            lblXP2.Text = "label9";
+            lblXP2.Text = "XP";
             // 
             // lblName2
             // 
             lblName2.AutoSize = true;
+            lblName2.BackColor = Color.Aqua;
+            lblName2.FlatStyle = FlatStyle.Flat;
+            lblName2.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblName2.Location = new Point(14, 63);
             lblName2.Name = "lblName2";
-            lblName2.Size = new Size(51, 20);
+            lblName2.Size = new Size(65, 24);
             lblName2.TabIndex = 1;
             lblName2.Text = "NAME";
             // 
             // lblPosition2
             // 
             lblPosition2.AutoSize = true;
+            lblPosition2.BackColor = Color.Aqua;
+            lblPosition2.FlatStyle = FlatStyle.Popup;
+            lblPosition2.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPosition2.Location = new Point(140, 0);
             lblPosition2.Name = "lblPosition2";
-            lblPosition2.Size = new Size(26, 20);
+            lblPosition2.Size = new Size(38, 28);
             lblPosition2.TabIndex = 0;
             lblPosition2.Text = "#2";
             // 
@@ -228,46 +240,58 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             // lblBountiesCracked1
             // 
             lblBountiesCracked1.AutoSize = true;
-            lblBountiesCracked1.Location = new Point(143, 137);
+            lblBountiesCracked1.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBountiesCracked1.Location = new Point(172, 137);
             lblBountiesCracked1.Name = "lblBountiesCracked1";
-            lblBountiesCracked1.Size = new Size(50, 20);
+            lblBountiesCracked1.Size = new Size(143, 21);
             lblBountiesCracked1.TabIndex = 4;
-            lblBountiesCracked1.Text = "label6";
+            lblBountiesCracked1.Text = "Bounties Cracked";
             // 
             // lblMissionSolved1
             // 
             lblMissionSolved1.AutoSize = true;
-            lblMissionSolved1.Location = new Point(143, 73);
+            lblMissionSolved1.FlatStyle = FlatStyle.Flat;
+            lblMissionSolved1.Font = new Font("Bahnschrift SemiBold", 10.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMissionSolved1.Location = new Point(178, 73);
             lblMissionSolved1.Name = "lblMissionSolved1";
-            lblMissionSolved1.Size = new Size(50, 20);
+            lblMissionSolved1.Size = new Size(132, 22);
             lblMissionSolved1.TabIndex = 3;
-            lblMissionSolved1.Text = "label5";
+            lblMissionSolved1.Text = "Mission Solved";
             // 
             // lblXP1
             // 
             lblXP1.AutoSize = true;
-            lblXP1.Location = new Point(29, 135);
+            lblXP1.FlatStyle = FlatStyle.Flat;
+            lblXP1.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblXP1.Location = new Point(43, 135);
             lblXP1.Name = "lblXP1";
-            lblXP1.Size = new Size(50, 20);
+            lblXP1.Size = new Size(31, 21);
             lblXP1.TabIndex = 2;
-            lblXP1.Text = "label4";
+            lblXP1.Text = "XP";
             lblXP1.Click += label4_Click;
             // 
             // lblPosition1
             // 
             lblPosition1.AutoSize = true;
+            lblPosition1.BackColor = Color.Teal;
+            lblPosition1.Font = new Font("Bahnschrift SemiBold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblPosition1.ForeColor = Color.White;
             lblPosition1.Location = new Point(143, 0);
             lblPosition1.Name = "lblPosition1";
-            lblPosition1.Size = new Size(22, 20);
+            lblPosition1.Size = new Size(41, 34);
             lblPosition1.TabIndex = 1;
-            lblPosition1.Text = "#!";
+            lblPosition1.Text = "#1";
             // 
             // lblName1
             // 
             lblName1.AutoSize = true;
+            lblName1.BackColor = Color.Teal;
+            lblName1.FlatStyle = FlatStyle.Flat;
+            lblName1.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName1.ForeColor = Color.White;
             lblName1.Location = new Point(29, 73);
             lblName1.Name = "lblName1";
-            lblName1.Size = new Size(51, 20);
+            lblName1.Size = new Size(65, 24);
             lblName1.TabIndex = 0;
             lblName1.Text = "NAME";
             // 
@@ -289,45 +313,56 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             // lblBountiesCracked3
             // 
             lblBountiesCracked3.AutoSize = true;
-            lblBountiesCracked3.Location = new Point(160, 127);
+            lblBountiesCracked3.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBountiesCracked3.Location = new Point(169, 122);
             lblBountiesCracked3.Name = "lblBountiesCracked3";
-            lblBountiesCracked3.Size = new Size(58, 20);
+            lblBountiesCracked3.Size = new Size(125, 18);
             lblBountiesCracked3.TabIndex = 4;
-            lblBountiesCracked3.Text = "label16";
+            lblBountiesCracked3.Text = "Bounties Cracked";
             // 
             // lblMissionSolved3
             // 
             lblMissionSolved3.AutoSize = true;
-            lblMissionSolved3.Location = new Point(160, 77);
+            lblMissionSolved3.FlatStyle = FlatStyle.Flat;
+            lblMissionSolved3.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMissionSolved3.Location = new Point(170, 74);
             lblMissionSolved3.Name = "lblMissionSolved3";
-            lblMissionSolved3.Size = new Size(58, 20);
+            lblMissionSolved3.Size = new Size(123, 21);
             lblMissionSolved3.TabIndex = 3;
-            lblMissionSolved3.Text = "label15";
+            lblMissionSolved3.Text = "Mission Solved";
             // 
             // lblName3
             // 
             lblName3.AutoSize = true;
-            lblName3.Location = new Point(21, 77);
+            lblName3.BackColor = Color.Thistle;
+            lblName3.FlatStyle = FlatStyle.Flat;
+            lblName3.Font = new Font("Bahnschrift SemiBold SemiConden", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblName3.Location = new Point(23, 75);
             lblName3.Name = "lblName3";
-            lblName3.Size = new Size(51, 20);
+            lblName3.Size = new Size(55, 24);
             lblName3.TabIndex = 2;
             lblName3.Text = "NAME";
             // 
             // lblXP3
             // 
             lblXP3.AutoSize = true;
-            lblXP3.Location = new Point(21, 127);
+            lblXP3.FlatStyle = FlatStyle.Flat;
+            lblXP3.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblXP3.Location = new Point(35, 122);
             lblXP3.Name = "lblXP3";
-            lblXP3.Size = new Size(58, 20);
+            lblXP3.Size = new Size(26, 18);
             lblXP3.TabIndex = 1;
-            lblXP3.Text = "label13";
+            lblXP3.Text = "XP";
             // 
             // lblPosition3
             // 
             lblPosition3.AutoSize = true;
+            lblPosition3.BackColor = Color.Thistle;
+            lblPosition3.FlatStyle = FlatStyle.Flat;
+            lblPosition3.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblPosition3.Location = new Point(145, 0);
             lblPosition3.Name = "lblPosition3";
-            lblPosition3.Size = new Size(26, 20);
+            lblPosition3.Size = new Size(33, 24);
             lblPosition3.TabIndex = 0;
             lblPosition3.Text = "#3";
             // 

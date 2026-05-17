@@ -47,14 +47,14 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
             using var conn = DBHelper.Getconnection();
 
-            var cmdTotal =  new SqlCommand(@"SELECT COUNT(*) FROM Missions", conn);
+            var cmdTotal = new SqlCommand(@"SELECT COUNT(*) FROM Missions", conn);
             int total = (int)cmdTotal.ExecuteScalar();
 
             var cmdSolved = new SqlCommand(@"SELECT COUNT(*) FROM Progress WHERE UserID = @uid AND Solved =1", conn);
-                cmdSolved.Parameters.AddWithValue("@uid", SessionManager.CurrentUser.UserID);
+            cmdSolved.Parameters.AddWithValue("@uid", SessionManager.CurrentUser.UserID);
             int solved = (int)cmdSolved.ExecuteScalar();
 
-            double rate = total > 0 ? (double)solved / total * 100 : 0 ;
+            double rate = total > 0 ? (double)solved / total * 100 : 0;
             lblMissionCompletion.Text = $"Missions Solved: {solved}/{total}";
             lblSuccessRate.Text = $"Success Rate: {rate:F2}%";
 
@@ -104,8 +104,8 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
                 cmd.Parameters.AddWithValue("@UserID", SessionManager.CurrentUser.UserID);
                 cmd.ExecuteNonQuery();
                 lblFullname.Text = "Full Name: " + txtName.Text;
-                txtName.Clear  ();
-               
+                txtName.Clear();
+
             }
         }
 
@@ -120,7 +120,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
                 cmd.ExecuteNonQuery();
                 lblEmail.Text = "Email: " + txtEmail.Text;
                 txtEmail.Clear();
-                
+
             }
         }
 
@@ -158,12 +158,22 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             SessionManager.CurrentUser.PasswordHash = newHash;
 
             //lblError.ForeColor = Color.FromArgb(0, 255, 136);
-            MessageBox.Show ("Password updated successfully.");
+            MessageBox.Show("Password updated successfully.");
 
             // Clear fields
             txtOldPass.Clear();
             txtNewPass.Clear();
             txtConfirmPass.Clear();
+        }
+
+        private void lblFullname_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

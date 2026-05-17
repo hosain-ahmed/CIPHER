@@ -33,12 +33,13 @@
             // 
             // loginTerminal
             // 
-            loginTerminal.BackColor = SystemColors.InactiveCaptionText;
+            loginTerminal.BackColor = SystemColors.ControlLight;
             loginTerminal.Dock = DockStyle.Fill;
             loginTerminal.ForeColor = SystemColors.Window;
             loginTerminal.Location = new Point(0, 0);
+            loginTerminal.Margin = new Padding(3, 4, 3, 4);
             loginTerminal.Name = "loginTerminal";
-            loginTerminal.Size = new Size(921, 635);
+            loginTerminal.Size = new Size(1053, 847);
             loginTerminal.TabIndex = 0;
             loginTerminal.Text = "";
             loginTerminal.SelectionChanged += loginTerminal_SelectionChanged;
@@ -49,12 +50,13 @@
             // 
             // LoginControl
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaptionText;
             Controls.Add(loginTerminal);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "LoginControl";
-            Size = new Size(921, 635);
+            Size = new Size(1053, 847);
             ResumeLayout(false);
         }
 
