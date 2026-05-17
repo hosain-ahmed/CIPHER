@@ -39,7 +39,7 @@
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1264, 711);
+            panel1.Size = new Size(1264, 731);
             panel1.TabIndex = 0;
             // 
             // aDashboardContainer1
@@ -47,14 +47,14 @@
             aDashboardContainer1.Dock = DockStyle.Fill;
             aDashboardContainer1.Location = new Point(0, 0);
             aDashboardContainer1.Name = "aDashboardContainer1";
-            aDashboardContainer1.Size = new Size(1264, 711);
+            aDashboardContainer1.Size = new Size(1264, 731);
             aDashboardContainer1.TabIndex = 0;
             // 
             // AdminMainShell
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1264, 711);
+            ClientSize = new Size(1264, 731);
             Controls.Add(panel1);
             Name = "AdminMainShell";
             StartPosition = FormStartPosition.CenterScreen;

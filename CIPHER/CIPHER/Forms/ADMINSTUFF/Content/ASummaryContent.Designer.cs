@@ -96,7 +96,7 @@
             // 
             // panel2
             // 
-            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel2.BackColor = SystemColors.ControlLight;
             panel2.Controls.Add(btnLock);
             panel2.Controls.Add(btnDelete);
@@ -110,7 +110,7 @@
             // 
             // btnLock
             // 
-            btnLock.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLock.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnLock.Location = new Point(16, 397);
             btnLock.Name = "btnLock";
             btnLock.Size = new Size(245, 23);
@@ -121,7 +121,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnDelete.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnDelete.Location = new Point(16, 465);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(245, 32);
@@ -132,7 +132,7 @@
             // 
             // btnReset
             // 
-            btnReset.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            btnReset.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnReset.Location = new Point(141, 426);
             btnReset.Name = "btnReset";
             btnReset.Size = new Size(120, 33);
@@ -143,7 +143,7 @@
             // 
             // pnlUserDetails
             // 
-            pnlUserDetails.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
+            pnlUserDetails.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             pnlUserDetails.BackColor = SystemColors.AppWorkspace;
             pnlUserDetails.Controls.Add(lblFactionID);
             pnlUserDetails.Controls.Add(lblXP);
@@ -262,7 +262,6 @@
             // 
             // btnPromote
             // 
-            btnPromote.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             btnPromote.Location = new Point(16, 426);
             btnPromote.Name = "btnPromote";
             btnPromote.Size = new Size(119, 33);
