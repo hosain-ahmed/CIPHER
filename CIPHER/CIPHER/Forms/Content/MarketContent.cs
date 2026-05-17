@@ -20,11 +20,33 @@ namespace CIPHER.Forms.Content
         public MarketContent()
         {
             InitializeComponent();
-
             LoadBounties();
+
 
             this.BackColor = Theme.BackgroundMain;
 
+        }
+
+        private void ShowSection(string section)
+        {
+            // Hide everything first
+            flowLayoutPanel1.Visible = false;
+            pnlHolder.Visible = false;
+
+            switch (section)
+            {
+                case "bounties":
+                    flowLayoutPanel1.Visible = true;
+                    LoadBounties();
+                    break;
+                case "hitlist":
+                    flowLayoutPanel1.Visible = true;
+                    LoadHitlist();
+                    break;
+                case "items":
+                    pnlHolder.Visible = true;
+                    break;
+            }
         }
 
         public void LoadBounties()
@@ -64,114 +86,37 @@ namespace CIPHER.Forms.Content
             flowLayoutPanel1.Refresh(); // Force the panel to redraw
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        public void LoadHitlist()
         {
 
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        public void LoadExtras()
         {
 
         }
 
-        private void btnHint_Click(object sender, EventArgs e)
+        public void LoadView(UserControl view)
         {
+            if (pnlHolder.Controls.Count > 0)
+            {
+                pnlHolder.Controls[0].Dispose();
+            }
+            pnlHolder.Controls.Clear();
 
+            view.Dock = DockStyle.Fill;
+            pnlHolder.Controls.Add(view);
         }
 
-        private void btnHint_MouseHover(object sender, EventArgs e)
+        private void btnBountyShow_Click(object sender, EventArgs e)
         {
-
+            ShowSection("bounties");
         }
 
-        private void btnHint_MouseEnter(object sender, EventArgs e)
+        private void btnExtraFeaturesShow_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void btnHint_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBounty_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBounty_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnBounty_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_MouseEnter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_MouseHover(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSearch_MouseLeave(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblMarketTitle_Click(object sender, EventArgs e)
-        {
-
+            ShowSection("items");
         }
     }
 }

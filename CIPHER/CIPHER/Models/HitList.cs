@@ -14,6 +14,7 @@ namespace CIPHER.Models
         public string Status { get; set; }
         public DateTime ExpiresAt { get; set; }
         public DateTime? ExecutedAt { get; set; }
+        public string AttackerCodename { get; set; }
     }
 
 }

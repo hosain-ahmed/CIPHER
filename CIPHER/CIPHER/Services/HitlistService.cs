@@ -106,6 +106,37 @@ namespace CIPHER.Services
             }
         }
 
+        public List<HitList> GetOpenHitsForAgent(int currentUserID)
+        {
+            var list = new List<HitList>();
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand(@"
+        SELECT h.*, 
+               a.Codename as AttackerCodename,
+               t.Codename as TargetCodename
+        FROM Hitlist h
+        JOIN Users a ON h.AttackerID = a.UserID
+        JOIN Users t ON h.TargetID = t.UserID
+        WHERE h.Status = 'Active'
+        AND h.ExpiresAt > GETDATE()
+        AND h.AttackerID != @uid
+        AND h.TargetID != @uid
+        ORDER BY h.CreatedAt DESC", conn);
+            cmd.Parameters.AddWithValue("@uid", currentUserID);
+            using var r = cmd.ExecuteReader();
+            while (r.Read()) list.Add(new HitList
+            {
+                HitID = (int)r["HitID"],
+                AttackerID = (int)r["AttackerID"],
+                TargetID = (int)r["TargetID"],
+                AttackerCodename = r["AttackerCodename"].ToString(),
+                TargetCodename = r["TargetCodename"].ToString(),
+                CoinsStaked = (int)r["CoinsStaked"],
+                ExpiresAt = (DateTime)r["ExpiresAt"]
+            });
+            return list;
+        }
+
         // Get active hit for current attacker
         public HitList GetMyActiveHit(int attackerID)
         {
@@ -268,6 +299,35 @@ namespace CIPHER.Services
             {
                 tx.Rollback();
                 return (false, "Execution failed.");
+            }
+        }
+
+        public void ExpireHit(int hitID, int attackerID)
+        {
+            using var conn = DBHelper.Getconnection();
+            var tx = conn.BeginTransaction();
+            try
+            {
+                // Mark expired
+                new SqlCommand(
+                    "UPDATE Hitlist SET Status='Expired' WHERE HitID=@id",
+                    conn, tx)
+                {
+                    Parameters = { new("@id", hitID) }
+                }.ExecuteNonQuery();
+
+                // Penalty — lose 25 coins for failed contract
+                new EconomyService().AddCoin(
+                    attackerID, -25,
+                    "Hit contract expired — penalty", conn, tx);
+
+                tx.Commit();
+                new AuditService().Log(attackerID, "HitExpired",
+                    $"Contract #{hitID} expired");
+            }
+            catch
+            {
+                tx.Rollback();
             }
         }
 

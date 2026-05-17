@@ -31,7 +31,7 @@ namespace CIPHER.Forms.Content
         private void InitializeComponent()
         {
             flowLayoutPanel1 = new FlowLayoutPanel();
-            panel1 = new Panel();
+            pnlHolder = new Panel();
             panel3 = new Panel();
             panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
@@ -43,53 +43,71 @@ namespace CIPHER.Forms.Content
             label1 = new Label();
             lblMarketTitle = new Label();
             lblExtraStuff = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            btnBounty = new Button();
+            btnBountyShow = new Button();
+            btnExtraFeaturesShow = new Button();
+            btnHitlistShow = new Button();
+            btnCreate = new Button();
             txtSearch = new TextBox();
             btnSearch = new Button();
             panel4 = new Panel();
-            btnHint = new Button();
-            panel1.SuspendLayout();
+            pnlContent = new Panel();
+            panel8 = new Panel();
+            lblBBD = new Label();
+            lblBB = new Label();
+            btnBBBuy = new Button();
+            panel7 = new Panel();
+            lblMSD = new Label();
+            lblMS = new Label();
+            btnMSBuy = new Button();
+            panel6 = new Panel();
+            lblXPD = new Label();
+            lblXP = new Label();
+            btnXPBuy = new Button();
+            panel5 = new Panel();
+            lblGPD = new Label();
+            lblGP = new Label();
+            btnGPBuy = new Button();
+            pnlHolder.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            pnlContent.SuspendLayout();
+            panel8.SuspendLayout();
+            panel7.SuspendLayout();
+            panel6.SuspendLayout();
+            panel5.SuspendLayout();
             SuspendLayout();
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = Theme.BackgroundMain;
+            flowLayoutPanel1.BackColor = Color.FromArgb(244, 247, 246);
             flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.FlowDirection = FlowDirection.TopDown;
             flowLayoutPanel1.Location = new Point(0, 0);
-            flowLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(1199, 631);
+            flowLayoutPanel1.Size = new Size(1049, 473);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.WrapContents = false;
             // 
-            // panel1
+            // pnlHolder
             // 
-            panel1.BackColor = SystemColors.WindowFrame;
-            panel1.Controls.Add(panel3);
-            panel1.Controls.Add(panel2);
-            panel1.ForeColor = Color.Firebrick;
-            panel1.Location = new Point(47, 229);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(1199, 695);
-            panel1.TabIndex = 2;
+            pnlHolder.BackColor = SystemColors.WindowFrame;
+            pnlHolder.Controls.Add(panel3);
+            pnlHolder.Controls.Add(panel2);
+            pnlHolder.ForeColor = Color.Firebrick;
+            pnlHolder.Location = new Point(41, 172);
+            pnlHolder.Name = "pnlHolder";
+            pnlHolder.Size = new Size(1049, 521);
+            pnlHolder.TabIndex = 2;
             // 
             // panel3
             // 
             panel3.Controls.Add(flowLayoutPanel1);
             panel3.Dock = DockStyle.Fill;
             panel3.ForeColor = Color.Crimson;
-            panel3.Location = new Point(0, 64);
-            panel3.Margin = new Padding(3, 4, 3, 4);
+            panel3.Location = new Point(0, 48);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1199, 631);
+            panel3.Size = new Size(1049, 473);
             panel3.TabIndex = 3;
             // 
             // panel2
@@ -98,21 +116,20 @@ namespace CIPHER.Forms.Content
             panel2.Controls.Add(tableLayoutPanel1);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(0, 0);
-            panel2.Margin = new Padding(3, 4, 3, 4);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1199, 64);
+            panel2.Size = new Size(1049, 48);
             panel2.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.BackColor = Color.BurlyWood;
             tableLayoutPanel1.ColumnCount = 6;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 91F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 80F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 44.4444427F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 17.9363556F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.4291229F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2222214F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 74F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 66F));
             tableLayoutPanel1.Controls.Add(lblID, 0, 0);
             tableLayoutPanel1.Controls.Add(lblTitle, 1, 0);
             tableLayoutPanel1.Controls.Add(lblEmpty, 2, 0);
@@ -122,11 +139,10 @@ namespace CIPHER.Forms.Content
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.ForeColor = Color.DarkSlateGray;
             tableLayoutPanel1.Location = new Point(0, 0);
-            tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Size = new Size(1199, 64);
+            tableLayoutPanel1.Size = new Size(1049, 48);
             tableLayoutPanel1.TabIndex = 0;
             // 
             // lblID
@@ -136,7 +152,7 @@ namespace CIPHER.Forms.Content
             lblID.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblID.Location = new Point(3, 0);
             lblID.Name = "lblID";
-            lblID.Size = new Size(85, 64);
+            lblID.Size = new Size(74, 48);
             lblID.TabIndex = 0;
             lblID.Text = "ID";
             lblID.TextAlign = ContentAlignment.MiddleCenter;
@@ -146,9 +162,9 @@ namespace CIPHER.Forms.Content
             lblTitle.BackColor = Color.BurlyWood;
             lblTitle.Dock = DockStyle.Fill;
             lblTitle.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.Location = new Point(94, 0);
+            lblTitle.Location = new Point(83, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(453, 64);
+            lblTitle.Size = new Size(395, 48);
             lblTitle.TabIndex = 1;
             lblTitle.Text = "Title";
             lblTitle.TextAlign = ContentAlignment.MiddleCenter;
@@ -157,9 +173,9 @@ namespace CIPHER.Forms.Content
             // 
             lblEmpty.BackColor = Color.BurlyWood;
             lblEmpty.Dock = DockStyle.Fill;
-            lblEmpty.Location = new Point(553, 0);
+            lblEmpty.Location = new Point(484, 0);
             lblEmpty.Name = "lblEmpty";
-            lblEmpty.Size = new Size(179, 64);
+            lblEmpty.Size = new Size(155, 48);
             lblEmpty.TabIndex = 2;
             lblEmpty.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -168,9 +184,9 @@ namespace CIPHER.Forms.Content
             lblReward.BackColor = Color.BurlyWood;
             lblReward.Dock = DockStyle.Fill;
             lblReward.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblReward.Location = new Point(738, 0);
+            lblReward.Location = new Point(645, 0);
             lblReward.Name = "lblReward";
-            lblReward.Size = new Size(153, 64);
+            lblReward.Size = new Size(133, 48);
             lblReward.TabIndex = 3;
             lblReward.Text = "Reward";
             lblReward.TextAlign = ContentAlignment.MiddleCenter;
@@ -180,9 +196,9 @@ namespace CIPHER.Forms.Content
             lblStatus.BackColor = Color.BurlyWood;
             lblStatus.Dock = DockStyle.Fill;
             lblStatus.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStatus.Location = new Point(897, 0);
+            lblStatus.Location = new Point(784, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(223, 64);
+            lblStatus.Size = new Size(194, 48);
             lblStatus.TabIndex = 4;
             lblStatus.Text = "Status";
             lblStatus.TextAlign = ContentAlignment.MiddleCenter;
@@ -192,9 +208,9 @@ namespace CIPHER.Forms.Content
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
             label1.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(1126, 0);
+            label1.Location = new Point(984, 0);
             label1.Name = "label1";
-            label1.Size = new Size(70, 64);
+            label1.Size = new Size(62, 48);
             label1.TabIndex = 5;
             label1.Text = "Action";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -205,101 +221,85 @@ namespace CIPHER.Forms.Content
             lblMarketTitle.FlatStyle = FlatStyle.Flat;
             lblMarketTitle.Font = new Font("Bahnschrift SemiBold", 22.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMarketTitle.ForeColor = Color.Teal;
-            lblMarketTitle.Location = new Point(50, 31);
+            lblMarketTitle.Location = new Point(44, 23);
             lblMarketTitle.Name = "lblMarketTitle";
-            lblMarketTitle.Size = new Size(287, 45);
+            lblMarketTitle.Size = new Size(229, 36);
             lblMarketTitle.TabIndex = 3;
             lblMarketTitle.Text = "BLACK MARKET";
-            lblMarketTitle.Click += lblMarketTitle_Click;
             // 
             // lblExtraStuff
             // 
             lblExtraStuff.AutoSize = true;
             lblExtraStuff.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             lblExtraStuff.ForeColor = Color.Gray;
-            lblExtraStuff.Location = new Point(54, 93);
+            lblExtraStuff.Location = new Point(47, 70);
             lblExtraStuff.Name = "lblExtraStuff";
-            lblExtraStuff.Size = new Size(689, 24);
+            lblExtraStuff.Size = new Size(554, 19);
             lblExtraStuff.TabIndex = 4;
             lblExtraStuff.Text = "Encrypted bounty board for high-value targets. All transactions are routed.";
             // 
-            // button1
+            // btnBountyShow
             // 
-            button1.BackColor = Color.Teal;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(50, 170);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 51);
-            button1.TabIndex = 5;
-            button1.Text = "ALL_JOBS";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            button1.MouseEnter += button1_MouseEnter;
-            button1.MouseLeave += button1_MouseLeave;
-            button1.MouseHover += button1_MouseHover;
+            btnBountyShow.BackColor = Color.Teal;
+            btnBountyShow.FlatStyle = FlatStyle.Flat;
+            btnBountyShow.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBountyShow.ForeColor = Color.White;
+            btnBountyShow.Location = new Point(44, 128);
+            btnBountyShow.Name = "btnBountyShow";
+            btnBountyShow.Size = new Size(88, 38);
+            btnBountyShow.TabIndex = 5;
+            btnBountyShow.Text = "BOUNTIES";
+            btnBountyShow.UseVisualStyleBackColor = false;
+            btnBountyShow.Click += btnBountyShow_Click;
             // 
-            // button2
+            // btnExtraFeaturesShow
             // 
-            button2.BackColor = Color.Teal;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(171, 191);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(111, 31);
-            button2.TabIndex = 6;
-            button2.Text = "INFLATION";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            button2.MouseEnter += button2_MouseEnter;
-            button2.MouseLeave += button2_MouseLeave;
-            button2.MouseHover += button2_MouseHover;
+            btnExtraFeaturesShow.BackColor = Color.Teal;
+            btnExtraFeaturesShow.FlatStyle = FlatStyle.Flat;
+            btnExtraFeaturesShow.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExtraFeaturesShow.ForeColor = Color.White;
+            btnExtraFeaturesShow.Location = new Point(150, 128);
+            btnExtraFeaturesShow.Name = "btnExtraFeaturesShow";
+            btnExtraFeaturesShow.Size = new Size(97, 38);
+            btnExtraFeaturesShow.TabIndex = 6;
+            btnExtraFeaturesShow.Text = "DATA HEIST";
+            btnExtraFeaturesShow.UseVisualStyleBackColor = false;
+            btnExtraFeaturesShow.Click += btnExtraFeaturesShow_Click;
             // 
-            // button3
+            // btnHitlistShow
             // 
-            button3.BackColor = Color.Teal;
-            button3.FlatStyle = FlatStyle.Flat;
-            button3.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.ForeColor = Color.White;
-            button3.Location = new Point(303, 191);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(122, 31);
-            button3.TabIndex = 7;
-            button3.Text = "DATA_HEIST";
-            button3.UseVisualStyleBackColor = false;
-            button3.Click += button3_Click;
+            btnHitlistShow.BackColor = Color.Teal;
+            btnHitlistShow.FlatStyle = FlatStyle.Flat;
+            btnHitlistShow.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHitlistShow.ForeColor = Color.White;
+            btnHitlistShow.Location = new Point(265, 128);
+            btnHitlistShow.Name = "btnHitlistShow";
+            btnHitlistShow.Size = new Size(107, 38);
+            btnHitlistShow.TabIndex = 7;
+            btnHitlistShow.Text = "HITLIST";
+            btnHitlistShow.UseVisualStyleBackColor = false;
             // 
-            // btnBounty
+            // btnCreate
             // 
-            btnBounty.BackColor = Color.Teal;
-            btnBounty.FlatStyle = FlatStyle.Flat;
-            btnBounty.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBounty.ForeColor = Color.White;
-            btnBounty.Location = new Point(1079, 74);
-            btnBounty.Margin = new Padding(3, 4, 3, 4);
-            btnBounty.Name = "btnBounty";
-            btnBounty.Size = new Size(167, 65);
-            btnBounty.TabIndex = 8;
-            btnBounty.Text = "Create new Bounty";
-            btnBounty.UseVisualStyleBackColor = false;
-            btnBounty.MouseEnter += btnBounty_MouseEnter;
-            btnBounty.MouseLeave += btnBounty_MouseLeave;
-            btnBounty.MouseHover += btnBounty_MouseHover;
+            btnCreate.BackColor = Color.Teal;
+            btnCreate.FlatStyle = FlatStyle.Flat;
+            btnCreate.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnCreate.ForeColor = Color.White;
+            btnCreate.Location = new Point(944, 56);
+            btnCreate.Name = "btnCreate";
+            btnCreate.Size = new Size(146, 49);
+            btnCreate.TabIndex = 8;
+            btnCreate.Text = "Create +";
+            btnCreate.UseVisualStyleBackColor = false;
             // 
             // txtSearch
             // 
             txtSearch.BackColor = SystemColors.ButtonFace;
             txtSearch.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtSearch.Location = new Point(961, 191);
-            txtSearch.Margin = new Padding(3, 4, 3, 4);
+            txtSearch.Location = new Point(837, 143);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Search...";
-            txtSearch.Size = new Size(285, 30);
+            txtSearch.Size = new Size(250, 26);
             txtSearch.TabIndex = 9;
             // 
             // btnSearch
@@ -308,89 +308,231 @@ namespace CIPHER.Forms.Content
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(880, 194);
-            btnSearch.Margin = new Padding(3, 4, 3, 4);
+            btnSearch.Location = new Point(765, 143);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(75, 31);
+            btnSearch.Size = new Size(66, 26);
             btnSearch.TabIndex = 10;
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
-            btnSearch.Click += btnSearch_Click;
-            btnSearch.MouseEnter += btnSearch_MouseEnter;
-            btnSearch.MouseLeave += btnSearch_MouseLeave;
-            btnSearch.MouseHover += btnSearch_MouseHover;
             // 
             // panel4
             // 
             panel4.BackColor = SystemColors.MenuHighlight;
-            panel4.Location = new Point(47, 31);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(41, 23);
             panel4.Name = "panel4";
-            panel4.Size = new Size(5, 133);
+            panel4.Size = new Size(4, 100);
             panel4.TabIndex = 11;
             // 
-            // btnHint
+            // pnlContent
             // 
-            btnHint.AutoSize = true;
-            btnHint.BackColor = Color.Teal;
-            btnHint.FlatStyle = FlatStyle.Flat;
-            btnHint.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnHint.ForeColor = Color.White;
-            btnHint.Location = new Point(880, 74);
-            btnHint.Margin = new Padding(3, 4, 3, 4);
-            btnHint.Name = "btnHint";
-            btnHint.Size = new Size(180, 65);
-            btnHint.TabIndex = 12;
-            btnHint.Text = "Create new Hint";
-            btnHint.UseVisualStyleBackColor = false;
-            btnHint.Click += btnHint_Click;
-            btnHint.MouseEnter += btnHint_MouseEnter;
-            btnHint.MouseLeave += btnHint_MouseLeave;
-            btnHint.MouseHover += btnHint_MouseHover;
+            pnlContent.BackColor = SystemColors.WindowFrame;
+            pnlContent.Controls.Add(panel8);
+            pnlContent.Controls.Add(panel7);
+            pnlContent.Controls.Add(panel6);
+            pnlContent.Controls.Add(panel5);
+            pnlContent.Location = new Point(397, 128);
+            pnlContent.Name = "pnlContent";
+            pnlContent.Size = new Size(933, 312);
+            pnlContent.TabIndex = 12;
+            // 
+            // panel8
+            // 
+            panel8.Controls.Add(lblBBD);
+            panel8.Controls.Add(lblBB);
+            panel8.Controls.Add(btnBBBuy);
+            panel8.Location = new Point(702, 47);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(200, 204);
+            panel8.TabIndex = 3;
+            // 
+            // lblBBD
+            // 
+            lblBBD.AutoSize = true;
+            lblBBD.Location = new Point(28, 61);
+            lblBBD.Name = "lblBBD";
+            lblBBD.Size = new Size(143, 15);
+            lblBBD.TabIndex = 2;
+            lblBBD.Text = "Bounty Bomb Description";
+            // 
+            // lblBB
+            // 
+            lblBB.AutoSize = true;
+            lblBB.Location = new Point(28, 14);
+            lblBB.Name = "lblBB";
+            lblBB.Size = new Size(80, 15);
+            lblBB.TabIndex = 1;
+            lblBB.Text = "Bounty Bomb";
+            // 
+            // btnBBBuy
+            // 
+            btnBBBuy.Location = new Point(71, 181);
+            btnBBBuy.Name = "btnBBBuy";
+            btnBBBuy.Size = new Size(75, 23);
+            btnBBBuy.TabIndex = 0;
+            btnBBBuy.Text = "Buy";
+            btnBBBuy.UseVisualStyleBackColor = true;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(lblMSD);
+            panel7.Controls.Add(lblMS);
+            panel7.Controls.Add(btnMSBuy);
+            panel7.Location = new Point(482, 47);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(200, 204);
+            panel7.TabIndex = 2;
+            // 
+            // lblMSD
+            // 
+            lblMSD.AutoSize = true;
+            lblMSD.Location = new Point(27, 52);
+            lblMSD.Name = "lblMSD";
+            lblMSD.Size = new Size(111, 15);
+            lblMSD.TabIndex = 2;
+            lblMSD.Text = "Mission Skip Details";
+            // 
+            // lblMS
+            // 
+            lblMS.AutoSize = true;
+            lblMS.Location = new Point(27, 15);
+            lblMS.Name = "lblMS";
+            lblMS.Size = new Size(73, 15);
+            lblMS.TabIndex = 1;
+            lblMS.Text = "Mission Skip";
+            // 
+            // btnMSBuy
+            // 
+            btnMSBuy.Location = new Point(76, 174);
+            btnMSBuy.Name = "btnMSBuy";
+            btnMSBuy.Size = new Size(75, 23);
+            btnMSBuy.TabIndex = 0;
+            btnMSBuy.Text = "Buy";
+            btnMSBuy.UseVisualStyleBackColor = true;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(lblXPD);
+            panel6.Controls.Add(lblXP);
+            panel6.Controls.Add(btnXPBuy);
+            panel6.Location = new Point(256, 47);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(200, 204);
+            panel6.TabIndex = 1;
+            // 
+            // lblXPD
+            // 
+            lblXPD.AutoSize = true;
+            lblXPD.Location = new Point(16, 52);
+            lblXPD.Name = "lblXPD";
+            lblXPD.Size = new Size(117, 15);
+            lblXPD.TabIndex = 2;
+            lblXPD.Text = "XP Boost Description";
+            // 
+            // lblXP
+            // 
+            lblXP.AutoSize = true;
+            lblXP.Location = new Point(16, 15);
+            lblXP.Name = "lblXP";
+            lblXP.Size = new Size(54, 15);
+            lblXP.TabIndex = 1;
+            lblXP.Text = "XP Boost";
+            // 
+            // btnXPBuy
+            // 
+            btnXPBuy.Location = new Point(71, 174);
+            btnXPBuy.Name = "btnXPBuy";
+            btnXPBuy.Size = new Size(75, 23);
+            btnXPBuy.TabIndex = 0;
+            btnXPBuy.Text = "Buy";
+            btnXPBuy.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(lblGPD);
+            panel5.Controls.Add(lblGP);
+            panel5.Controls.Add(btnGPBuy);
+            panel5.Location = new Point(27, 44);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(200, 207);
+            panel5.TabIndex = 0;
+            // 
+            // lblGPD
+            // 
+            lblGPD.AutoSize = true;
+            lblGPD.Location = new Point(13, 55);
+            lblGPD.Name = "lblGPD";
+            lblGPD.Size = new Size(149, 15);
+            lblGPD.TabIndex = 2;
+            lblGPD.Text = "Ghost protocol Description";
+            // 
+            // lblGP
+            // 
+            lblGP.AutoSize = true;
+            lblGP.Location = new Point(13, 18);
+            lblGP.Name = "lblGP";
+            lblGP.Size = new Size(86, 15);
+            lblGP.TabIndex = 1;
+            lblGP.Text = "Ghost Protocol";
+            // 
+            // btnGPBuy
+            // 
+            btnGPBuy.Location = new Point(64, 165);
+            btnGPBuy.Name = "btnGPBuy";
+            btnGPBuy.Size = new Size(75, 23);
+            btnGPBuy.TabIndex = 0;
+            btnGPBuy.Text = "Buy";
+            btnGPBuy.UseVisualStyleBackColor = true;
             // 
             // MarketContent
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Controls.Add(btnHint);
+            Controls.Add(pnlContent);
             Controls.Add(panel4);
             Controls.Add(btnSearch);
             Controls.Add(txtSearch);
-            Controls.Add(btnBounty);
-            Controls.Add(button3);
-            Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(btnCreate);
+            Controls.Add(btnHitlistShow);
+            Controls.Add(btnExtraFeaturesShow);
+            Controls.Add(btnBountyShow);
             Controls.Add(lblExtraStuff);
             Controls.Add(lblMarketTitle);
-            Controls.Add(panel1);
-            Margin = new Padding(3, 4, 3, 4);
+            Controls.Add(pnlHolder);
             Name = "MarketContent";
-            Size = new Size(1303, 964);
-            panel1.ResumeLayout(false);
+            Size = new Size(1140, 723);
+            pnlHolder.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            pnlContent.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private FlowLayoutPanel flowLayoutPanel1;
-        private Panel panel1;
+        private Panel pnlHolder;
         private Panel panel3;
         private Panel panel2;
         private Label lblMarketTitle;
         private Label lblExtraStuff;
-        private Button button1;
-        private Button button2;
-        private Button button3;
-        private Button btnBounty;
+        private Button btnBountyShow;
+        private Button btnExtraFeaturesShow;
+        private Button btnHitlistShow;
+        private Button btnCreate;
         private TextBox txtSearch;
         private Button btnSearch;
         private Panel panel4;
-        private Button btnHint;
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblID;
         private Label lblTitle;
@@ -398,5 +540,22 @@ namespace CIPHER.Forms.Content
         private Label lblReward;
         private Label lblStatus;
         private Label label1;
+        private Panel pnlContent;
+        private Panel panel8;
+        private Label lblBBD;
+        private Label lblBB;
+        private Button btnBBBuy;
+        private Panel panel7;
+        private Label lblMSD;
+        private Label lblMS;
+        private Button btnMSBuy;
+        private Panel panel6;
+        private Label lblXPD;
+        private Label lblXP;
+        private Button btnXPBuy;
+        private Panel panel5;
+        private Label lblGPD;
+        private Label lblGP;
+        private Button btnGPBuy;
     }
 }
