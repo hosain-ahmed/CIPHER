@@ -25,7 +25,8 @@ namespace CIPHER.Services
             {
                 var balcmd = new SqlCommand("SELECT CryptCoin FROM Users WHERE UserID= @id", conn, tx);
                 balcmd.Parameters.AddWithValue("@id", userID);
-                int bal = (int)balcmd.ExecuteScalar();
+                var balResult = balcmd.ExecuteScalar();
+                int bal = balResult == DBNull.Value || balResult == null ? 0 : Convert.ToInt32(balResult);
                 if ((bal < amount))
                 {
                     throw new Exception("Insufficient Funds.");
@@ -43,7 +44,7 @@ namespace CIPHER.Services
             }
             catch (Exception ex)
             {
-                tx.Rollback();
+                try{tx.Rollback();} catch { }
                 return (false, ex.Message);
             }
         }

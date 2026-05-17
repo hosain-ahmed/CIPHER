@@ -15,6 +15,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
     public partial class AMissionContent : UserControl
     {
         private MissionService missionService = new MissionService();
+    
         public AMissionContent()
         {
             InitializeComponent();

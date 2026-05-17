@@ -8,7 +8,7 @@ namespace CIPHER.Models
     {
         public int BountyID { get; set; }
         public int CreatorID { get; set; }
-        public int SolverID { get; set; }
+        public int? SolverID { get; set; }
         public string CreatorCodename { get; set; }
         public string Title { get; set; }
         public string EncryptedMessage { get; set; }

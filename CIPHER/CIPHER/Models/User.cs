@@ -22,5 +22,7 @@ namespace CIPHER.Models
         public int FactionID { get; set; }
         public string AccountStatus { get; set; }
 
+        public int XPBoostMissions { get; set; }
+
     }
 }

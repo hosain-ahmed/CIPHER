@@ -13,31 +13,50 @@ namespace CIPHER.Services
         {
             var list = new List<Bounty>();
             using var conn = DBHelper.Getconnection();
-            var cmd = new SqlCommand
-            (
-                @"SELECT b.* , u.CodeName as CreatorCodename 
-                  FROM Bounties b 
-                  JOIN Users u on b.CreatorID=u.UserID
-                  WHERE b.Status='Open' AND b.CreatorID != @uid
-                  ORDER BY b.CreatedAt DESC", conn
-            );
+            var cmd = new SqlCommand(@"
+        SELECT b.*, u.CodeName as CreatorCodename 
+        FROM Bounties b 
+        JOIN Users u on b.CreatorID=u.UserID
+        WHERE b.Status='Open' AND b.CreatorID <> @uid
+        ORDER BY b.CreatedAt DESC", conn);
             cmd.Parameters.AddWithValue("@uid", currentUserID);
             using var r = cmd.ExecuteReader();
-            while (r.Read()) list.Add(MapBounty(r));
+            while (r.Read())
+            {
+                try
+                {
+                    list.Add(MapBounty(r));
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"BountyID={r["BountyID"]}, CoinReward={r["CoinReward"]}, Status={r["Status"]}, Error={ex.Message}");
+                }
+            }
             return list;
         }
 
         public List<Bounty> GetAllBounties()
         {
-                        var list = new List<Bounty>();
+            var list = new List<Bounty>();
             using var conn = DBHelper.Getconnection();
             var cmd = new SqlCommand(@"
-            SELECT b.*, u.CodeName as CreatorCodeName
-            FROM Bounties b
-            JOIN Users u on b.CreatorID = u.UserID
-            ORDER BY b.CreatedAt DESC", conn);
-            var r = cmd.ExecuteReader();
-            while (r.Read()) list.Add(MapBounty(r));
+        SELECT b.*, u.CodeName as CreatorCodename
+        FROM Bounties b
+        JOIN Users u on b.CreatorID = u.UserID
+        ORDER BY b.CreatedAt DESC", conn);
+            using var r = cmd.ExecuteReader();
+            while (r.Read())
+            {
+                try
+                {
+                    list.Add(MapBounty(r));
+                }
+                catch (Exception ex)
+                {
+                    // Add a breakpoint here or show which row fails
+                    MessageBox.Show($"Row failed: BountyID={r["BountyID"]}, Error={ex.Message}");
+                }
+            }
             return list;
         }
 
@@ -49,7 +68,7 @@ namespace CIPHER.Services
             SELECT b.*, u.CodeName as CreatorCodeName
             FROM Bounties b
             JOIN Users u on b.CreatorID = u.UserID
-            WHERE b.CreatorID =@uid or u.SolverID= @uid
+            WHERE b.CreatorID =@uid or b.SolverID= @uid
             ORDER BY b.CreatedAt DESC", conn);
             cmd.Parameters.AddWithValue("@uid", userID);
             var r = cmd.ExecuteReader();
@@ -57,23 +76,33 @@ namespace CIPHER.Services
             return list;
         }
 
-        public (bool success, string error) PostBounty(int CreatorID, string title,string message,string answer,int reward)
+        public (bool success, string error) PostBounty(
+    int CreatorID, string title, string message, string answer, int reward)
         {
-            //Escrow Logic, which means like tthe middle one like Fiverr
-            var (ok, err) = new EconomyService().DeductCoin(CreatorID, reward, "Bounty escrow posted");
-            if (!ok) return (false, err);
 
             using var conn = DBHelper.Getconnection();
-            var cmd = new SqlCommand(@"INSERT INTO Bounties
-                                       (CreatorID,Title,EncryptedMessage, Answer, CoinReward,Status) VALUES(@cid,@t,@em,@a,@cr,'Open')
-                                       
-                                        ", conn);
-            cmd.Parameters.AddWithValue("@cid", CreatorID);
-            cmd.Parameters.AddWithValue("@t", title);
-            cmd.Parameters.AddWithValue("@m", message);
-            cmd.Parameters.AddWithValue("@a", answer);
-            cmd.Parameters.AddWithValue("@cr", reward);
-            cmd.ExecuteNonQuery();
+            try
+            {
+                var cmd = new SqlCommand(@"
+            INSERT INTO Bounties
+            (CreatorID,Title,EncryptedMessage,Answer,CoinReward,Status)
+            VALUES(@cid,@t,@EM,@a,@cr,'Open')", conn);
+                cmd.Parameters.AddWithValue("@cid", CreatorID);
+                cmd.Parameters.AddWithValue("@t", title);
+                cmd.Parameters.AddWithValue("@EM", message);
+                cmd.Parameters.AddWithValue("@a", answer);
+                cmd.Parameters.AddWithValue("@cr", reward);
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"INSERT failed: {ex.Message} | CreatorID={CreatorID}, Title={title}, Reward={reward}");
+            }
+
+            var (ok, err) = new EconomyService().DeductCoin(
+                CreatorID, reward, "Bounty escrow posted");
+            if (!ok) return (false, err);
+
             return (true, null);
         }
 
@@ -92,11 +121,12 @@ namespace CIPHER.Services
         {
             BountyID = (int)r["BountyID"],
             CreatorID = (int)r["CreatorID"],
+            SolverID = r["SolverID"] == DBNull.Value ? (int?)null : (int)r["SolverID"],
             Title = r["Title"].ToString(),
             EncryptedMessage = r["EncryptedMessage"].ToString(),
             Answer = r["Answer"].ToString(),
-            CoinReward = (int)r["CoinReward"],
-            Status = r["Status"].ToString(),
+            CoinReward = r["CoinReward"] == DBNull.Value ? 0 : (int)r["CoinReward"],
+            Status = r["Status"] == DBNull.Value ? "Open" : r["Status"].ToString(),
             CreatorCodename = r["CreatorCodename"]?.ToString()
         };
 

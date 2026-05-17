@@ -16,43 +16,26 @@ namespace CIPHER.Forms.Content
     public partial class MarketContent : UserControl
     {
         BountyService bountyService = new BountyService();
-
+        private List<Bounty> _allOpenBounties;
         public MarketContent()
         {
             InitializeComponent();
-            LoadBounties();
+
 
 
             this.BackColor = Theme.BackgroundMain;
 
+            LoadBounties();
+
         }
 
-        private void ShowSection(string section)
-        {
-            // Hide everything first
-            flowLayoutPanel1.Visible = false;
-            pnlHolder.Visible = false;
 
-            switch (section)
-            {
-                case "bounties":
-                    flowLayoutPanel1.Visible = true;
-                    LoadBounties();
-                    break;
-                case "hitlist":
-                    flowLayoutPanel1.Visible = true;
-                    LoadHitlist();
-                    break;
-                case "items":
-                    pnlHolder.Visible = true;
-                    break;
-            }
-        }
 
         public void LoadBounties()
         {
-            var Bounties = bountyService.GetAllBounties();
-
+            var Bounties = bountyService.GetOpenBounties(SessionManager.CurrentUser.UserID);
+            _allOpenBounties = Bounties; 
+            
 
 
             flowLayoutPanel1.Controls.Clear();
@@ -86,16 +69,8 @@ namespace CIPHER.Forms.Content
             flowLayoutPanel1.Refresh(); // Force the panel to redraw
         }
 
-        public void LoadHitlist()
-        {
+     
 
-        }
-
-
-        public void LoadExtras()
-        {
-
-        }
 
         public void LoadView(UserControl view)
         {
@@ -111,12 +86,30 @@ namespace CIPHER.Forms.Content
 
         private void btnBountyShow_Click(object sender, EventArgs e)
         {
-            ShowSection("bounties");
+
+            flowLayoutPanel1.Visible = true;
+            LoadBounties();
         }
 
         private void btnExtraFeaturesShow_Click(object sender, EventArgs e)
         {
-            ShowSection("items");
+            ExtraFeatures ef = new ExtraFeatures();
+            ef.Show();
+
+        }
+
+   
+
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
+            var win = new GenericCreatorWindow();
+            win.SetupMode(CreationModeEnum.Bounty);
+            win.Show();
+        }
+
+        private void btnHitlistShow_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hitlist Coming Soon!", "Coming Soon", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

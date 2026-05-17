@@ -67,7 +67,7 @@ namespace CIPHER.Services
         public(bool correct, int xp, int coin) SubmitAnswer(int userID, int missionID, string answer)
         {
             var mission = GetByID(missionID);
-            if (!PuzzleValidator.Check(mission, answer)) return (false, 0, 0);
+            if (mission == null || !PuzzleValidator.Check(mission, answer)) return (false, 0, 0);
 
             using var conn = DBHelper.Getconnection();
             var tx = conn.BeginTransaction();
@@ -91,13 +91,31 @@ namespace CIPHER.Services
                      }
                  }.ExecuteNonQuery();*/
 
+                int xpToaward = mission.XPReward;
+                int coinToAward = mission.CoinReward;
+
+                var cmdBoost = new SqlCommand(@"SELECT XPBoostMissions FROM Users WHERE UserID = @uid", conn, tx);
+                cmdBoost.Parameters.AddWithValue("@uid", userID);
+                int boostMissions = (int)cmdBoost.ExecuteScalar();
+                if (boostMissions > 0)
+                {
+                    xpToaward *= 2;
+                    new SqlCommand(
+                "UPDATE Users SET XPBoostMissions = XPBoostMissions - 1 WHERE UserID = @uid",
+                conn, tx)
+                    { Parameters = { new SqlParameter("@uid", userID) } }
+            .ExecuteNonQuery();
+                }
+
+
+
                 var cmd1 = new SqlCommand(@"
                 UPDATE Users SET XP = XP +@xp , CryptCoin = CryptCoin +@c
                 WHERE UserID = @uid
                 ", conn, tx);
-                cmd1.Parameters.AddWithValue("@xp", mission.XPReward);
-                cmd1.Parameters.AddWithValue("@c", mission.CoinReward);
-                cmd1.Parameters.AddWithValue("uid", userID);
+                cmd1.Parameters.AddWithValue("@xp", xpToaward);
+                cmd1.Parameters.AddWithValue("@c", coinToAward);
+                cmd1.Parameters.AddWithValue("@uid", userID);
                 cmd1.ExecuteNonQuery();
                 tx.Commit();
                 RankService.UpdateRank(userID, SessionManager.CurrentUser.XP + mission.XPReward);

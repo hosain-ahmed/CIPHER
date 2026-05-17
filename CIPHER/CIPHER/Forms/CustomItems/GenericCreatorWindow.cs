@@ -72,7 +72,12 @@ namespace CIPHER.Forms.CustomItems
                             EncryptedMessage = rtbBriefing.Text,
                             Answer = rtbAnswer.Text
                         };
-                        _bountyService.PostBounty(SessionManager.CurrentUser.UserID, bounty.Title,bounty.EncryptedMessage,bounty.Answer,bounty.CoinReward);
+                        var(okk, errr) = _bountyService.PostBounty(SessionManager.CurrentUser.UserID, bounty.Title,bounty.EncryptedMessage,bounty.Answer,bounty.CoinReward);
+                        if (!okk )
+                        {
+                            MessageBox.Show($"ERROR CREATING BOUNTY: {errr}");
+                            return;
+                        }
                         break;
                     case CreationModeEnum.Hitlist:
                         int targetID = int.Parse(txtTitle.Text);
