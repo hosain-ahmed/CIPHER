@@ -17,5 +17,7 @@ namespace CIPHER.Models
         public int CoinReward { get; set; }
         public int OrderIndex { get; set; }
 
+        public string IsSolved { get; set; }
+
     }
 }

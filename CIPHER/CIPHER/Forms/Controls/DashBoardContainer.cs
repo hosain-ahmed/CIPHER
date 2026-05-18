@@ -14,6 +14,7 @@ namespace CIPHER.Forms.Controls
         public DashBoardContainer()
         {
             InitializeComponent();
+            LoadView(new MissionContent());
         }
 
         public void LoadView(UserControl view)

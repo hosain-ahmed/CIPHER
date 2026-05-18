@@ -19,15 +19,20 @@ namespace CIPHER.Services
             var list = new List<Mission>();
             using var conn = DBHelper.Getconnection();
             var cmd = new SqlCommand(@"
-            SELECT m.*,
-                ISNULL(p.Solved, 0) as IsSolved,
-                ISNULL(p.Attempts,0) as AttemptsMade
-            FROM Missions m
-            LEFT JOIN Progress p ON m.MissionID=p.MissionID AND p.UserID=@uid 
-            ORDER BY m.OrderIndex", conn);
+    SELECT m.*,
+        ISNULL(p.Solved, 0) as IsSolved,
+        ISNULL(p.Attempts,0) as AttemptsMade
+    FROM Missions m
+    LEFT JOIN Progress p ON m.MissionID=p.MissionID AND p.UserID=@uid 
+    ORDER BY m.OrderIndex", conn);
             cmd.Parameters.AddWithValue("@uid", userID);
             using var r = cmd.ExecuteReader();
-            while (r.Read()) list.Add(MapMission(r));
+            while (r.Read())
+            {
+                var mission = MapMission(r);
+                mission.IsSolved = r["IsSolved"].ToString(); // set here only
+                list.Add(mission);
+            }
             return list;
         }
 
@@ -53,7 +58,7 @@ namespace CIPHER.Services
         private Mission MapMission(SqlDataReader r) => new Mission
         {
             MissionID = (int)r["MissionID"],
-            Title= r["Title"].ToString(),
+            Title = r["Title"].ToString(),
             Category = r["Category"].ToString(),
             Difficulty = r["Difficulty"].ToString(),
             Briefing = r["Briefing"].ToString(),
@@ -61,13 +66,25 @@ namespace CIPHER.Services
             Hint = r["Hint"].ToString(),
             XPReward = (int)r["XPReward"],
             CoinReward = (int)r["CoinReward"],
-            OrderIndex = (int)r["OrderIndex"]  
+            OrderIndex = (int)r["OrderIndex"],
+            
         };
 
-        public(bool correct, int xp, int coin) SubmitAnswer(int userID, int missionID, string answer)
+        public (bool correct, int xp, int coin) SubmitAnswer(int userID, int missionID, string answer)
         {
             var mission = GetByID(missionID);
-          
+
+            using var checkConn = DBHelper.Getconnection();
+            var checkCmd = new SqlCommand(@"
+    SELECT ISNULL(p.Solved, 0) FROM Progress p
+    WHERE p.UserID = @uid AND p.MissionID = @mid", checkConn);
+            checkCmd.Parameters.AddWithValue("@uid", userID);
+            checkCmd.Parameters.AddWithValue("@mid", missionID);
+            var solvedResult = checkCmd.ExecuteScalar();
+            if (solvedResult != null && solvedResult != DBNull.Value && Convert.ToInt32(solvedResult) == 1)
+                return (false, 0, 0);
+            
+
             if (mission == null)
             {
                 MessageBox.Show($"Mission not found! ID: {missionID}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Error);

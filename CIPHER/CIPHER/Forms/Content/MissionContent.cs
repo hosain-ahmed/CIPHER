@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -17,7 +18,7 @@ namespace CIPHER.Forms.Content
     public partial class MissionContent : UserControl
     {
         MissionService MissionService = new MissionService(); // Assuming MissionService is a class that retrieves missions
-        BountyService bountyService = new BountyService();
+
         public MissionContent()
         {
             InitializeComponent();
@@ -48,10 +49,12 @@ namespace CIPHER.Forms.Content
                 ).ToList();
             }
 
-            foreach (var m in filtered)
+            
+                foreach (var m in filtered)
             {
                 MissionCard card = new MissionCard();
                 card.MissionData = m;
+
 
                 // Use the card's existing properties
                 card.MissionTitle = m.Title;
@@ -59,6 +62,8 @@ namespace CIPHER.Forms.Content
                 card.MissionDescription = m.Briefing;
                 card.MissionReward = m.CoinReward + " CR";
                 card.MissionDifficulty = m.Difficulty;
+                card.MissionStatus = m.IsSolved == "1" ? "COMPLETED" : "AVAILABLE";
+               
 
                 flowLayoutPanel1.Controls.Add(card);
             }
@@ -90,7 +95,11 @@ namespace CIPHER.Forms.Content
             }
         }
 
-
+        public void RefreshAll()
+        {
+            LoadMissions();
+            JustDoinSomething(); // updates XP & solved count labels
+        }
 
 
 

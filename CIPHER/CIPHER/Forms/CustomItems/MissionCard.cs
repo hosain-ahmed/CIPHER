@@ -4,7 +4,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using CIPHER.Forms.Content;
 using CIPHER.Helpers;
-using CIPHER.Models; // Make sure this points to wherever your Mission class is
+using CIPHER.Models;
+using Microsoft.Data.SqlClient; // Make sure this points to wherever your Mission class is
 
 namespace CIPHER.Forms.CustomItems
 {
@@ -44,6 +45,7 @@ namespace CIPHER.Forms.CustomItems
 
             this.MissionReward = MissionData.XPReward.ToString() + " XP";
             this.MissionDifficulty = MissionData.Difficulty;
+            this.MissionStatus = MissionData.IsSolved == "1" ? "COMPLETED" : "AVAILABLE";
 
 
 
@@ -59,7 +61,12 @@ namespace CIPHER.Forms.CustomItems
         {
             if (this.MissionData == null) return;
 
-            if(this.MissionStatus == "COMPLETED")
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand("SELECT Solved FROM Progress WHERE UserID = @userID AND MissionID = @missionID", conn);
+            cmd.Parameters.AddWithValue("@userID", SessionManager.CurrentUser.UserID);
+            cmd.Parameters.AddWithValue("@missionID", this.MissionData.MissionID);
+            var isSolved = cmd.ExecuteScalar();
+            if (isSolved != null && Convert.ToInt32(isSolved) == 1)
             {
                 MessageBox.Show("You've already completed this mission!", "Mission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
@@ -77,7 +84,12 @@ namespace CIPHER.Forms.CustomItems
                         // If they solved it, maybe change the UI here?
                         this.MissionStatus = "COMPLETED";
 
-                        //this.AccentColor = Color.LimeGreen;
+                        Control parent = this.Parent;
+                        while (parent != null && !(parent is MissionContent))
+                            parent = parent.Parent;
+
+                        if (parent is MissionContent content)
+                            content.RefreshAll();
                     }
                 }
             }
