@@ -182,7 +182,7 @@ namespace CIPHER.Services
             var stat = new AdminStats();
 
             using var conn = DBHelper.Getconnection();
-            conn.Open();
+            
             var cmd = new SqlCommand(@"SELECT COUNT(*) FROM Users WHERE Role = 'Agent'", conn);
             stat.TotalAgents = Convert.ToInt32(cmd.ExecuteScalar());
 

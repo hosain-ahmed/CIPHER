@@ -54,11 +54,11 @@
             panel4 = new Panel();
             lblMissionSolved = new Label();
             lblMS = new Label();
-            lblLockedAccounts = new Label();
-            lblActiveSessions = new Label();
+            lblFailedMissions = new Label();
+            lblTopAgent = new Label();
             lblTotalUsers = new Label();
-            lblLA = new Label();
-            lblAS = new Label();
+            lblMF = new Label();
+            lblTA = new Label();
             lblTUS = new Label();
             pnlContent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsers).BeginInit();
@@ -225,7 +225,6 @@
             lblCryptcoin.Size = new Size(60, 14);
             lblCryptcoin.TabIndex = 6;
             lblCryptcoin.Text = "CryptCoin";
-            lblCryptcoin.Click += lblCryptcoin_Click;
             // 
             // lblRank
             // 
@@ -332,7 +331,6 @@
             btnCreateUser.TabIndex = 0;
             btnCreateUser.Text = "Create User+";
             btnCreateUser.UseVisualStyleBackColor = false;
-            btnCreateUser.Click += btnCreateUser_Click;
             // 
             // lblActiveRegistry
             // 
@@ -357,7 +355,6 @@
             lblCurrentUser.Size = new Size(121, 23);
             lblCurrentUser.TabIndex = 4;
             lblCurrentUser.Text = "Current User";
-            lblCurrentUser.Click += lblCurrentUser_Click;
             // 
             // panel4
             // 
@@ -365,11 +362,11 @@
             panel4.BackColor = Color.White;
             panel4.Controls.Add(lblMissionSolved);
             panel4.Controls.Add(lblMS);
-            panel4.Controls.Add(lblLockedAccounts);
-            panel4.Controls.Add(lblActiveSessions);
+            panel4.Controls.Add(lblFailedMissions);
+            panel4.Controls.Add(lblTopAgent);
             panel4.Controls.Add(lblTotalUsers);
-            panel4.Controls.Add(lblLA);
-            panel4.Controls.Add(lblAS);
+            panel4.Controls.Add(lblMF);
+            panel4.Controls.Add(lblTA);
             panel4.Controls.Add(lblTUS);
             panel4.Controls.Add(btnCreateUser);
             panel4.Location = new Point(35, 35);
@@ -384,9 +381,8 @@
             lblMissionSolved.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMissionSolved.Location = new Point(578, 24);
             lblMissionSolved.Name = "lblMissionSolved";
-            lblMissionSolved.Size = new Size(23, 19);
+            lblMissionSolved.Size = new Size(0, 19);
             lblMissionSolved.TabIndex = 8;
-            lblMissionSolved.Text = "10";
             // 
             // lblMS
             // 
@@ -400,28 +396,25 @@
             lblMS.TabIndex = 7;
             lblMS.Text = "Mission Solved";
             // 
-            // lblLockedAccounts
+            // lblFailedMissions
             // 
-            lblLockedAccounts.AutoSize = true;
-            lblLockedAccounts.FlatStyle = FlatStyle.Flat;
-            lblLockedAccounts.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLockedAccounts.Location = new Point(416, 23);
-            lblLockedAccounts.Name = "lblLockedAccounts";
-            lblLockedAccounts.Size = new Size(22, 19);
-            lblLockedAccounts.TabIndex = 6;
-            lblLockedAccounts.Text = "12";
+            lblFailedMissions.AutoSize = true;
+            lblFailedMissions.FlatStyle = FlatStyle.Flat;
+            lblFailedMissions.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblFailedMissions.Location = new Point(416, 23);
+            lblFailedMissions.Name = "lblFailedMissions";
+            lblFailedMissions.Size = new Size(0, 19);
+            lblFailedMissions.TabIndex = 6;
             // 
-            // lblActiveSessions
+            // lblTopAgent
             // 
-            lblActiveSessions.AutoSize = true;
-            lblActiveSessions.FlatStyle = FlatStyle.Flat;
-            lblActiveSessions.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblActiveSessions.Location = new Point(245, 22);
-            lblActiveSessions.Name = "lblActiveSessions";
-            lblActiveSessions.Size = new Size(35, 19);
-            lblActiveSessions.TabIndex = 5;
-            lblActiveSessions.Text = "650";
-            lblActiveSessions.Click += lblActiveSessions_Click;
+            lblTopAgent.AutoSize = true;
+            lblTopAgent.FlatStyle = FlatStyle.Flat;
+            lblTopAgent.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTopAgent.Location = new Point(245, 22);
+            lblTopAgent.Name = "lblTopAgent";
+            lblTopAgent.Size = new Size(0, 19);
+            lblTopAgent.TabIndex = 5;
             // 
             // lblTotalUsers
             // 
@@ -430,33 +423,32 @@
             lblTotalUsers.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTotalUsers.Location = new Point(84, 22);
             lblTotalUsers.Name = "lblTotalUsers";
-            lblTotalUsers.Size = new Size(49, 19);
+            lblTotalUsers.Size = new Size(0, 19);
             lblTotalUsers.TabIndex = 4;
-            lblTotalUsers.Text = "12000";
             // 
-            // lblLA
+            // lblMF
             // 
-            lblLA.AutoSize = true;
-            lblLA.FlatStyle = FlatStyle.Flat;
-            lblLA.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLA.ForeColor = Color.Gray;
-            lblLA.Location = new Point(307, 26);
-            lblLA.Name = "lblLA";
-            lblLA.Size = new Size(99, 14);
-            lblLA.TabIndex = 3;
-            lblLA.Text = "Locked Accounts";
+            lblMF.AutoSize = true;
+            lblMF.FlatStyle = FlatStyle.Flat;
+            lblMF.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMF.ForeColor = Color.Gray;
+            lblMF.Location = new Point(284, 26);
+            lblMF.Name = "lblMF";
+            lblMF.Size = new Size(117, 14);
+            lblMF.TabIndex = 3;
+            lblMF.Text = "Most Failed Missions";
             // 
-            // lblAS
+            // lblTA
             // 
-            lblAS.AutoSize = true;
-            lblAS.FlatStyle = FlatStyle.Flat;
-            lblAS.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblAS.ForeColor = Color.Gray;
-            lblAS.Location = new Point(144, 26);
-            lblAS.Name = "lblAS";
-            lblAS.Size = new Size(91, 14);
-            lblAS.TabIndex = 2;
-            lblAS.Text = "Active Sessions";
+            lblTA.AutoSize = true;
+            lblTA.FlatStyle = FlatStyle.Flat;
+            lblTA.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTA.ForeColor = Color.Gray;
+            lblTA.Location = new Point(144, 26);
+            lblTA.Name = "lblTA";
+            lblTA.Size = new Size(60, 14);
+            lblTA.TabIndex = 2;
+            lblTA.Text = "Top Agent";
             // 
             // lblTUS
             // 
@@ -504,12 +496,12 @@
         private Label lblActiveRegistry;
         private Label lblCurrentUser;
         private Panel panel4;
-        private Label lblAS;
+        private Label lblTA;
         private Label lblTUS;
-        private Label lblLockedAccounts;
-        private Label lblActiveSessions;
+        private Label lblFailedMissions;
+        private Label lblTopAgent;
         private Label lblTotalUsers;
-        private Label lblLA;
+        private Label lblMF;
         private Label lblMissionSolved;
         private Label lblMS;
         private Button btnDelete;

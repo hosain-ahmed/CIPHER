@@ -1,12 +1,17 @@
-﻿using CIPHER.Models;
+﻿using CIPHER.Helpers;
+using CIPHER.Models;
 using CIPHER.Services;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Net.WebSockets;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.AxHost;
 
 namespace CIPHER.Forms.ADMINSTUFF.Content
 {
@@ -20,6 +25,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
         {
             InitializeComponent();
             LoadUsers();
+                AboveLabels();
         }
 
         private void LoadUsers()
@@ -198,24 +204,35 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             }
         }
 
-        private void btnCreateUser_Click(object sender, EventArgs e)
+        private void AboveLabels()
         {
+            using var conn = DBHelper.Getconnection();
+            var cmd = new SqlCommand("SELECT COUNT(*) FROM Users", conn);
+            var totalUsers = (int)cmd.ExecuteScalar();
+            lblTotalUsers.Text = totalUsers.ToString();
+
+            var cmd2 = new SqlCommand("SELECT COUNT(*) FROM Progress WHERE Solved = 1 AND CAST(SolvedAt as DATE) = CAST(GETDATE() as DATE)", conn);
+            var puzzlesSolvedToday = (int)cmd2.ExecuteScalar();
+            lblMissionSolved.Text = puzzlesSolvedToday.ToString();
+
+            var cmd3 = new SqlCommand(@"SELECT TOP 1 CodeName FROM Users
+            ORDER BY XP Desc", conn);
+            var topAgent = cmd3.ExecuteScalar()?.ToString() ?? "None";
+            lblTopAgent.Text = topAgent;
+
+            var cmd4 = new SqlCommand(@"
+            SELECT TOP 1 m.Title
+            FROM Missions m
+            JOIN Progress p ON m.MissionID = p.MissionID
+            GROUP BY m.MissionID, m.Title
+            HAVING SUM(p.Attempts) > 0  -- Avoid division by zero
+            ORDER BY 
+                (CAST(SUM(CAST(p.Solved AS INT)) AS FLOAT) / SUM(p.Attempts)) ASC", conn);
+            var MostFailedMission = cmd4.ExecuteScalar()?.ToString() ?? "None";
+            lblFailedMissions.Text = MostFailedMission;
 
         }
 
-        private void lblActiveSessions_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void lblCurrentUser_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblCryptcoin_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
