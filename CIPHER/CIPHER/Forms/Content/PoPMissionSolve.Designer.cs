@@ -145,9 +145,9 @@
             btnExit.FlatStyle = FlatStyle.Flat;
             btnExit.Font = new Font("Bahnschrift SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnExit.ForeColor = Color.White;
-            btnExit.Location = new Point(478, 12);
+            btnExit.Location = new Point(523, 12);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(75, 33);
+            btnExit.Size = new Size(47, 33);
             btnExit.TabIndex = 8;
             btnExit.Text = "Exit";
             btnExit.UseVisualStyleBackColor = false;

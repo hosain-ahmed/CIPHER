@@ -204,7 +204,7 @@
             btnXPBuy.FlatStyle = FlatStyle.Flat;
             btnXPBuy.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             btnXPBuy.ForeColor = Color.White;
-            btnXPBuy.Location = new Point(141, 154);
+            btnXPBuy.Location = new Point(138, 154);
             btnXPBuy.Name = "btnXPBuy";
             btnXPBuy.Size = new Size(75, 29);
             btnXPBuy.TabIndex = 0;
@@ -241,7 +241,7 @@
             lblGP.FlatStyle = FlatStyle.Flat;
             lblGP.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
             lblGP.ForeColor = Color.Teal;
-            lblGP.Location = new Point(122, 15);
+            lblGP.Location = new Point(109, 15);
             lblGP.Name = "lblGP";
             lblGP.Size = new Size(135, 23);
             lblGP.TabIndex = 1;
@@ -253,7 +253,7 @@
             btnGPBuy.FlatStyle = FlatStyle.Flat;
             btnGPBuy.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             btnGPBuy.ForeColor = Color.White;
-            btnGPBuy.Location = new Point(141, 159);
+            btnGPBuy.Location = new Point(135, 159);
             btnGPBuy.Name = "btnGPBuy";
             btnGPBuy.Size = new Size(75, 38);
             btnGPBuy.TabIndex = 0;
@@ -268,6 +268,7 @@
             ClientSize = new Size(869, 555);
             Controls.Add(pnlContent);
             Name = "ExtraFeatures";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "ExtraFeatures";
             pnlContent.ResumeLayout(false);
             panel8.ResumeLayout(false);

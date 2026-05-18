@@ -16,6 +16,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Controls
         public ADashboardContainer()
         {
             InitializeComponent();
+            LoadView(new Content.ASummaryContent());
         }
 
         protected override void btnProfile_Click(object sender, EventArgs e)
@@ -27,7 +28,11 @@ namespace CIPHER.Forms.ADMINSTUFF.Controls
             LoadView(new Forms.Content.LogContent());
         }
 
-       
+        protected override void btnLeaderBoard_Click(object sender, EventArgs e)
+        {
+            LoadView(new Content.ALeaderBoardContent());
+        }
+
 
         protected override void btnMission_Click(object sender, EventArgs e)
         {

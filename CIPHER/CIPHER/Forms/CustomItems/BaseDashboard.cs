@@ -47,5 +47,10 @@ namespace CIPHER.Forms.CustomItems
         {
 
         }
+
+        protected virtual void btnLeaderBoard_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

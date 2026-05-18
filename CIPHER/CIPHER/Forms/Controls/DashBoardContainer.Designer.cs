@@ -33,10 +33,10 @@ namespace CIPHER.Forms.Controls
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DashBoardContainer));
             pnlSideBar = new Panel();
             btnTerminal = new Button();
+            btnProfile = new Button();
             btnMission = new Button();
             btnLog = new Button();
             btnMarket = new Button();
-            btnProfile = new Button();
             pnlContent = new Panel();
             label1 = new Label();
             pnlSideBar.SuspendLayout();
@@ -68,6 +68,18 @@ namespace CIPHER.Forms.Controls
             btnTerminal.TabIndex = 9;
             btnTerminal.UseVisualStyleBackColor = true;
             btnTerminal.Click += btnTerminal_Click;
+            // 
+            // btnProfile
+            // 
+            btnProfile.FlatAppearance.BorderSize = 0;
+            btnProfile.FlatStyle = FlatStyle.Flat;
+            btnProfile.Image = Properties.Resources.SSMale;
+            btnProfile.Location = new Point(4, 675);
+            btnProfile.Name = "btnProfile";
+            btnProfile.Size = new Size(22, 23);
+            btnProfile.TabIndex = 8;
+            btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
             // 
             // btnMission
             // 
@@ -106,18 +118,6 @@ namespace CIPHER.Forms.Controls
             btnMarket.TabIndex = 6;
             btnMarket.UseVisualStyleBackColor = false;
             btnMarket.Click += btnmarket_click;
-            // 
-            // btnProfile
-            // 
-            btnProfile.FlatAppearance.BorderSize = 0;
-            btnProfile.FlatStyle = FlatStyle.Flat;
-            btnProfile.Image = Properties.Resources.SSMale;
-            btnProfile.Location = new Point(9, 709);
-            btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(22, 23);
-            btnProfile.TabIndex = 8;
-            btnProfile.UseVisualStyleBackColor = true;
-            btnProfile.Click += btnProfile_Click;
             // 
             // pnlContent
             // 

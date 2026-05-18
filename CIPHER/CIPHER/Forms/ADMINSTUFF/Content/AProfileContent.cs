@@ -61,20 +61,12 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
         }
 
-        private void AProfileContent_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             if (!txtName.Visible)
             {
+                lblPassword.Visible = true;
                 txtName.Visible = true;
                 txtEmail.Visible = true;
                 txtOldPass.Visible = true;
@@ -90,6 +82,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
                 txtNewPass.Visible = false;
                 txtConfirmPass.Visible = false;
                 btnConfirmPass.Visible = false;
+                    lblPassword.Visible = false;
             }
 
         }
@@ -166,14 +159,6 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
             txtConfirmPass.Clear();
         }
 
-        private void lblFullname_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+ 
     }
 }

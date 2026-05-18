@@ -216,7 +216,7 @@ namespace CIPHER.Forms
                 }
                 else
                 {
-                    MessageBox.Show($"BUFF_LEN: {passwordBuffer.Length} | USER: {tempUser}");
+                   
                     rtbLogin.AppendText($"ERROR: {error}" + Environment.NewLine);
                     await Task.Delay(1000);
                     StartBootSequence();
