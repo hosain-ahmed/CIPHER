@@ -45,6 +45,7 @@ namespace CIPHER.Forms.CustomItems
 
             this.MissionReward = MissionData.XPReward.ToString() + " XP";
             this.MissionDifficulty = MissionData.Difficulty;
+
             this.MissionStatus = MissionData.IsSolved == "1" ? "COMPLETED" : "AVAILABLE";
 
 
@@ -103,17 +104,17 @@ namespace CIPHER.Forms.CustomItems
 
         private void MissionCard_MouseEnter(object sender, EventArgs e)
         {
-
+            BackColor = Color.FromArgb(20, Color.Gray); // Slightly darker on hover
         }
 
         private void MissionCard_MouseHover(object sender, EventArgs e)
         {
-
+           // BackColor = Color.FromArgb(30, Color.Gray); // Slightly lighter on hover
         }
 
         private void MissionCard_MouseLeave(object sender, EventArgs e)
         {
-
+            BackColor = Color.White; // Reset to original color when mouse leaves
         }
 
         [Browsable(false)]
@@ -148,6 +149,9 @@ namespace CIPHER.Forms.CustomItems
                 // Update color automatically whenever text changes
                 switch (value?.ToLower())
                 {
+                    case "expert":
+                        lblDifficulty.ForeColor = Color.Purple;
+                        break;
                     case "hard":
                         lblDifficulty.ForeColor = Color.Red;
                         break;

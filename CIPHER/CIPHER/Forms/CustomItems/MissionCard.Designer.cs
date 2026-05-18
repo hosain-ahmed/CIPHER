@@ -43,10 +43,12 @@
             // 
             lblID.AutoSize = true;
             lblID.BackColor = Color.White;
-            lblID.ForeColor = SystemColors.ControlLightLight;
-            lblID.Location = new Point(146, 36);
+            lblID.FlatStyle = FlatStyle.Flat;
+            lblID.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblID.ForeColor = Color.Teal;
+            lblID.Location = new Point(146, 29);
             lblID.Name = "lblID";
-            lblID.Size = new Size(31, 15);
+            lblID.Size = new Size(43, 19);
             lblID.TabIndex = 1;
             lblID.Text = "lblID";
             lblID.Click += OpenMissionDetails;

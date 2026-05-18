@@ -62,8 +62,13 @@ namespace CIPHER.Forms.Content
                 //card.MissionDescription = m.Briefing;
                 card.MissionReward = m.CoinReward + " CR";
                 card.MissionDifficulty = m.Difficulty;
-                card.MissionStatus = m.IsSolved == "1" ? "COMPLETED" : "AVAILABLE";
-               
+                using var conn = DBHelper.Getconnection();
+                var cmd = new SqlCommand("SELECT Solved FROM Progress WHERE UserID = @userID AND MissionID = @missionID", conn);
+                cmd.Parameters.AddWithValue("@userID", SessionManager.CurrentUser.UserID);
+                cmd.Parameters.AddWithValue("@missionID", m.MissionID);
+                var isSolved = cmd.ExecuteScalar();
+                card.MissionStatus = isSolved != null && (bool)isSolved ? "COMPLETED" : "AVAILABLE";
+
 
                 flowLayoutPanel1.Controls.Add(card);
             }

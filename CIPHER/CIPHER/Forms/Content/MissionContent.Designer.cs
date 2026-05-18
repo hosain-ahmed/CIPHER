@@ -53,9 +53,9 @@ namespace CIPHER.Forms.Content
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.FromArgb(244, 247, 246);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(824, 399);
@@ -79,7 +79,7 @@ namespace CIPHER.Forms.Content
             panel1.Controls.Add(lblMissionPage1);
             panel1.Location = new Point(46, 31);
             panel1.Name = "panel1";
-            panel1.Size = new Size(562, 60);
+            panel1.Size = new Size(637, 60);
             panel1.TabIndex = 1;
             // 
             // lblMissionPage1
@@ -100,7 +100,7 @@ namespace CIPHER.Forms.Content
             panel2.BackColor = Color.FromArgb(240, 244, 247);
             panel2.Controls.Add(lblXP);
             panel2.Controls.Add(lblMissionpage3);
-            panel2.Location = new Point(622, 31);
+            panel2.Location = new Point(689, 31);
             panel2.Name = "panel2";
             panel2.Size = new Size(82, 60);
             panel2.TabIndex = 2;
@@ -130,11 +130,11 @@ namespace CIPHER.Forms.Content
             // 
             // panel4
             // 
-            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel4.BackColor = Color.FromArgb(240, 244, 247);
             panel4.Controls.Add(lblMISSIOM);
             panel4.Controls.Add(lblMissionpage5);
-            panel4.Location = new Point(724, 31);
+            panel4.Location = new Point(790, 31);
             panel4.Margin = new Padding(3, 2, 3, 2);
             panel4.Name = "panel4";
             panel4.Size = new Size(80, 60);
@@ -142,6 +142,7 @@ namespace CIPHER.Forms.Content
             // 
             // lblMISSIOM
             // 
+            lblMISSIOM.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblMISSIOM.AutoSize = true;
             lblMISSIOM.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMISSIOM.ForeColor = Color.FromArgb(11, 109, 126);
@@ -179,7 +180,7 @@ namespace CIPHER.Forms.Content
             btnCreateMission.BackColor = Color.FromArgb(234, 240, 240);
             btnCreateMission.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateMission.ForeColor = Color.FromArgb(11, 109, 126);
-            btnCreateMission.Location = new Point(417, 104);
+            btnCreateMission.Location = new Point(365, 105);
             btnCreateMission.Margin = new Padding(3, 2, 3, 2);
             btnCreateMission.Name = "btnCreateMission";
             btnCreateMission.Size = new Size(150, 22);
@@ -196,7 +197,7 @@ namespace CIPHER.Forms.Content
             txtSearch.Location = new Point(634, 104);
             txtSearch.Margin = new Padding(3, 2, 3, 2);
             txtSearch.Name = "txtSearch";
-            txtSearch.Size = new Size(170, 23);
+            txtSearch.Size = new Size(236, 23);
             txtSearch.TabIndex = 6;
             txtSearch.KeyDown += txtSearch_KeyDown;
             // 
@@ -205,10 +206,10 @@ namespace CIPHER.Forms.Content
             btnSEarch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSEarch.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSEarch.ForeColor = Color.FromArgb(11, 109, 126);
-            btnSEarch.Location = new Point(573, 104);
+            btnSEarch.Location = new Point(541, 104);
             btnSEarch.Margin = new Padding(3, 2, 3, 2);
             btnSEarch.Name = "btnSEarch";
-            btnSEarch.Size = new Size(59, 22);
+            btnSEarch.Size = new Size(91, 22);
             btnSEarch.TabIndex = 7;
             btnSEarch.Text = "Search";
             btnSEarch.UseVisualStyleBackColor = true;
