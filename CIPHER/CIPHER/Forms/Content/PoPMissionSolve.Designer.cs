@@ -42,97 +42,123 @@
             // lblTitle
             // 
             lblTitle.AutoSize = true;
-            lblTitle.ForeColor = SystemColors.ControlLightLight;
+            lblTitle.BackColor = Color.White;
+            lblTitle.FlatStyle = FlatStyle.Flat;
+            lblTitle.Font = new Font("Bahnschrift SemiBold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Teal;
             lblTitle.Location = new Point(22, 37);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(71, 15);
+            lblTitle.Size = new Size(121, 25);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "MissionTitle";
             // 
             // rtbQuestion
             // 
-            rtbQuestion.Location = new Point(12, 102);
+            rtbQuestion.BackColor = Color.FromArgb(244, 247, 246);
+            rtbQuestion.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rtbQuestion.Location = new Point(22, 80);
             rtbQuestion.Name = "rtbQuestion";
-            rtbQuestion.Size = new Size(408, 519);
+            rtbQuestion.ReadOnly = true;
+            rtbQuestion.Size = new Size(303, 319);
             rtbQuestion.TabIndex = 1;
             rtbQuestion.Text = "";
             // 
             // rtbAnswer
             // 
-            rtbAnswer.Location = new Point(441, 238);
+            rtbAnswer.BackColor = Color.FromArgb(244, 247, 246);
+            rtbAnswer.Font = new Font("Bahnschrift SemiBold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            rtbAnswer.Location = new Point(359, 126);
             rtbAnswer.Name = "rtbAnswer";
-            rtbAnswer.Size = new Size(219, 235);
+            rtbAnswer.Size = new Size(188, 207);
             rtbAnswer.TabIndex = 2;
             rtbAnswer.Text = "";
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(510, 503);
+            btnSubmit.BackColor = Color.Teal;
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Bahnschrift SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSubmit.ForeColor = Color.White;
+            btnSubmit.Location = new Point(417, 339);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(75, 23);
+            btnSubmit.Size = new Size(75, 29);
             btnSubmit.TabIndex = 3;
             btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
             // lblAnswer
             // 
             lblAnswer.AutoSize = true;
-            lblAnswer.BackColor = Color.Black;
-            lblAnswer.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblAnswer.ForeColor = SystemColors.ControlLightLight;
-            lblAnswer.Location = new Point(441, 210);
+            lblAnswer.BackColor = Color.White;
+            lblAnswer.FlatStyle = FlatStyle.Flat;
+            lblAnswer.Font = new Font("Bahnschrift SemiBold", 12.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblAnswer.ForeColor = Color.Black;
+            lblAnswer.Location = new Point(359, 92);
             lblAnswer.Name = "lblAnswer";
-            lblAnswer.Size = new Size(178, 21);
+            lblAnswer.Size = new Size(194, 21);
             lblAnswer.TabIndex = 4;
             lblAnswer.Text = "Write your Answer here:";
             // 
             // lblMissionID
             // 
             lblMissionID.AutoSize = true;
-            lblMissionID.ForeColor = SystemColors.ControlLightLight;
-            lblMissionID.Location = new Point(441, 37);
+            lblMissionID.BackColor = Color.White;
+            lblMissionID.FlatStyle = FlatStyle.Flat;
+            lblMissionID.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMissionID.ForeColor = Color.Black;
+            lblMissionID.Location = new Point(359, 43);
             lblMissionID.Name = "lblMissionID";
-            lblMissionID.Size = new Size(59, 15);
+            lblMissionID.Size = new Size(78, 19);
             lblMissionID.TabIndex = 5;
             lblMissionID.Text = "MissionID";
             // 
             // lblcReward
             // 
             lblcReward.AutoSize = true;
-            lblcReward.ForeColor = SystemColors.ControlLightLight;
-            lblcReward.Location = new Point(441, 606);
+            lblcReward.BackColor = Color.White;
+            lblcReward.FlatStyle = FlatStyle.Flat;
+            lblcReward.Font = new Font("Bahnschrift SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblcReward.ForeColor = Color.Teal;
+            lblcReward.Location = new Point(359, 381);
             lblcReward.Name = "lblcReward";
-            lblcReward.Size = new Size(71, 15);
+            lblcReward.Size = new Size(89, 18);
             lblcReward.TabIndex = 6;
             lblcReward.Text = "CoinReward";
             // 
             // lblXP
             // 
             lblXP.AutoSize = true;
-            lblXP.ForeColor = SystemColors.ControlLightLight;
-            lblXP.Location = new Point(531, 606);
+            lblXP.BackColor = Color.White;
+            lblXP.FlatStyle = FlatStyle.Flat;
+            lblXP.Font = new Font("Bahnschrift SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblXP.ForeColor = Color.Teal;
+            lblXP.Location = new Point(359, 408);
             lblXP.Name = "lblXP";
-            lblXP.Size = new Size(60, 15);
+            lblXP.Size = new Size(78, 18);
             lblXP.TabIndex = 7;
             lblXP.Text = "XPReward";
             // 
             // btnExit
             // 
-            btnExit.Location = new Point(602, 11);
+            btnExit.BackColor = Color.Teal;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Bahnschrift SemiBold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnExit.ForeColor = Color.White;
+            btnExit.Location = new Point(478, 12);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(75, 23);
+            btnExit.Size = new Size(75, 33);
             btnExit.TabIndex = 8;
             btnExit.Text = "Exit";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
             // 
             // PoPMissionSolve
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(30, 30, 30);
-            ClientSize = new Size(689, 655);
+            BackColor = Color.White;
+            ClientSize = new Size(582, 444);
             Controls.Add(btnExit);
             Controls.Add(lblXP);
             Controls.Add(lblcReward);

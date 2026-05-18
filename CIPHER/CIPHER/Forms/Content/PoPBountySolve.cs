@@ -20,9 +20,9 @@ namespace CIPHER.Forms.Content
             cB = b;
             lblTitle.Text = b.Title;
 
-            lblcReward.Text = b.CoinReward.ToString();
-            lblMissionID.Text = b.BountyID.ToString();
-            //lblXP.Text = b.XPReward.ToString();
+            lblcReward.Text = $"Coin Reward: {b.CoinReward}";
+            lblMissionID.Text = $"Bounty ID: {b.BountyID}";
+            //lblXP.Text = $"XP Reward: {b.XPReward}";
             rtbQuestion.Text = b.EncryptedMessage;
 
 
