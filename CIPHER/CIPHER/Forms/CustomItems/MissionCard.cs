@@ -3,6 +3,7 @@ using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using CIPHER.Forms.Content;
+using CIPHER.Helpers;
 using CIPHER.Models; // Make sure this points to wherever your Mission class is
 
 namespace CIPHER.Forms.CustomItems
@@ -58,18 +59,33 @@ namespace CIPHER.Forms.CustomItems
         {
             if (this.MissionData == null) return;
 
-            // Open the detail form and pass this card's specific mission object
-            using (var detailForm = new PoPMissionSolve(this.MissionData))
+            if(this.MissionStatus == "COMPLETED")
             {
-                var result = detailForm.ShowDialog();
+                MessageBox.Show("You've already completed this mission!", "Mission Completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
 
-                if (result == DialogResult.OK)
+            if (!SessionManager.isAdmin)
+            {
+                // Open the detail form and pass this card's specific mission object
+                using (var detailForm = new PoPMissionSolve(this.MissionData))
                 {
-                    // If they solved it, maybe change the UI here?
-                    this.MissionStatus = "COMPLETED";
+                    var result = detailForm.ShowDialog();
 
-                    //this.AccentColor = Color.LimeGreen;
+                    if (result == DialogResult.OK)
+                    {
+                        // If they solved it, maybe change the UI here?
+                        this.MissionStatus = "COMPLETED";
+
+                        //this.AccentColor = Color.LimeGreen;
+                    }
                 }
+            }
+            else
+            {
+                var win = new GenericCreatorWindow();
+                win.SetupEditMode(this.MissionData);
+                win.ShowDialog();
             }
         }
 

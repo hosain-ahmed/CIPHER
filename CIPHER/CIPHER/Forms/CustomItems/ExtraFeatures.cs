@@ -74,7 +74,7 @@ namespace CIPHER.Forms.CustomItems
             ELSE 
                 INSERT INTO Progress (UserID,MissionID,Solved,SolvedAt)
                 VALUES (@uid,@mid,1,GETDATE())
-        ")
+        ",conn)
             {
                 Parameters =
                 {

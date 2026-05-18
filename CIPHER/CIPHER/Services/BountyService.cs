@@ -130,15 +130,19 @@ namespace CIPHER.Services
             CreatorCodename = r["CreatorCodename"]?.ToString()
         };
 
-        public (bool success, string msg)SolveBouny(int bountyID,int solverID,string answer)
+        public (bool success, string msg)SolveBounty(int bountyID,int solverID,string answer)
         {
             Bounty bounty;
             using (var conn = DBHelper.Getconnection()) 
             {
-                var cmd = new SqlCommand("SELECT * FROM Bounties WHERE BountyID = @bid", conn);
+                var cmd = new SqlCommand(@"
+    SELECT b.*, u.Codename as CreatorCodename 
+    FROM Bounties b
+    JOIN Users u ON b.CreatorID = u.UserID
+    WHERE b.BountyID = @bid", conn);
                 cmd.Parameters.AddWithValue("@bid", bountyID);
                 var r = cmd.ExecuteReader();
-                while (!r.Read()) return (false, "Bounty not found");
+                if (!r.Read()) return (false, "Bounty not found");
                 bounty = MapBounty(r);
             }
 

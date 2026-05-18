@@ -35,6 +35,7 @@
             lblAnswer = new Label();
             lblMissionID = new Label();
             lblcReward = new Label();
+            btnExit = new Button();
             SuspendLayout();
             // 
             // lblTitle
@@ -89,7 +90,7 @@
             // 
             lblMissionID.AutoSize = true;
             lblMissionID.ForeColor = SystemColors.ControlLightLight;
-            lblMissionID.Location = new Point(560, 37);
+            lblMissionID.Location = new Point(441, 46);
             lblMissionID.Name = "lblMissionID";
             lblMissionID.Size = new Size(56, 15);
             lblMissionID.TabIndex = 5;
@@ -105,12 +106,23 @@
             lblcReward.TabIndex = 6;
             lblcReward.Text = "CoinReward";
             // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(585, 12);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(75, 23);
+            btnExit.TabIndex = 7;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
             // PoPBountySolve
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(689, 655);
+            Controls.Add(btnExit);
             Controls.Add(lblcReward);
             Controls.Add(lblMissionID);
             Controls.Add(lblAnswer);
@@ -136,5 +148,6 @@
         private Label lblAnswer;
         private Label lblMissionID;
         private Label lblcReward;
+        private Button btnExit;
     }
 }

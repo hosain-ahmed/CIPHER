@@ -117,7 +117,7 @@ namespace CIPHER.Services
             _audit.Log(SessionManager.CurrentUser.UserID, "AdminAction", $"Admin added Mission #{newID}");
         }
 
-        public void UpdateMission(Mission m)
+        public bool UpdateMission(Mission m)
         {
             using var conn = DBHelper.Getconnection();
             var cmd = new SqlCommand(@"
@@ -134,10 +134,10 @@ namespace CIPHER.Services
             cmd.Parameters.AddWithValue("@cr", m.CoinReward);
             cmd.Parameters.AddWithValue("@mid", m.MissionID);
 
-            cmd.ExecuteNonQuery();
+            int rowsAffected = cmd.ExecuteNonQuery();
 
-
-            _audit.Log(SessionManager.CurrentUser.UserID, "AdminAction", $"Admin added Mission #{m.MissionID}");
+            _audit.Log(SessionManager.CurrentUser.UserID, "AdminAction", $"Admin updated Mission #{m.MissionID}");
+            return rowsAffected > 0;
         }
 
         public void DeleteMission(int missionID)

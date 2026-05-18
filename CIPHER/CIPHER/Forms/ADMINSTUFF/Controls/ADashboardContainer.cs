@@ -31,7 +31,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Controls
 
         protected override void btnMission_Click(object sender, EventArgs e)
         {
-            LoadView(new Content.AMissionContent());
+            LoadView(new Forms.Content.MissionContent());
         }
 
         protected override void btnAgentManagement_Click(object sender, EventArgs e)

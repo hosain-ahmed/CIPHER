@@ -1,4 +1,6 @@
-﻿using CIPHER.Models;
+﻿using CIPHER.Helpers;
+using CIPHER.Models;
+using CIPHER.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,7 @@ namespace CIPHER.Forms.Content
             InitializeComponent();
             cB = b;
             lblTitle.Text = b.Title;
-            
+
             lblcReward.Text = b.CoinReward.ToString();
             lblMissionID.Text = b.BountyID.ToString();
             //lblXP.Text = b.XPReward.ToString();
@@ -28,15 +30,23 @@ namespace CIPHER.Forms.Content
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            if(rtbAnswer.Text.Trim() == cB.Answer.Trim())
+            var bountyService = new BountyService();
+            var(correct,msg) = bountyService.SolveBounty(cB.BountyID, SessionManager.CurrentUser.UserID, rtbAnswer.Text.Trim());
+
+            if (correct)
             {
-                MessageBox.Show("Correct! You've completed the bounty.");
+                MessageBox.Show(msg);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("Incorrect answer. Please try again.");
+                MessageBox.Show(msg);
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

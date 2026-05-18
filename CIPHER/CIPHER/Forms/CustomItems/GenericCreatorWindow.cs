@@ -23,10 +23,6 @@ namespace CIPHER.Forms.CustomItems
             InitializeComponent();
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -39,18 +35,34 @@ namespace CIPHER.Forms.CustomItems
             {
                 switch(_currMode){
                     case CreationModeEnum.Mission:
-                        var mission = new Mission
-                        {
-                            Title = txtTitle.Text,
-                            Category = txtCategory.Text,
-                            Difficulty = txtDifficulty.Text,
-                            CoinReward = int.Parse(txtCoin.Text),
-                            XPReward = int.Parse(txtXP.Text),
-                            Briefing = rtbBriefing.Text,
-                            Answer = rtbAnswer.Text,
-                            Hint = rtbHint.Text
-                        };
-                        _adminService.CreateMission(mission);
+                        if(_editMission !=null){
+                            _editMission.Title = txtTitle.Text;
+                            _editMission.Category = txtCategory.Text;
+                            _editMission.Difficulty = txtDifficulty.Text;
+                            _editMission.CoinReward = int.Parse(txtCoin.Text);
+                            _editMission.XPReward = int.Parse(txtXP.Text);
+                            _editMission.Briefing = rtbBriefing.Text;
+                            _editMission.Answer = rtbAnswer.Text;
+                            _editMission.Hint = rtbHint.Text;
+                            bool updated = _adminService.UpdateMission(_editMission);
+                            if (!updated) throw new Exception("Update failed.");
+                        }
+
+
+
+                        else {
+                            var mission = new Mission
+                            {
+                                Title = txtTitle.Text,
+                                Category = txtCategory.Text,
+                                Difficulty = txtDifficulty.Text,
+                                CoinReward = int.Parse(txtCoin.Text),
+                                XPReward = int.Parse(txtXP.Text),
+                                Briefing = rtbBriefing.Text,
+                                Answer = rtbAnswer.Text,
+                                Hint = rtbHint.Text
+                            };
+                            _adminService.CreateMission(mission); }
                         break;
                     case CreationModeEnum.User:
                         var user = new User
@@ -105,6 +117,41 @@ namespace CIPHER.Forms.CustomItems
                 MessageBox.Show($"ERROR CREATING {_currMode.ToString().ToUpper()}: {ex.Message}");
             }
 
+        }
+
+        private Mission _editMission; // null if creating
+
+        public void SetupEditMode(Mission mission)
+        {
+            _editMission = mission;
+            this.Text = $"LOG_DEPT :: EDIT_MISSION #{mission.MissionID}";
+
+            // Show all controls (like Mission creation mode)
+            ToggleAllControls(true);
+            lblTitle.Text = "Mission Title";
+            lblCategory.Text = "Category";
+            lblDifficulty.Text = "Difficulty";
+            lblCoin.Text = "Coin Reward";
+            lblXP.Text = "XP Reward";
+            lblBriefing.Text = "Briefing";
+            lblAnswer.Text = "Answer";
+            lblHint.Text = "Hint";
+            // Ensure all labels/fields visible
+            lblAnswer.Visible = rtbAnswer.Visible = true;
+            lblHint.Visible = rtbHint.Visible = true;
+            lblCategory.Visible = txtCategory.Visible = true;
+            lblXP.Visible = txtXP.Visible = true;
+            lblDifficulty.Visible = txtDifficulty.Visible = true;
+
+            // Pre-fill data
+            txtTitle.Text = mission.Title;
+            txtCategory.Text = mission.Category;
+            txtDifficulty.Text = mission.Difficulty;
+            txtCoin.Text = mission.CoinReward.ToString();
+            txtXP.Text = mission.XPReward.ToString();
+            rtbBriefing.Text = mission.Briefing;
+            rtbAnswer.Text = mission.Answer;
+            rtbHint.Text = mission.Hint;
         }
 
         public void SetupMode(CreationModeEnum mode)

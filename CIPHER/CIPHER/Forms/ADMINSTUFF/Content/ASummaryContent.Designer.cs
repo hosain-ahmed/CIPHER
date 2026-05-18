@@ -72,10 +72,9 @@
             // 
             pnlContent.BackColor = SystemColors.ControlDark;
             pnlContent.Controls.Add(dgvUsers);
-            pnlContent.Location = new Point(43, 252);
-            pnlContent.Margin = new Padding(3, 4, 3, 4);
+            pnlContent.Location = new Point(38, 189);
             pnlContent.Name = "pnlContent";
-            pnlContent.Size = new Size(800, 679);
+            pnlContent.Size = new Size(700, 509);
             pnlContent.TabIndex = 1;
             // 
             // dgvUsers
@@ -86,11 +85,10 @@
             dgvUsers.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUsers.EditMode = DataGridViewEditMode.EditProgrammatically;
             dgvUsers.Location = new Point(0, 0);
-            dgvUsers.Margin = new Padding(3, 4, 3, 4);
             dgvUsers.MultiSelect = false;
             dgvUsers.Name = "dgvUsers";
             dgvUsers.RowHeadersWidth = 51;
-            dgvUsers.Size = new Size(800, 679);
+            dgvUsers.Size = new Size(700, 509);
             dgvUsers.TabIndex = 0;
             dgvUsers.SelectionChanged += dgvUsers_SelectionChanged;
             // 
@@ -107,10 +105,9 @@
             panel2.Controls.Add(btnReset);
             panel2.Controls.Add(pnlUserDetails);
             panel2.Controls.Add(btnPromote);
-            panel2.Location = new Point(869, 252);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(760, 189);
             panel2.Name = "panel2";
-            panel2.Size = new Size(318, 679);
+            panel2.Size = new Size(278, 509);
             panel2.TabIndex = 2;
             // 
             // btnLock
@@ -120,10 +117,9 @@
             btnLock.FlatStyle = FlatStyle.Flat;
             btnLock.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLock.ForeColor = Color.White;
-            btnLock.Location = new Point(18, 525);
-            btnLock.Margin = new Padding(3, 4, 3, 4);
+            btnLock.Location = new Point(16, 394);
             btnLock.Name = "btnLock";
-            btnLock.Size = new Size(280, 31);
+            btnLock.Size = new Size(245, 23);
             btnLock.TabIndex = 4;
             btnLock.Text = "Unlock/Lock User";
             btnLock.UseVisualStyleBackColor = false;
@@ -136,10 +132,9 @@
             btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDelete.ForeColor = Color.White;
-            btnDelete.Location = new Point(18, 620);
-            btnDelete.Margin = new Padding(3, 4, 3, 4);
+            btnDelete.Location = new Point(16, 465);
             btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(280, 43);
+            btnDelete.Size = new Size(245, 32);
             btnDelete.TabIndex = 3;
             btnDelete.Text = "Delete User";
             btnDelete.UseVisualStyleBackColor = false;
@@ -152,10 +147,9 @@
             btnReset.FlatStyle = FlatStyle.Flat;
             btnReset.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnReset.ForeColor = Color.White;
-            btnReset.Location = new Point(161, 564);
-            btnReset.Margin = new Padding(3, 4, 3, 4);
+            btnReset.Location = new Point(141, 423);
             btnReset.Name = "btnReset";
-            btnReset.Size = new Size(137, 48);
+            btnReset.Size = new Size(120, 36);
             btnReset.TabIndex = 1;
             btnReset.Text = "Reset Progress";
             btnReset.UseVisualStyleBackColor = false;
@@ -176,9 +170,8 @@
             pnlUserDetails.Controls.Add(lblFullName);
             pnlUserDetails.Controls.Add(lblCodeName);
             pnlUserDetails.Location = new Point(0, 0);
-            pnlUserDetails.Margin = new Padding(3, 4, 3, 4);
             pnlUserDetails.Name = "pnlUserDetails";
-            pnlUserDetails.Size = new Size(318, 515);
+            pnlUserDetails.Size = new Size(278, 386);
             pnlUserDetails.TabIndex = 0;
             // 
             // lblFactionID
@@ -188,9 +181,9 @@
             lblFactionID.FlatStyle = FlatStyle.Flat;
             lblFactionID.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFactionID.ForeColor = Color.DimGray;
-            lblFactionID.Location = new Point(18, 313);
+            lblFactionID.Location = new Point(16, 235);
             lblFactionID.Name = "lblFactionID";
-            lblFactionID.Size = new Size(70, 18);
+            lblFactionID.Size = new Size(58, 14);
             lblFactionID.TabIndex = 9;
             lblFactionID.Text = "FactionID";
             // 
@@ -201,9 +194,9 @@
             lblXP.FlatStyle = FlatStyle.Flat;
             lblXP.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblXP.ForeColor = Color.DimGray;
-            lblXP.Location = new Point(18, 267);
+            lblXP.Location = new Point(16, 200);
             lblXP.Name = "lblXP";
-            lblXP.Size = new Size(26, 18);
+            lblXP.Size = new Size(21, 14);
             lblXP.TabIndex = 8;
             lblXP.Text = "XP";
             // 
@@ -214,9 +207,9 @@
             lblRole.FlatStyle = FlatStyle.Flat;
             lblRole.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRole.ForeColor = Color.DimGray;
-            lblRole.Location = new Point(18, 179);
+            lblRole.Location = new Point(16, 134);
             lblRole.Name = "lblRole";
-            lblRole.Size = new Size(38, 18);
+            lblRole.Size = new Size(31, 14);
             lblRole.TabIndex = 7;
             lblRole.Text = "Role";
             // 
@@ -227,9 +220,9 @@
             lblCryptcoin.FlatStyle = FlatStyle.Flat;
             lblCryptcoin.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCryptcoin.ForeColor = Color.DimGray;
-            lblCryptcoin.Location = new Point(18, 223);
+            lblCryptcoin.Location = new Point(16, 167);
             lblCryptcoin.Name = "lblCryptcoin";
-            lblCryptcoin.Size = new Size(72, 18);
+            lblCryptcoin.Size = new Size(60, 14);
             lblCryptcoin.TabIndex = 6;
             lblCryptcoin.Text = "CryptCoin";
             lblCryptcoin.Click += lblCryptcoin_Click;
@@ -241,9 +234,9 @@
             lblRank.FlatStyle = FlatStyle.Flat;
             lblRank.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblRank.ForeColor = Color.DimGray;
-            lblRank.Location = new Point(226, 55);
+            lblRank.Location = new Point(198, 41);
             lblRank.Name = "lblRank";
-            lblRank.Size = new Size(42, 18);
+            lblRank.Size = new Size(34, 14);
             lblRank.TabIndex = 5;
             lblRank.Text = "Rank";
             // 
@@ -254,9 +247,9 @@
             lblStatus.FlatStyle = FlatStyle.Flat;
             lblStatus.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblStatus.ForeColor = Color.DimGray;
-            lblStatus.Location = new Point(226, 16);
+            lblStatus.Location = new Point(198, 12);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(51, 18);
+            lblStatus.Size = new Size(41, 14);
             lblStatus.TabIndex = 4;
             lblStatus.Text = "Status";
             // 
@@ -267,9 +260,9 @@
             lblUserID.FlatStyle = FlatStyle.Flat;
             lblUserID.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUserID.ForeColor = Color.DimGray;
-            lblUserID.Location = new Point(18, 17);
+            lblUserID.Location = new Point(16, 13);
             lblUserID.Name = "lblUserID";
-            lblUserID.Size = new Size(61, 18);
+            lblUserID.Size = new Size(48, 14);
             lblUserID.TabIndex = 3;
             lblUserID.Text = "User_ID";
             // 
@@ -280,9 +273,9 @@
             lblEmail.FlatStyle = FlatStyle.Flat;
             lblEmail.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblEmail.ForeColor = Color.DimGray;
-            lblEmail.Location = new Point(18, 141);
+            lblEmail.Location = new Point(16, 106);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 18);
+            lblEmail.Size = new Size(36, 14);
             lblEmail.TabIndex = 2;
             lblEmail.Text = "Email";
             // 
@@ -293,9 +286,9 @@
             lblFullName.FlatStyle = FlatStyle.Flat;
             lblFullName.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblFullName.ForeColor = Color.DimGray;
-            lblFullName.Location = new Point(18, 100);
+            lblFullName.Location = new Point(16, 75);
             lblFullName.Name = "lblFullName";
-            lblFullName.Size = new Size(69, 18);
+            lblFullName.Size = new Size(56, 14);
             lblFullName.TabIndex = 1;
             lblFullName.Text = "Fullname";
             // 
@@ -306,9 +299,9 @@
             lblCodeName.FlatStyle = FlatStyle.Flat;
             lblCodeName.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCodeName.ForeColor = Color.DimGray;
-            lblCodeName.Location = new Point(18, 57);
+            lblCodeName.Location = new Point(16, 43);
             lblCodeName.Name = "lblCodeName";
-            lblCodeName.Size = new Size(78, 18);
+            lblCodeName.Size = new Size(62, 14);
             lblCodeName.TabIndex = 0;
             lblCodeName.Text = "Codename";
             // 
@@ -318,10 +311,9 @@
             btnPromote.FlatStyle = FlatStyle.Flat;
             btnPromote.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPromote.ForeColor = Color.White;
-            btnPromote.Location = new Point(18, 564);
-            btnPromote.Margin = new Padding(3, 4, 3, 4);
+            btnPromote.Location = new Point(16, 423);
             btnPromote.Name = "btnPromote";
-            btnPromote.Size = new Size(136, 48);
+            btnPromote.Size = new Size(119, 36);
             btnPromote.TabIndex = 2;
             btnPromote.Text = "Promote";
             btnPromote.UseVisualStyleBackColor = false;
@@ -334,10 +326,9 @@
             btnCreateUser.FlatStyle = FlatStyle.Flat;
             btnCreateUser.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateUser.ForeColor = Color.White;
-            btnCreateUser.Location = new Point(946, 13);
-            btnCreateUser.Margin = new Padding(3, 4, 3, 4);
+            btnCreateUser.Location = new Point(816, 8);
             btnCreateUser.Name = "btnCreateUser";
-            btnCreateUser.Size = new Size(194, 63);
+            btnCreateUser.Size = new Size(170, 47);
             btnCreateUser.TabIndex = 0;
             btnCreateUser.Text = "Create User+";
             btnCreateUser.UseVisualStyleBackColor = false;
@@ -349,9 +340,9 @@
             lblActiveRegistry.FlatStyle = FlatStyle.Flat;
             lblActiveRegistry.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblActiveRegistry.ForeColor = Color.Teal;
-            lblActiveRegistry.Location = new Point(40, 207);
+            lblActiveRegistry.Location = new Point(35, 155);
             lblActiveRegistry.Name = "lblActiveRegistry";
-            lblActiveRegistry.Size = new Size(168, 28);
+            lblActiveRegistry.Size = new Size(137, 23);
             lblActiveRegistry.TabIndex = 3;
             lblActiveRegistry.Text = "Active Registry";
             // 
@@ -361,9 +352,9 @@
             lblCurrentUser.AutoSize = true;
             lblCurrentUser.Font = new Font("Bahnschrift SemiBold", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblCurrentUser.ForeColor = Color.Teal;
-            lblCurrentUser.Location = new Point(869, 207);
+            lblCurrentUser.Location = new Point(760, 155);
             lblCurrentUser.Name = "lblCurrentUser";
-            lblCurrentUser.Size = new Size(147, 28);
+            lblCurrentUser.Size = new Size(121, 23);
             lblCurrentUser.TabIndex = 4;
             lblCurrentUser.Text = "Current User";
             lblCurrentUser.Click += lblCurrentUser_Click;
@@ -381,10 +372,9 @@
             panel4.Controls.Add(lblAS);
             panel4.Controls.Add(lblTUS);
             panel4.Controls.Add(btnCreateUser);
-            panel4.Location = new Point(40, 47);
-            panel4.Margin = new Padding(3, 4, 3, 4);
+            panel4.Location = new Point(35, 35);
             panel4.Name = "panel4";
-            panel4.Size = new Size(1146, 88);
+            panel4.Size = new Size(1003, 66);
             panel4.TabIndex = 5;
             // 
             // lblMissionSolved
@@ -392,9 +382,9 @@
             lblMissionSolved.AutoSize = true;
             lblMissionSolved.FlatStyle = FlatStyle.Flat;
             lblMissionSolved.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMissionSolved.Location = new Point(660, 32);
+            lblMissionSolved.Location = new Point(578, 24);
             lblMissionSolved.Name = "lblMissionSolved";
-            lblMissionSolved.Size = new Size(28, 24);
+            lblMissionSolved.Size = new Size(23, 19);
             lblMissionSolved.TabIndex = 8;
             lblMissionSolved.Text = "10";
             // 
@@ -404,9 +394,9 @@
             lblMS.FlatStyle = FlatStyle.Flat;
             lblMS.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMS.ForeColor = Color.Gray;
-            lblMS.Location = new Point(544, 36);
+            lblMS.Location = new Point(476, 27);
             lblMS.Name = "lblMS";
-            lblMS.Size = new Size(109, 18);
+            lblMS.Size = new Size(86, 14);
             lblMS.TabIndex = 7;
             lblMS.Text = "Mission Solved";
             // 
@@ -415,9 +405,9 @@
             lblLockedAccounts.AutoSize = true;
             lblLockedAccounts.FlatStyle = FlatStyle.Flat;
             lblLockedAccounts.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblLockedAccounts.Location = new Point(475, 31);
+            lblLockedAccounts.Location = new Point(416, 23);
             lblLockedAccounts.Name = "lblLockedAccounts";
-            lblLockedAccounts.Size = new Size(27, 24);
+            lblLockedAccounts.Size = new Size(22, 19);
             lblLockedAccounts.TabIndex = 6;
             lblLockedAccounts.Text = "12";
             // 
@@ -426,9 +416,9 @@
             lblActiveSessions.AutoSize = true;
             lblActiveSessions.FlatStyle = FlatStyle.Flat;
             lblActiveSessions.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblActiveSessions.Location = new Point(280, 30);
+            lblActiveSessions.Location = new Point(245, 22);
             lblActiveSessions.Name = "lblActiveSessions";
-            lblActiveSessions.Size = new Size(42, 24);
+            lblActiveSessions.Size = new Size(35, 19);
             lblActiveSessions.TabIndex = 5;
             lblActiveSessions.Text = "650";
             lblActiveSessions.Click += lblActiveSessions_Click;
@@ -438,9 +428,9 @@
             lblTotalUsers.AutoSize = true;
             lblTotalUsers.FlatStyle = FlatStyle.Flat;
             lblTotalUsers.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTotalUsers.Location = new Point(96, 30);
+            lblTotalUsers.Location = new Point(84, 22);
             lblTotalUsers.Name = "lblTotalUsers";
-            lblTotalUsers.Size = new Size(60, 24);
+            lblTotalUsers.Size = new Size(49, 19);
             lblTotalUsers.TabIndex = 4;
             lblTotalUsers.Text = "12000";
             // 
@@ -450,9 +440,9 @@
             lblLA.FlatStyle = FlatStyle.Flat;
             lblLA.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblLA.ForeColor = Color.Gray;
-            lblLA.Location = new Point(351, 34);
+            lblLA.Location = new Point(307, 26);
             lblLA.Name = "lblLA";
-            lblLA.Size = new Size(121, 18);
+            lblLA.Size = new Size(99, 14);
             lblLA.TabIndex = 3;
             lblLA.Text = "Locked Accounts";
             // 
@@ -462,9 +452,9 @@
             lblAS.FlatStyle = FlatStyle.Flat;
             lblAS.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblAS.ForeColor = Color.Gray;
-            lblAS.Location = new Point(165, 34);
+            lblAS.Location = new Point(144, 26);
             lblAS.Name = "lblAS";
-            lblAS.Size = new Size(115, 18);
+            lblAS.Size = new Size(91, 14);
             lblAS.TabIndex = 2;
             lblAS.Text = "Active Sessions";
             // 
@@ -474,15 +464,15 @@
             lblTUS.FlatStyle = FlatStyle.Flat;
             lblTUS.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTUS.ForeColor = Color.Gray;
-            lblTUS.Location = new Point(14, 35);
+            lblTUS.Location = new Point(12, 26);
             lblTUS.Name = "lblTUS";
-            lblTUS.Size = new Size(83, 18);
+            lblTUS.Size = new Size(66, 14);
             lblTUS.TabIndex = 1;
             lblTUS.Text = "Total Users";
             // 
             // ASummaryContent
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             Controls.Add(panel4);
@@ -490,9 +480,8 @@
             Controls.Add(lblActiveRegistry);
             Controls.Add(panel2);
             Controls.Add(pnlContent);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "ASummaryContent";
-            Size = new Size(1237, 1000);
+            Size = new Size(1082, 750);
             pnlContent.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvUsers).EndInit();
             ((System.ComponentModel.ISupportInitialize)userBindingSource).EndInit();

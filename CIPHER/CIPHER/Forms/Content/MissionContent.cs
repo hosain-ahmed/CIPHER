@@ -1,6 +1,7 @@
 ﻿
 using CIPHER.Forms.CustomItems;
 using CIPHER.Helpers;
+using CIPHER.Models;
 using CIPHER.Services;
 using Microsoft.Data.SqlClient;
 using System;
@@ -22,75 +23,97 @@ namespace CIPHER.Forms.Content
             InitializeComponent();
             LoadMissions();
             JustDoinSomething();
-        }
 
+
+        }
+        private List<Mission> _allMissions;
         public void LoadMissions()
         {
-            flowLayoutPanel1.Controls.Clear();
-            var missions = MissionService.GetMissionForAgent(SessionManager.CurrentUser.UserID);
-            //var missions = bountyService.GetAllBounties(); // Replace with your actual method to get missions
-            // If you don't see this popup, the method isn't running!
+            _allMissions = MissionService.GetMissionForAgent(SessionManager.CurrentUser.UserID);
+            ApplyFilter("");
+        }
 
-            foreach (var m in missions)
+        private void ApplyFilter(string searchTerm)
+        {
+            flowLayoutPanel1.SuspendLayout();
+            flowLayoutPanel1.Controls.Clear();
+
+            var filtered = _allMissions;
+            if (!string.IsNullOrWhiteSpace(searchTerm))
+            {
+                filtered = _allMissions.Where(m =>
+                    m.Title.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    m.MissionID.ToString() == searchTerm.Trim() ||
+                    m.Difficulty.IndexOf(searchTerm, StringComparison.OrdinalIgnoreCase) >= 0
+                ).ToList();
+            }
+
+            foreach (var m in filtered)
             {
                 MissionCard card = new MissionCard();
-
-                // 1. Give the card the "Whole Soul" of the mission
                 card.MissionData = m;
 
-                // 2. Map the UI (You can keep your existing mapping or 
-                // move this inside a 'card.LoadData()' method later)
+                // Use the card's existing properties
                 card.MissionTitle = m.Title;
-                card.MissionID = "ID: " + m.MissionID.ToString();
+                card.MissionID = "ID: " + m.MissionID;
                 card.MissionDescription = m.Briefing;
-                //card.MissionStatus = m.Status; // Make sure your card has this property!
-                card.MissionReward = m.CoinReward.ToString() + " CR";
+                card.MissionReward = m.CoinReward + " CR";
                 card.MissionDifficulty = m.Difficulty;
 
-                // Use your theme color here!
-                // card.AccentColor = Color.FromArgb(0, 245, 255); // Neon Cyan
-
-                // 3. Add to the panel
                 flowLayoutPanel1.Controls.Add(card);
-
-
-
             }
+            flowLayoutPanel1.ResumeLayout();
         }
 
         private void JustDoinSomething()
         {
-            using var conn = DBHelper.Getconnection();
+            if (!SessionManager.isAdmin)
+            {
+                using var conn = DBHelper.Getconnection();
 
-            var cmdTotal = new SqlCommand(@"SELECT COUNT(*) FROM Missions", conn);
-            int total = (int)cmdTotal.ExecuteScalar();
+                var cmdTotal = new SqlCommand(@"SELECT COUNT(*) FROM Missions", conn);
+                int total = (int)cmdTotal.ExecuteScalar();
 
-            var cmdSolved = new SqlCommand(@"SELECT COUNT(*) FROM Progress WHERE UserID = @uid AND Solved =1", conn);
+                var cmdSolved = new SqlCommand(@"SELECT COUNT(*) FROM Progress WHERE UserID = @uid AND Solved =1", conn);
                 cmdSolved.Parameters.AddWithValue("@uid", SessionManager.CurrentUser.UserID);
-            int solved = (int)cmdSolved.ExecuteScalar();
+                int solved = (int)cmdSolved.ExecuteScalar();
 
-            
-            lblMissionpage6.Text = $"{solved}/{total}";
+
+                lblMissionpage6.Text = $"{solved}/{total}";
+
+                lblXP.Text = SessionManager.CurrentUser.XP.ToString();
+            }
+            else
+            {
+                lblMissionpage6.Text = "Admin";
+                lblXP.Text = "Admin";
+            }
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
 
+
+
+
+        private void btnCreateMission_Click(object sender, EventArgs e)
+        {
+            var win = new GenericCreatorWindow();
+            win.SetupMode(CreationModeEnum.Mission);
+            win.Show();
         }
 
-        private void lblMissionpage2_Click(object sender, EventArgs e)
+        private void btnSEarch_Click(object sender, EventArgs e)
         {
-
+            ApplyFilter(txtSearch.Text);
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void txtSearch_KeyDown(object sender, KeyEventArgs e)
         {
-
-        }
-
-        private void lblMissionPage1_Click(object sender, EventArgs e)
-        {
-
+            if(e.KeyCode == Keys.Enter)
+            {
+                ApplyFilter(txtSearch.Text);
+                e.Handled = true;
+                e.SuppressKeyPress = true;
+            }
         }
     }
 

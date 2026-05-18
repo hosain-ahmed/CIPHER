@@ -44,7 +44,7 @@ namespace CIPHER.Services
         public Mission GetByID(int missionID)
         {
             using var conn = DBHelper.Getconnection();
-            var cmd = new SqlCommand("SELECT * FROM Missions WHERE MissioID=@mid", conn);
+            var cmd = new SqlCommand("SELECT * FROM Missions WHERE MissionID=@mid", conn);
             cmd.Parameters.AddWithValue("@mid", missionID);
             using var r = cmd.ExecuteReader();
             return r.Read() ? MapMission(r) : null;
@@ -67,7 +67,25 @@ namespace CIPHER.Services
         public(bool correct, int xp, int coin) SubmitAnswer(int userID, int missionID, string answer)
         {
             var mission = GetByID(missionID);
-            if (mission == null || !PuzzleValidator.Check(mission, answer)) return (false, 0, 0);
+          
+            if (mission == null)
+            {
+                MessageBox.Show($"Mission not found! ID: {missionID}", "Debug", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return (false, 0, 0);
+            }
+            if (mission == null || !PuzzleValidator.Check(mission, answer))
+            {
+                // 🔒 Log the failed attempt and check rate limit
+                var detector = new IntrusionDetector();
+                detector.logAttempt(userID, missionID, answer);
+                if (detector.isRateLimited(userID))
+                {
+                    detector.LockAccount(userID);
+                    detector.ScheduleUnlock(userID, () => { });
+                    return (false, 0, 0); // account now locked
+                }
+                return (false, 0, 0);
+            }
 
             using var conn = DBHelper.Getconnection();
             var tx = conn.BeginTransaction();
@@ -76,7 +94,7 @@ namespace CIPHER.Services
                 //Upsert Progress
                 var cmd = new SqlCommand(@"
                 IF EXISTS(SELECT 1 FROM Progress WHERE UserID= @uid AND MissionID= @mid)
-                UPDATE Progress SET Solved 1,SolvedAt=GETDATE()
+                UPDATE Progress SET Solved = 1,SolvedAt=GETDATE()
                 WHERE UserID=@uid AND MissionID =@mid
                 ELSE
                     INSERT INTO Progress(UserID,MissionID,Solved,SolvedAt)
@@ -96,7 +114,8 @@ namespace CIPHER.Services
 
                 var cmdBoost = new SqlCommand(@"SELECT XPBoostMissions FROM Users WHERE UserID = @uid", conn, tx);
                 cmdBoost.Parameters.AddWithValue("@uid", userID);
-                int boostMissions = (int)cmdBoost.ExecuteScalar();
+                var boostResult = cmdBoost.ExecuteScalar();
+                int boostMissions = boostResult == DBNull.Value ? 0 : (int)boostResult;
                 if (boostMissions > 0)
                 {
                     xpToaward *= 2;
@@ -122,9 +141,10 @@ namespace CIPHER.Services
                 SessionManager.RefreshUser();
                 return (true, mission.XPReward, mission.CoinReward);
             }
-            catch
+            catch (Exception ex)
             {
-                tx.Rollback();
+                try { tx.Rollback(); } catch { }
+                MessageBox.Show($"SubmitAnswer failed: {ex.Message}");
                 return (false, 0, 0);
             }
         }

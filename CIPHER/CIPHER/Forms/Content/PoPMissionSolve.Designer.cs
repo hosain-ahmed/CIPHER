@@ -36,6 +36,7 @@
             lblMissionID = new Label();
             lblcReward = new Label();
             lblXP = new Label();
+            btnExit = new Button();
             SuspendLayout();
             // 
             // lblTitle
@@ -90,7 +91,7 @@
             // 
             lblMissionID.AutoSize = true;
             lblMissionID.ForeColor = SystemColors.ControlLightLight;
-            lblMissionID.Location = new Point(560, 37);
+            lblMissionID.Location = new Point(441, 37);
             lblMissionID.Name = "lblMissionID";
             lblMissionID.Size = new Size(59, 15);
             lblMissionID.TabIndex = 5;
@@ -116,12 +117,23 @@
             lblXP.TabIndex = 7;
             lblXP.Text = "XPReward";
             // 
+            // btnExit
+            // 
+            btnExit.Location = new Point(602, 11);
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(75, 23);
+            btnExit.TabIndex = 8;
+            btnExit.Text = "Exit";
+            btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
+            // 
             // PoPMissionSolve
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(30, 30, 30);
             ClientSize = new Size(689, 655);
+            Controls.Add(btnExit);
             Controls.Add(lblXP);
             Controls.Add(lblcReward);
             Controls.Add(lblMissionID);
@@ -149,5 +161,6 @@
         private Label lblMissionID;
         private Label lblcReward;
         private Label lblXP;
+        private Button btnExit;
     }
 }

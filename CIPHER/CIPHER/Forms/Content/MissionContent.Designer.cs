@@ -36,14 +36,14 @@ namespace CIPHER.Forms.Content
             panel1 = new Panel();
             lblMissionPage1 = new Label();
             panel2 = new Panel();
-            lblMissionpage4 = new Label();
+            lblXP = new Label();
             lblMissionpage3 = new Label();
             panel4 = new Panel();
             lblMissionpage6 = new Label();
             lblMissionpage5 = new Label();
             panel3 = new Panel();
             btnCreateMission = new Button();
-            textBox1 = new TextBox();
+            txtSearch = new TextBox();
             btnSEarch = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -53,9 +53,9 @@ namespace CIPHER.Forms.Content
             // 
             // flowLayoutPanel1
             // 
+            flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.FromArgb(244, 247, 246);
-            flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new Size(758, 318);
@@ -71,7 +71,6 @@ namespace CIPHER.Forms.Content
             lblMissionpage2.Size = new Size(443, 14);
             lblMissionpage2.TabIndex = 1;
             lblMissionpage2.Text = "Deploy into active cyber warfare scenarios. Neutralize threats, secure data nodes .";
-            lblMissionpage2.Click += lblMissionpage2_Click;
             // 
             // panel1
             // 
@@ -82,7 +81,6 @@ namespace CIPHER.Forms.Content
             panel1.Name = "panel1";
             panel1.Size = new Size(562, 60);
             panel1.TabIndex = 1;
-            panel1.Paint += panel1_Paint;
             // 
             // lblMissionPage1
             // 
@@ -95,28 +93,27 @@ namespace CIPHER.Forms.Content
             lblMissionPage1.Size = new Size(236, 29);
             lblMissionPage1.TabIndex = 0;
             lblMissionPage1.Text = "CURRENT MISSIONS";
-            lblMissionPage1.Click += lblMissionPage1_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(240, 244, 247);
-            panel2.Controls.Add(lblMissionpage4);
+            panel2.Controls.Add(lblXP);
             panel2.Controls.Add(lblMissionpage3);
             panel2.Location = new Point(622, 31);
             panel2.Name = "panel2";
             panel2.Size = new Size(82, 60);
             panel2.TabIndex = 2;
             // 
-            // lblMissionpage4
+            // lblXP
             // 
-            lblMissionpage4.AutoSize = true;
-            lblMissionpage4.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMissionpage4.ForeColor = Color.FromArgb(11, 109, 126);
-            lblMissionpage4.Location = new Point(19, 29);
-            lblMissionpage4.Name = "lblMissionpage4";
-            lblMissionpage4.Size = new Size(44, 17);
-            lblMissionpage4.TabIndex = 1;
-            lblMissionpage4.Text = "12450";
+            lblXP.AutoSize = true;
+            lblXP.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblXP.ForeColor = Color.FromArgb(11, 109, 126);
+            lblXP.Location = new Point(32, 33);
+            lblXP.Name = "lblXP";
+            lblXP.Size = new Size(16, 17);
+            lblXP.TabIndex = 1;
+            lblXP.Text = "0";
             // 
             // lblMissionpage3
             // 
@@ -127,7 +124,6 @@ namespace CIPHER.Forms.Content
             lblMissionpage3.Size = new Size(49, 12);
             lblMissionpage3.TabIndex = 0;
             lblMissionpage3.Text = "TOTAL_XP";
-            lblMissionpage3.Click += label1_Click;
             // 
             // panel4
             // 
@@ -154,7 +150,7 @@ namespace CIPHER.Forms.Content
             // 
             lblMissionpage5.AutoSize = true;
             lblMissionpage5.Font = new Font("Bahnschrift SemiBold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMissionpage5.Location = new Point(6, 14);
+            lblMissionpage5.Location = new Point(3, 14);
             lblMissionpage5.Name = "lblMissionpage5";
             lblMissionpage5.Size = new Size(61, 12);
             lblMissionpage5.TabIndex = 0;
@@ -182,15 +178,18 @@ namespace CIPHER.Forms.Content
             btnCreateMission.TabIndex = 5;
             btnCreateMission.Text = "Create Mission";
             btnCreateMission.UseVisualStyleBackColor = false;
+            btnCreateMission.Visible = false;
+            btnCreateMission.Click += btnCreateMission_Click;
             // 
-            // textBox1
+            // txtSearch
             // 
-            textBox1.BackColor = Color.FromArgb(240, 244, 244);
-            textBox1.Location = new Point(634, 104);
-            textBox1.Margin = new Padding(3, 2, 3, 2);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(170, 23);
-            textBox1.TabIndex = 6;
+            txtSearch.BackColor = Color.FromArgb(240, 244, 244);
+            txtSearch.Location = new Point(634, 104);
+            txtSearch.Margin = new Padding(3, 2, 3, 2);
+            txtSearch.Name = "txtSearch";
+            txtSearch.Size = new Size(170, 23);
+            txtSearch.TabIndex = 6;
+            txtSearch.KeyDown += txtSearch_KeyDown;
             // 
             // btnSEarch
             // 
@@ -203,6 +202,7 @@ namespace CIPHER.Forms.Content
             btnSEarch.TabIndex = 7;
             btnSEarch.Text = "Search";
             btnSEarch.UseVisualStyleBackColor = true;
+            btnSEarch.Click += btnSEarch_Click;
             // 
             // MissionContent
             // 
@@ -210,14 +210,14 @@ namespace CIPHER.Forms.Content
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(234, 240, 240);
             Controls.Add(btnSEarch);
-            Controls.Add(textBox1);
+            Controls.Add(txtSearch);
             Controls.Add(btnCreateMission);
             Controls.Add(panel3);
             Controls.Add(panel4);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "MissionContent";
-            Size = new Size(819, 487);
+            Size = new Size(914, 596);
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
@@ -236,14 +236,14 @@ namespace CIPHER.Forms.Content
         private Panel panel2;
         private Label lblMissionPage1;
         private Label lblMissionpage2;
-        private Label lblMissionpage4;
+        private Label lblXP;
         private Label lblMissionpage3;
         private Panel panel4;
         private Label lblMissionpage6;
         private Label lblMissionpage5;
         private Panel panel3;
         private Button btnCreateMission;
-        private TextBox textBox1;
+        private TextBox txtSearch;
         private Button btnSEarch;
     }
 }
