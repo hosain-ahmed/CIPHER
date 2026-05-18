@@ -1,4 +1,5 @@
 ﻿using CIPHER.Forms.Content;
+using CIPHER.Helpers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace CIPHER.Forms.Controls
         {
             InitializeComponent();
             LoadView(new MissionContent());
+
         }
 
         public void LoadView(UserControl view)
@@ -30,29 +32,10 @@ namespace CIPHER.Forms.Controls
         }
 
 
-        private void sdbControl_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pnlSideBar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-        private void pnlContent_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
+        //private void loadName()
+        //{
+        //    lblName.Text = "Welcome, " + SessionManager.CurrentUser.Codename + "!";
+        //}
 
         private void button1_click(object sender, EventArgs e)
         {

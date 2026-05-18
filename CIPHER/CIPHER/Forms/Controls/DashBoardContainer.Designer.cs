@@ -34,9 +34,9 @@ namespace CIPHER.Forms.Controls
             pnlSideBar = new Panel();
             btnTerminal = new Button();
             btnMission = new Button();
-            btnProfile = new Button();
             btnLog = new Button();
             btnMarket = new Button();
+            btnProfile = new Button();
             pnlContent = new Panel();
             label1 = new Label();
             pnlSideBar.SuspendLayout();
@@ -47,8 +47,8 @@ namespace CIPHER.Forms.Controls
             // 
             pnlSideBar.BackColor = Color.FromArgb(50, 56, 62);
             pnlSideBar.Controls.Add(btnTerminal);
-            pnlSideBar.Controls.Add(btnMission);
             pnlSideBar.Controls.Add(btnProfile);
+            pnlSideBar.Controls.Add(btnMission);
             pnlSideBar.Controls.Add(btnLog);
             pnlSideBar.Controls.Add(btnMarket);
             pnlSideBar.Dock = DockStyle.Left;
@@ -56,7 +56,6 @@ namespace CIPHER.Forms.Controls
             pnlSideBar.Name = "pnlSideBar";
             pnlSideBar.Size = new Size(34, 750);
             pnlSideBar.TabIndex = 0;
-            pnlSideBar.Paint += pnlSideBar_Paint;
             // 
             // btnTerminal
             // 
@@ -84,18 +83,6 @@ namespace CIPHER.Forms.Controls
             btnMission.UseVisualStyleBackColor = false;
             btnMission.Click += button1_click;
             // 
-            // btnProfile
-            // 
-            btnProfile.FlatAppearance.BorderSize = 0;
-            btnProfile.FlatStyle = FlatStyle.Flat;
-            btnProfile.Image = Properties.Resources.SSMale;
-            btnProfile.Location = new Point(6, 675);
-            btnProfile.Name = "btnProfile";
-            btnProfile.Size = new Size(22, 23);
-            btnProfile.TabIndex = 8;
-            btnProfile.UseVisualStyleBackColor = true;
-            btnProfile.Click += btnProfile_Click;
-            // 
             // btnLog
             // 
             btnLog.FlatAppearance.BorderSize = 0;
@@ -120,6 +107,18 @@ namespace CIPHER.Forms.Controls
             btnMarket.UseVisualStyleBackColor = false;
             btnMarket.Click += btnmarket_click;
             // 
+            // btnProfile
+            // 
+            btnProfile.FlatAppearance.BorderSize = 0;
+            btnProfile.FlatStyle = FlatStyle.Flat;
+            btnProfile.Image = Properties.Resources.SSMale;
+            btnProfile.Location = new Point(9, 709);
+            btnProfile.Name = "btnProfile";
+            btnProfile.Size = new Size(22, 23);
+            btnProfile.TabIndex = 8;
+            btnProfile.UseVisualStyleBackColor = true;
+            btnProfile.Click += btnProfile_Click;
+            // 
             // pnlContent
             // 
             pnlContent.BackColor = Color.FromArgb(245, 250, 252);
@@ -129,7 +128,6 @@ namespace CIPHER.Forms.Controls
             pnlContent.Name = "pnlContent";
             pnlContent.Size = new Size(1280, 750);
             pnlContent.TabIndex = 1;
-            pnlContent.Paint += pnlContent_Paint;
             // 
             // label1
             // 
@@ -149,7 +147,6 @@ namespace CIPHER.Forms.Controls
             Controls.Add(pnlContent);
             Name = "DashBoardContainer";
             Size = new Size(1280, 750);
-            Load += sdbControl_Load;
             pnlSideBar.ResumeLayout(false);
             pnlContent.ResumeLayout(false);
             pnlContent.PerformLayout();
