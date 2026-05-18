@@ -331,6 +331,7 @@
             btnCreateUser.TabIndex = 0;
             btnCreateUser.Text = "Create User+";
             btnCreateUser.UseVisualStyleBackColor = false;
+            btnCreateUser.Click += btnCreateUser_Click;
             // 
             // lblActiveRegistry
             // 

@@ -59,7 +59,7 @@ namespace CIPHER.Forms.Content
                 // Use the card's existing properties
                 card.MissionTitle = m.Title;
                 card.MissionID = "ID: " + m.MissionID;
-                card.MissionDescription = m.Briefing;
+                //card.MissionDescription = m.Briefing;
                 card.MissionReward = m.CoinReward + " CR";
                 card.MissionDifficulty = m.Difficulty;
                 card.MissionStatus = m.IsSolved == "1" ? "COMPLETED" : "AVAILABLE";
@@ -84,13 +84,13 @@ namespace CIPHER.Forms.Content
                 int solved = (int)cmdSolved.ExecuteScalar();
 
 
-                lblMissionpage6.Text = $"{solved}/{total}";
+                lblMISSIOM.Text = $"{solved}/{total}";
 
                 lblXP.Text = SessionManager.CurrentUser.XP.ToString();
             }
             else
             {
-                lblMissionpage6.Text = "Admin";
+                lblMISSIOM.Text = "Admin";
                 lblXP.Text = "Admin";
             }
         }

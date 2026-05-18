@@ -54,7 +54,7 @@
             // 
             // pnlContent
             // 
-            pnlContent.BackColor = SystemColors.WindowFrame;
+            pnlContent.BackColor = Color.FromArgb(244, 247, 246);
             pnlContent.Controls.Add(panel8);
             pnlContent.Controls.Add(panel7);
             pnlContent.Controls.Add(panel6);
@@ -67,6 +67,7 @@
             // 
             // panel8
             // 
+            panel8.BackColor = SystemColors.ControlLight;
             panel8.Controls.Add(lblBBD);
             panel8.Controls.Add(lblBB);
             panel8.Controls.Add(btnBBBuy);
@@ -78,33 +79,44 @@
             // lblBBD
             // 
             lblBBD.AutoSize = true;
-            lblBBD.Location = new Point(28, 61);
+            lblBBD.FlatStyle = FlatStyle.Flat;
+            lblBBD.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblBBD.ForeColor = Color.Gray;
+            lblBBD.Location = new Point(101, 51);
             lblBBD.Name = "lblBBD";
-            lblBBD.Size = new Size(143, 15);
+            lblBBD.Size = new Size(192, 19);
             lblBBD.TabIndex = 2;
             lblBBD.Text = "Bounty Bomb Description";
             // 
             // lblBB
             // 
             lblBB.AutoSize = true;
-            lblBB.Location = new Point(28, 14);
+            lblBB.FlatStyle = FlatStyle.Flat;
+            lblBB.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
+            lblBB.ForeColor = Color.Teal;
+            lblBB.Location = new Point(136, 14);
             lblBB.Name = "lblBB";
-            lblBB.Size = new Size(80, 15);
+            lblBB.Size = new Size(122, 23);
             lblBB.TabIndex = 1;
             lblBB.Text = "Bounty Bomb";
             // 
             // btnBBBuy
             // 
-            btnBBBuy.Location = new Point(71, 181);
+            btnBBBuy.BackColor = Color.Teal;
+            btnBBBuy.FlatStyle = FlatStyle.Flat;
+            btnBBBuy.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            btnBBBuy.ForeColor = Color.White;
+            btnBBBuy.Location = new Point(161, 154);
             btnBBBuy.Name = "btnBBBuy";
-            btnBBBuy.Size = new Size(75, 23);
+            btnBBBuy.Size = new Size(75, 29);
             btnBBBuy.TabIndex = 0;
             btnBBBuy.Text = "Buy";
-            btnBBBuy.UseVisualStyleBackColor = true;
+            btnBBBuy.UseVisualStyleBackColor = false;
             btnBBBuy.Click += btnBBBuy_Click;
             // 
             // panel7
             // 
+            panel7.BackColor = SystemColors.ControlLight;
             panel7.Controls.Add(lblMSD);
             panel7.Controls.Add(lblMS);
             panel7.Controls.Add(btnMSBuy);
@@ -116,33 +128,44 @@
             // lblMSD
             // 
             lblMSD.AutoSize = true;
-            lblMSD.Location = new Point(27, 52);
+            lblMSD.FlatStyle = FlatStyle.Flat;
+            lblMSD.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblMSD.ForeColor = Color.Gray;
+            lblMSD.Location = new Point(122, 52);
             lblMSD.Name = "lblMSD";
-            lblMSD.Size = new Size(111, 15);
+            lblMSD.Size = new Size(153, 19);
             lblMSD.TabIndex = 2;
             lblMSD.Text = "Mission Skip Details";
             // 
             // lblMS
             // 
             lblMS.AutoSize = true;
-            lblMS.Location = new Point(27, 15);
+            lblMS.FlatStyle = FlatStyle.Flat;
+            lblMS.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
+            lblMS.ForeColor = Color.Teal;
+            lblMS.Location = new Point(136, 15);
             lblMS.Name = "lblMS";
-            lblMS.Size = new Size(73, 15);
+            lblMS.Size = new Size(118, 23);
             lblMS.TabIndex = 1;
             lblMS.Text = "Mission Skip";
             // 
             // btnMSBuy
             // 
-            btnMSBuy.Location = new Point(76, 174);
+            btnMSBuy.BackColor = Color.Teal;
+            btnMSBuy.FlatStyle = FlatStyle.Flat;
+            btnMSBuy.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            btnMSBuy.ForeColor = Color.White;
+            btnMSBuy.Location = new Point(161, 159);
             btnMSBuy.Name = "btnMSBuy";
-            btnMSBuy.Size = new Size(75, 23);
+            btnMSBuy.Size = new Size(75, 38);
             btnMSBuy.TabIndex = 0;
             btnMSBuy.Text = "Buy";
-            btnMSBuy.UseVisualStyleBackColor = true;
+            btnMSBuy.UseVisualStyleBackColor = false;
             btnMSBuy.Click += btnMSBuy_Click;
             // 
             // panel6
             // 
+            panel6.BackColor = SystemColors.ControlLight;
             panel6.Controls.Add(lblXPD);
             panel6.Controls.Add(lblXP);
             panel6.Controls.Add(btnXPBuy);
@@ -150,38 +173,48 @@
             panel6.Name = "panel6";
             panel6.Size = new Size(362, 218);
             panel6.TabIndex = 1;
-         
             // 
             // lblXPD
             // 
             lblXPD.AutoSize = true;
-            lblXPD.Location = new Point(16, 52);
+            lblXPD.FlatStyle = FlatStyle.Flat;
+            lblXPD.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblXPD.ForeColor = Color.Gray;
+            lblXPD.Location = new Point(107, 51);
             lblXPD.Name = "lblXPD";
-            lblXPD.Size = new Size(117, 15);
+            lblXPD.Size = new Size(160, 19);
             lblXPD.TabIndex = 2;
             lblXPD.Text = "XP Boost Description";
             // 
             // lblXP
             // 
             lblXP.AutoSize = true;
-            lblXP.Location = new Point(16, 15);
+            lblXP.FlatStyle = FlatStyle.Flat;
+            lblXP.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
+            lblXP.ForeColor = Color.Teal;
+            lblXP.Location = new Point(141, 14);
             lblXP.Name = "lblXP";
-            lblXP.Size = new Size(54, 15);
+            lblXP.Size = new Size(86, 23);
             lblXP.TabIndex = 1;
             lblXP.Text = "XP Boost";
             // 
             // btnXPBuy
             // 
-            btnXPBuy.Location = new Point(71, 174);
+            btnXPBuy.BackColor = Color.Teal;
+            btnXPBuy.FlatStyle = FlatStyle.Flat;
+            btnXPBuy.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            btnXPBuy.ForeColor = Color.White;
+            btnXPBuy.Location = new Point(141, 154);
             btnXPBuy.Name = "btnXPBuy";
-            btnXPBuy.Size = new Size(75, 23);
+            btnXPBuy.Size = new Size(75, 29);
             btnXPBuy.TabIndex = 0;
             btnXPBuy.Text = "Buy";
-            btnXPBuy.UseVisualStyleBackColor = true;
+            btnXPBuy.UseVisualStyleBackColor = false;
             btnXPBuy.Click += btnXPBuy_Click;
             // 
             // panel5
             // 
+            panel5.BackColor = SystemColors.ControlLight;
             panel5.Controls.Add(lblGPD);
             panel5.Controls.Add(lblGP);
             panel5.Controls.Add(btnGPBuy);
@@ -189,34 +222,43 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(362, 233);
             panel5.TabIndex = 0;
-           
             // 
             // lblGPD
             // 
             lblGPD.AutoSize = true;
-            lblGPD.Location = new Point(13, 55);
+            lblGPD.FlatStyle = FlatStyle.Flat;
+            lblGPD.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblGPD.ForeColor = Color.Gray;
+            lblGPD.Location = new Point(81, 52);
             lblGPD.Name = "lblGPD";
-            lblGPD.Size = new Size(149, 15);
+            lblGPD.Size = new Size(202, 19);
             lblGPD.TabIndex = 2;
             lblGPD.Text = "Ghost protocol Description";
             // 
             // lblGP
             // 
             lblGP.AutoSize = true;
-            lblGP.Location = new Point(13, 18);
+            lblGP.FlatStyle = FlatStyle.Flat;
+            lblGP.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
+            lblGP.ForeColor = Color.Teal;
+            lblGP.Location = new Point(122, 15);
             lblGP.Name = "lblGP";
-            lblGP.Size = new Size(86, 15);
+            lblGP.Size = new Size(135, 23);
             lblGP.TabIndex = 1;
             lblGP.Text = "Ghost Protocol";
             // 
             // btnGPBuy
             // 
-            btnGPBuy.Location = new Point(64, 165);
+            btnGPBuy.BackColor = Color.Teal;
+            btnGPBuy.FlatStyle = FlatStyle.Flat;
+            btnGPBuy.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            btnGPBuy.ForeColor = Color.White;
+            btnGPBuy.Location = new Point(141, 159);
             btnGPBuy.Name = "btnGPBuy";
-            btnGPBuy.Size = new Size(75, 23);
+            btnGPBuy.Size = new Size(75, 38);
             btnGPBuy.TabIndex = 0;
             btnGPBuy.Text = "Buy";
-            btnGPBuy.UseVisualStyleBackColor = true;
+            btnGPBuy.UseVisualStyleBackColor = false;
             btnGPBuy.Click += btnGPBuy_Click;
             // 
             // ExtraFeatures

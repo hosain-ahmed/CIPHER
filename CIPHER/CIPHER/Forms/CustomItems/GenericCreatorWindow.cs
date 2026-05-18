@@ -69,7 +69,7 @@ namespace CIPHER.Forms.CustomItems
                         {
                             Codename = txtTitle.Text,
                             FullName = txtCategory.Text,
-                            PasswordHash = txtDifficulty.Text,
+                            PasswordHash = rtbHint.Text,
                             CryptCoin = int.Parse(txtCoin.Text),
                             FactionID = int.Parse(txtXP.Text),
                             Email = rtbBriefing.Text
@@ -167,13 +167,13 @@ namespace CIPHER.Forms.CustomItems
                 case CreationModeEnum.User:
                     lblTitle.Text = "Agent Codename";
                     lblCategory.Text = "Full Name";
-                    lblDifficulty.Text = "Initial Password";
+                    lblHint.Text = "Initial Password";
                     lblCoin.Text = "Starting CryptCoin";
                     lblXP.Text = "Faction ID";
                     lblBriefing.Text = "Secure Email Route";
 
                     lblAnswer.Visible = rtbAnswer.Visible = false;
-                    lblHint.Visible = rtbHint.Visible = false;
+                    lblDifficulty.Visible = txtDifficulty.Visible = false;
                     break;
                 case CreationModeEnum.Bounty:
                     lblTitle.Text = "Bounty Title";

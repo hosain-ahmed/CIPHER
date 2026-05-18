@@ -41,7 +41,7 @@ namespace CIPHER.Forms.CustomItems
 
             this.MissionTitle = MissionData.Title;
             this.MissionID = "ID: " + MissionData.MissionID;
-            this.MissionDescription = MissionData.Briefing;
+            //this.MissionDescription = MissionData.Briefing;
 
             this.MissionReward = MissionData.XPReward.ToString() + " XP";
             this.MissionDifficulty = MissionData.Difficulty;
@@ -103,22 +103,18 @@ namespace CIPHER.Forms.CustomItems
 
         private void MissionCard_MouseEnter(object sender, EventArgs e)
         {
-            this.BorderStyle = BorderStyle.FixedSingle; // Add a border on hover
-            this.BackColor = Color.FromArgb(40, 40, 40); // Slightly lighter background on hover
+
+        }
+
+        private void MissionCard_MouseHover(object sender, EventArgs e)
+        {
+
         }
 
         private void MissionCard_MouseLeave(object sender, EventArgs e)
         {
-            this.BorderStyle = BorderStyle.None; // Remove the border when not hovering
-            this.BackColor = Color.FromArgb(30, 30, 30); // Revert to original background color
-        }
-
-        private void lblDifficulty_Click(object sender, EventArgs e)
-        {
 
         }
-
-        // --- Your existing properties remain below ---
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -128,9 +124,9 @@ namespace CIPHER.Forms.CustomItems
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string MissionID { get { return lblID.Text; } set { lblID.Text = value; } }
 
-        [Browsable(false)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public string MissionDescription { get { return lblDescription.Text; } set { lblDescription.Text = value; } }
+        //[Browsable(false)]
+        //[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        //public string MissionDescription { get { return lblDescription.Text; } set { lblDescription.Text = value; } }
 
         [Browsable(false)]
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]

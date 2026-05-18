@@ -39,7 +39,7 @@ namespace CIPHER.Forms.Content
             lblXP = new Label();
             lblMissionpage3 = new Label();
             panel4 = new Panel();
-            lblMissionpage6 = new Label();
+            lblMISSIOM = new Label();
             lblMissionpage5 = new Label();
             panel3 = new Panel();
             btnCreateMission = new Button();
@@ -53,12 +53,12 @@ namespace CIPHER.Forms.Content
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             flowLayoutPanel1.AutoScroll = true;
             flowLayoutPanel1.BackColor = Color.FromArgb(244, 247, 246);
+            flowLayoutPanel1.Dock = DockStyle.Fill;
             flowLayoutPanel1.Location = new Point(0, 0);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(758, 318);
+            flowLayoutPanel1.Size = new Size(824, 399);
             flowLayoutPanel1.TabIndex = 0;
             // 
             // lblMissionpage2
@@ -96,6 +96,7 @@ namespace CIPHER.Forms.Content
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             panel2.BackColor = Color.FromArgb(240, 244, 247);
             panel2.Controls.Add(lblXP);
             panel2.Controls.Add(lblMissionpage3);
@@ -106,6 +107,7 @@ namespace CIPHER.Forms.Content
             // 
             // lblXP
             // 
+            lblXP.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblXP.AutoSize = true;
             lblXP.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblXP.ForeColor = Color.FromArgb(11, 109, 126);
@@ -117,6 +119,7 @@ namespace CIPHER.Forms.Content
             // 
             // lblMissionpage3
             // 
+            lblMissionpage3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblMissionpage3.AutoSize = true;
             lblMissionpage3.Font = new Font("Bahnschrift SemiBold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMissionpage3.Location = new Point(12, 14);
@@ -127,8 +130,9 @@ namespace CIPHER.Forms.Content
             // 
             // panel4
             // 
+            panel4.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             panel4.BackColor = Color.FromArgb(240, 244, 247);
-            panel4.Controls.Add(lblMissionpage6);
+            panel4.Controls.Add(lblMISSIOM);
             panel4.Controls.Add(lblMissionpage5);
             panel4.Location = new Point(724, 31);
             panel4.Margin = new Padding(3, 2, 3, 2);
@@ -136,18 +140,20 @@ namespace CIPHER.Forms.Content
             panel4.Size = new Size(80, 60);
             panel4.TabIndex = 4;
             // 
-            // lblMissionpage6
+            // lblMISSIOM
             // 
-            lblMissionpage6.AutoSize = true;
-            lblMissionpage6.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblMissionpage6.ForeColor = Color.FromArgb(11, 109, 126);
-            lblMissionpage6.Location = new Point(21, 30);
-            lblMissionpage6.Name = "lblMissionpage6";
-            lblMissionpage6.Size = new Size(0, 17);
-            lblMissionpage6.TabIndex = 1;
+            lblMISSIOM.AutoSize = true;
+            lblMISSIOM.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMISSIOM.ForeColor = Color.FromArgb(11, 109, 126);
+            lblMISSIOM.Location = new Point(21, 30);
+            lblMISSIOM.Name = "lblMISSIOM";
+            lblMISSIOM.Size = new Size(16, 17);
+            lblMISSIOM.TabIndex = 1;
+            lblMISSIOM.Text = "0";
             // 
             // lblMissionpage5
             // 
+            lblMissionpage5.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             lblMissionpage5.AutoSize = true;
             lblMissionpage5.Font = new Font("Bahnschrift SemiBold", 7.20000029F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblMissionpage5.Location = new Point(3, 14);
@@ -158,16 +164,18 @@ namespace CIPHER.Forms.Content
             // 
             // panel3
             // 
+            panel3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             panel3.BackColor = Color.FromArgb(128, 255, 255);
             panel3.Controls.Add(flowLayoutPanel1);
             panel3.Location = new Point(46, 141);
             panel3.Margin = new Padding(3, 2, 3, 2);
             panel3.Name = "panel3";
-            panel3.Size = new Size(758, 318);
+            panel3.Size = new Size(824, 399);
             panel3.TabIndex = 0;
             // 
             // btnCreateMission
             // 
+            btnCreateMission.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCreateMission.BackColor = Color.FromArgb(234, 240, 240);
             btnCreateMission.Font = new Font("Bahnschrift SemiBold", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCreateMission.ForeColor = Color.FromArgb(11, 109, 126);
@@ -183,6 +191,7 @@ namespace CIPHER.Forms.Content
             // 
             // txtSearch
             // 
+            txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtSearch.BackColor = Color.FromArgb(240, 244, 244);
             txtSearch.Location = new Point(634, 104);
             txtSearch.Margin = new Padding(3, 2, 3, 2);
@@ -193,6 +202,7 @@ namespace CIPHER.Forms.Content
             // 
             // btnSEarch
             // 
+            btnSEarch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnSEarch.Font = new Font("Bahnschrift SemiBold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSEarch.ForeColor = Color.FromArgb(11, 109, 126);
             btnSEarch.Location = new Point(573, 104);
@@ -239,7 +249,7 @@ namespace CIPHER.Forms.Content
         private Label lblXP;
         private Label lblMissionpage3;
         private Panel panel4;
-        private Label lblMissionpage6;
+        private Label lblMISSIOM;
         private Label lblMissionpage5;
         private Panel panel3;
         private Button btnCreateMission;

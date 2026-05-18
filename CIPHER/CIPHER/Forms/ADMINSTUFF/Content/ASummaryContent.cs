@@ -25,7 +25,7 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
         {
             InitializeComponent();
             LoadUsers();
-                AboveLabels();
+            AboveLabels();
         }
 
         private void LoadUsers()
@@ -233,6 +233,12 @@ namespace CIPHER.Forms.ADMINSTUFF.Content
 
         }
 
+        private void btnCreateUser_Click(object sender, EventArgs e)
+        {
+            var win = new CustomItems.GenericCreatorWindow();
+            win.SetupMode(CreationModeEnum.User);
+            win.ShowDialog();
 
+        }
     }
 }

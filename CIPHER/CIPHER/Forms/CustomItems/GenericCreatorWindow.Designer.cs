@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            txtDifficulty = new ComboBox();
+            lblDifficulty = new Label();
             lblAnswer = new Label();
             lblBriefing = new Label();
             lblHint = new Label();
@@ -45,15 +47,14 @@
             rtbAnswer = new RichTextBox();
             rtbBriefing = new RichTextBox();
             btnExit = new Button();
-            txtDifficulty = new TextBox();
-            lblDifficulty = new Label();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
-            panel1.Controls.Add(lblDifficulty);
+            panel1.BackColor = Color.FromArgb(244, 247, 246);
             panel1.Controls.Add(txtDifficulty);
+            panel1.Controls.Add(lblDifficulty);
             panel1.Controls.Add(lblAnswer);
             panel1.Controls.Add(lblBriefing);
             panel1.Controls.Add(lblHint);
@@ -76,110 +77,168 @@
             panel1.Size = new Size(696, 503);
             panel1.TabIndex = 0;
             // 
+            // txtDifficulty
+            // 
+            txtDifficulty.FlatStyle = FlatStyle.Flat;
+            txtDifficulty.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            txtDifficulty.FormattingEnabled = true;
+            txtDifficulty.Items.AddRange(new object[] { "Easy", "Medium", "Hard", "Expert" });
+            txtDifficulty.Location = new Point(15, 190);
+            txtDifficulty.Name = "txtDifficulty";
+            txtDifficulty.Size = new Size(324, 27);
+            txtDifficulty.TabIndex = 18;
+            // 
+            // lblDifficulty
+            // 
+            lblDifficulty.AutoSize = true;
+            lblDifficulty.FlatStyle = FlatStyle.Flat;
+            lblDifficulty.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblDifficulty.ForeColor = Color.Teal;
+            lblDifficulty.Location = new Point(12, 160);
+            lblDifficulty.Name = "lblDifficulty";
+            lblDifficulty.Size = new Size(73, 19);
+            lblDifficulty.TabIndex = 17;
+            lblDifficulty.Text = "Difficulty";
+            // 
             // lblAnswer
             // 
             lblAnswer.AutoSize = true;
-            lblAnswer.Location = new Point(365, 341);
+            lblAnswer.FlatStyle = FlatStyle.Flat;
+            lblAnswer.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
+            lblAnswer.ForeColor = Color.Teal;
+            lblAnswer.Location = new Point(365, 326);
             lblAnswer.Name = "lblAnswer";
-            lblAnswer.Size = new Size(46, 15);
+            lblAnswer.Size = new Size(76, 23);
             lblAnswer.TabIndex = 15;
             lblAnswer.Text = "Answer";
             // 
             // lblBriefing
             // 
             lblBriefing.AutoSize = true;
-            lblBriefing.Location = new Point(367, 44);
+            lblBriefing.FlatStyle = FlatStyle.Flat;
+            lblBriefing.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblBriefing.ForeColor = Color.Teal;
+            lblBriefing.Location = new Point(363, 39);
             lblBriefing.Name = "lblBriefing";
-            lblBriefing.Size = new Size(48, 15);
+            lblBriefing.Size = new Size(66, 19);
             lblBriefing.TabIndex = 14;
             lblBriefing.Text = "Briefing";
             // 
             // lblHint
             // 
             lblHint.AutoSize = true;
-            lblHint.Location = new Point(12, 341);
+            lblHint.FlatStyle = FlatStyle.Flat;
+            lblHint.Font = new Font("Bahnschrift SemiBold", 14F, FontStyle.Bold);
+            lblHint.ForeColor = Color.Teal;
+            lblHint.Location = new Point(12, 326);
             lblHint.Name = "lblHint";
-            lblHint.Size = new Size(30, 15);
+            lblHint.Size = new Size(45, 23);
             lblHint.TabIndex = 13;
             lblHint.Text = "Hint";
             // 
             // lblXP
             // 
             lblXP.AutoSize = true;
+            lblXP.FlatStyle = FlatStyle.Flat;
+            lblXP.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblXP.ForeColor = Color.Teal;
             lblXP.Location = new Point(12, 282);
             lblXP.Name = "lblXP";
-            lblXP.Size = new Size(21, 15);
+            lblXP.Size = new Size(28, 19);
             lblXP.TabIndex = 12;
             lblXP.Text = "XP";
             // 
             // lblCoin
             // 
             lblCoin.AutoSize = true;
+            lblCoin.FlatStyle = FlatStyle.Flat;
+            lblCoin.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblCoin.ForeColor = Color.Teal;
             lblCoin.Location = new Point(12, 223);
             lblCoin.Name = "lblCoin";
-            lblCoin.Size = new Size(74, 15);
+            lblCoin.Size = new Size(101, 19);
             lblCoin.TabIndex = 11;
             lblCoin.Text = "Coin Reward";
             // 
             // lblCategory
             // 
             lblCategory.AutoSize = true;
+            lblCategory.BackColor = Color.White;
+            lblCategory.FlatStyle = FlatStyle.Flat;
+            lblCategory.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            lblCategory.ForeColor = Color.Teal;
             lblCategory.Location = new Point(12, 100);
             lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(55, 15);
+            lblCategory.Size = new Size(75, 19);
             lblCategory.TabIndex = 10;
             lblCategory.Text = "Category";
-        
             // 
             // lblTitle
             // 
             lblTitle.AutoSize = true;
+            lblTitle.BackColor = Color.White;
+            lblTitle.FlatStyle = FlatStyle.Flat;
+            lblTitle.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.ForeColor = Color.Teal;
             lblTitle.Location = new Point(12, 47);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(30, 15);
+            lblTitle.Size = new Size(40, 19);
             lblTitle.TabIndex = 9;
             lblTitle.Text = "Title";
             // 
             // btnSubmit
             // 
-            btnSubmit.Location = new Point(518, 454);
+            btnSubmit.BackColor = Color.Teal;
+            btnSubmit.FlatStyle = FlatStyle.Flat;
+            btnSubmit.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            btnSubmit.ForeColor = Color.White;
+            btnSubmit.Location = new Point(520, 440);
             btnSubmit.Name = "btnSubmit";
-            btnSubmit.Size = new Size(166, 37);
+            btnSubmit.Size = new Size(166, 51);
             btnSubmit.TabIndex = 8;
             btnSubmit.Text = "Submit";
-            btnSubmit.UseVisualStyleBackColor = true;
+            btnSubmit.UseVisualStyleBackColor = false;
             btnSubmit.Click += btnSubmit_Click;
             // 
             // txtXP
             // 
+            txtXP.BackColor = Color.White;
+            txtXP.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             txtXP.Location = new Point(12, 300);
             txtXP.Name = "txtXP";
-            txtXP.Size = new Size(324, 23);
+            txtXP.Size = new Size(324, 27);
             txtXP.TabIndex = 7;
             // 
             // txtCoin
             // 
+            txtCoin.BackColor = Color.White;
+            txtCoin.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             txtCoin.Location = new Point(12, 241);
             txtCoin.Name = "txtCoin";
-            txtCoin.Size = new Size(324, 23);
+            txtCoin.Size = new Size(324, 27);
             txtCoin.TabIndex = 6;
             // 
             // txtCategory
             // 
+            txtCategory.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             txtCategory.Location = new Point(12, 118);
             txtCategory.Name = "txtCategory";
-            txtCategory.Size = new Size(324, 23);
+            txtCategory.Size = new Size(324, 27);
             txtCategory.TabIndex = 5;
             // 
             // txtTitle
             // 
+            txtTitle.BackColor = Color.White;
+            txtTitle.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             txtTitle.Location = new Point(12, 65);
             txtTitle.Name = "txtTitle";
-            txtTitle.Size = new Size(324, 23);
+            txtTitle.Size = new Size(324, 27);
             txtTitle.TabIndex = 4;
             // 
             // rtbHint
             // 
+            rtbHint.BackColor = Color.White;
+            rtbHint.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             rtbHint.Location = new Point(12, 359);
             rtbHint.Name = "rtbHint";
             rtbHint.Size = new Size(324, 82);
@@ -188,6 +247,8 @@
             // 
             // rtbAnswer
             // 
+            rtbAnswer.BackColor = Color.White;
+            rtbAnswer.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             rtbAnswer.Location = new Point(365, 359);
             rtbAnswer.Name = "rtbAnswer";
             rtbAnswer.Size = new Size(321, 75);
@@ -196,6 +257,8 @@
             // 
             // rtbBriefing
             // 
+            rtbBriefing.BackColor = Color.White;
+            rtbBriefing.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
             rtbBriefing.Location = new Point(363, 65);
             rtbBriefing.Name = "rtbBriefing";
             rtbBriefing.Size = new Size(321, 232);
@@ -204,29 +267,17 @@
             // 
             // btnExit
             // 
+            btnExit.BackColor = Color.Teal;
+            btnExit.FlatStyle = FlatStyle.Flat;
+            btnExit.Font = new Font("Bahnschrift SemiBold", 12F, FontStyle.Bold);
+            btnExit.ForeColor = Color.White;
             btnExit.Location = new Point(609, 12);
             btnExit.Name = "btnExit";
-            btnExit.Size = new Size(75, 23);
+            btnExit.Size = new Size(75, 35);
             btnExit.TabIndex = 0;
             btnExit.Text = "Exit";
-            btnExit.UseVisualStyleBackColor = true;
+            btnExit.UseVisualStyleBackColor = false;
             btnExit.Click += btnExit_Click;
-            // 
-            // txtDifficulty
-            // 
-            txtDifficulty.Location = new Point(12, 178);
-            txtDifficulty.Name = "txtDifficulty";
-            txtDifficulty.Size = new Size(324, 23);
-            txtDifficulty.TabIndex = 16;
-            // 
-            // lblDifficulty
-            // 
-            lblDifficulty.AutoSize = true;
-            lblDifficulty.Location = new Point(12, 160);
-            lblDifficulty.Name = "lblDifficulty";
-            lblDifficulty.Size = new Size(55, 15);
-            lblDifficulty.TabIndex = 17;
-            lblDifficulty.Text = "Difficulty";
             // 
             // GenericCreatorWindow
             // 
@@ -263,6 +314,6 @@
         private Label lblCategory;
         private Label lblTitle;
         private Label lblDifficulty;
-        private TextBox txtDifficulty;
+        private ComboBox txtDifficulty;
     }
 }
